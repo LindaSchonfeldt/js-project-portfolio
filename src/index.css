@@ -106,7 +106,16 @@ h3 {
   }
 
   .heroTitle {
+    width: 50%;
     font-size: 5rem;
+  }
+
+  .heroText {
+    width: 70%;
+  }
+
+  .heroImage {
+    width: 100%;
   }
 }
 

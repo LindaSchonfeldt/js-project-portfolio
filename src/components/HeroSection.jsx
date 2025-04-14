@@ -1,5 +1,4 @@
 import React from 'react'
-import { StrictMode } from 'react'
 
 export const HeroSection = () => {
   return (
