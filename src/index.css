@@ -1,6 +1,6 @@
 :root {
   --primary-color: #0d453a;
-  --secondary-color: #fd6f00; /* 40% */
+  --secondary-color: #fd6f00;
   --accent-color: #ff904b;
   --color-background: #ffffff;
   --color-text: #202020;
@@ -8,10 +8,12 @@
   --text-body: 'Raleway', serif;
 }
 
+/* Base styles (mobile first) */
 body {
   background: var(--color-background);
   color: var(--color-text);
   font-family: var(--text-body);
+  margin: 40px 16px 80px 16px;
 }
 
 h1,
@@ -20,13 +22,19 @@ h3 {
   font-family: var(--text-headlines);
 }
 
-.logoSmall {
-  height: 2rem;
-  margin-bottom: 0.3rem;
+.logo {
+  height: 1.7rem;
+  margin-bottom: 0.2rem;
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .heroTitle {
-  font-size: 5rem;
+  font-size: 2.5rem;
   line-height: 0.9;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
@@ -34,10 +42,73 @@ h3 {
 }
 
 .heroSubtitle {
+  font-size: 1.2rem;
   margin: 0;
 }
 
-/* MEDIA QUERIES */
+.heroText {
+  width: 100%;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  body {
+    margin: 50px 32px 100px 32px;
+  }
+
+  .logo {
+    height: 2.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.3rem;
+  }
+
+  .heroImage {
+    width: 80%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  body {
+    margin: 80px 64px 160px 64px;
+  }
+
+  .heroTitle {
+    font-size: 4rem;
+  }
+
+  .logo {
+    height: 2.5rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  body {
+    margin: 100px 128px 200px 128px;
+  }
+
+  .heroContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .heroTitle {
+    font-size: 5rem;
+  }
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
@@ -47,49 +118,5 @@ h3 {
 
   .heroTitle {
     font-size: 6rem;
-  }
-}
-
-/* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199px) {
-  body {
-    margin: 100px 128px 200px 128px;
-  }
-
-  .heroTitle {
-    font-size: 5rem;
-  }
-}
-
-/* Medium devices (tablets, less than 992px) */
-@media (max-width: 991px) {
-  body {
-    margin: 80px 64px 160px 64px;
-  }
-
-  .heroTitle {
-    font-size: 4rem;
-  }
-}
-
-/* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767px) {
-  body {
-    margin: 50px 32px 100px 32px;
-  }
-
-  .heroTitle {
-    font-size: 3rem;
-  }
-}
-
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575px) {
-  body {
-    margin: 40px 16px 80px 16px;
-  }
-
-  .heroTitle {
-    font-size: 2.5rem;
   }
 }
