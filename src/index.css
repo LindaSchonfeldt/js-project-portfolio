@@ -1,4 +1,95 @@
+:root {
+  --primary-color: #0d453a;
+  --secondary-color: #fd6f00; /* 40% */
+  --accent-color: #ff904b;
+  --color-background: #ffffff;
+  --color-text: #202020;
+  --text-headlines: 'Josefin Sans', sans-serif;
+  --text-body: 'Raleway', serif;
+}
+
 body {
-  background: pink;
-  color: hotpink;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--text-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--text-headlines);
+}
+
+.logoSmall {
+  height: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.heroTitle {
+  font-size: 5rem;
+  line-height: 0.9;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.heroSubtitle {
+  margin: 0;
+}
+
+/* MEDIA QUERIES */
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  body {
+    margin: 120px 180px 240px 180px;
+  }
+
+  .heroTitle {
+    font-size: 6rem;
+  }
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199px) {
+  body {
+    margin: 100px 128px 200px 128px;
+  }
+
+  .heroTitle {
+    font-size: 5rem;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991px) {
+  body {
+    margin: 80px 64px 160px 64px;
+  }
+
+  .heroTitle {
+    font-size: 4rem;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767px) {
+  body {
+    margin: 50px 32px 100px 32px;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+  body {
+    margin: 40px 16px 80px 16px;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
 }

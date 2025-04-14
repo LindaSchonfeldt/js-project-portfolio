@@ -5,8 +5,8 @@ export const HeroSection = () => {
   return (
     <section className='heroContainer'>
       <div className='heroContent'>
-        <div className='logoSmall'>
-          <img src='assets/tree.svg' alt='' />
+        <div>
+          <img src='assets/tree.svg' className='logoSmall' alt='' />
         </div>
         <h2 className='heroSubtitle'>I am Linda Schönfeldt</h2>
         <h1 className='heroTitle'>Web Developer with UX Skills</h1>
