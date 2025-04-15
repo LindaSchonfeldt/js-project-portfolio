@@ -8,6 +8,12 @@
   --text-body: 'Raleway', serif;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 /* Base styles (mobile first) */
 body {
   background: var(--color-background);
@@ -23,14 +29,24 @@ h4 {
   font-family: var(--text-headlines);
 }
 
+h3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0; /* Removes default padding as well */
 }
 
+li {
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
 /* ACCESSIBILITY */
 /* Screen-reader-only content */
-.visually-hidden {
+.visuallyHidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -77,13 +93,20 @@ ul {
 }
 
 /* SOCIAL LINKS */
-.socialLinks {
+.socialContainer {
+  margin-top: 2rem;
+}
+
+.socialIcons {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
+}
+
+.socialIcon {
+  width: 32px;
+  height: auto;
+  color: var(--secondary-color);
+  transition: all 0.3s ease-in-out;
 }
 
 /* SKILL SECTION */
@@ -101,8 +124,8 @@ ul {
   margin-top: 2rem;
 }
 .skillTitle {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
   color: var(--primary-color);
 }
 .skillList {
@@ -120,6 +143,7 @@ ul {
   height: 0.5px;
   background-color: var(--primary-color);
   border-radius: 2px;
+  margin: 1rem;
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -194,5 +218,25 @@ ul {
 
   .heroTitle {
     font-size: 6rem;
+  }
+
+  .skillContainer {
+    flex-direction: column;
+  }
+  .skillSection {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  /* This transforms your dividers from horizontal to vertical */
+  .divider {
+    width: 1px;
+    height: 200px;
+    margin: 0 1rem;
+  }
+  .skillTitle {
+    font-size: 5rem;
   }
 }
