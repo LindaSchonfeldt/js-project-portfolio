@@ -4,9 +4,7 @@ export const HeroSection = () => {
   return (
     <section className='heroContainer'>
       <div className='heroContent'>
-        <div>
-          <img src='assets/tree.svg' className='logo' alt='' />
-        </div>
+        <img src='src/assets/tree.svg' className='logo' alt='' />
         <h2 className='heroSubtitle'>I am Linda Schönfeldt</h2>
         <h1 className='heroTitle'>Web Developer with UX Skills</h1>
         <div className='heroText'>
@@ -30,9 +28,7 @@ export const HeroSection = () => {
           </p>
         </div>
       </div>
-      <div>
-        <img src='assets/linda.svg' className='heroImage' alt='' />
-      </div>
+      <img src='src/assets/linda.svg' className='heroImage' alt='' />
     </section>
   )
 }

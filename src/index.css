@@ -18,10 +18,31 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--text-headlines);
 }
 
+ul {
+  list-style-type: none;
+  padding-left: 0; /* Removes default padding as well */
+}
+
+/* ACCESSIBILITY */
+/* Screen-reader-only content */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* HERO SECTION */
 .logo {
   height: 1.7rem;
   margin-bottom: 0.2rem;
@@ -34,7 +55,7 @@ h3 {
 }
 
 .heroTitle {
-  font-size: 2.5rem;
+  font-size: 3rem;
   line-height: 0.9;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
@@ -53,6 +74,52 @@ h3 {
 .heroImage {
   width: 100%;
   height: auto;
+}
+
+/* SOCIAL LINKS */
+.socialLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* SKILL SECTION */
+.skillContainer,
+.skillTitle,
+.skillList {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.skillContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.skillTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+.skillList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+  list-style-type: none;
+  padding: 0;
+}
+
+.divider {
+  width: 200px;
+  height: 0.5px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
 }
 
 /* Small devices (landscape phones, 576px and up) */
