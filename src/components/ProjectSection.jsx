@@ -1,10 +1,20 @@
+import { SectionTitle } from './SectionTitle'
+import { ProjectCard } from './ProjectCard'
+
 export const ProjectSection = () => {
   return (
-    <section className='projectSection'>
+    <section className='projectSectionContainer'>
       <div className='projectSection__title'>
-        <h2>Projects</h2>
+        <SectionTitle title='Projects' subtitle='' />
       </div>
-      <div className='projectSection__content'></div>
+      <div className='projectSection__content'>
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+      </div>
     </section>
   )
 }
