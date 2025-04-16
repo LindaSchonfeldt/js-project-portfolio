@@ -2,4 +2,4 @@
 
 # Github link
 
-# Netlify link
+# Portfolio link
