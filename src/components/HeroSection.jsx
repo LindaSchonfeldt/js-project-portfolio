@@ -15,7 +15,7 @@ export const HeroSection = () => {
           </p>
           <p>
             What drives me is the desire to bring clarity to complexity. I{' '}
-            <b>love </b> organizing—whether it's structuring information for
+            <b>love </b> organizing — whether it's structuring information for
             better usability, designing intuitive user flows, mapping out a
             product roadmap, or learning to write cleaner, more maintainable
             code. Turning chaos into something clear, purposeful, and

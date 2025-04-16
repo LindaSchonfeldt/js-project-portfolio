@@ -3,11 +3,11 @@ import { ProjectCard } from './ProjectCard'
 
 export const CardSection = () => {
   return (
-    <section className='projectSectionContainer'>
-      <div className='projectSection__title'>
+    <section className='cardSectionContainer'>
+      <div className='cardSection__title'>
         <SectionTitle title='' subtitle='' />
       </div>
-      <div className='projectSection__content'>
+      <div className='cardSection__content'>
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />
@@ -18,13 +18,3 @@ export const CardSection = () => {
     </section>
   )
 }
-
-// Toggle between Code and UX/UI
-// Card
-// Image
-// Title
-// Description
-// Buttons
-// Link to live demo
-// Link to GitHub repo
-// Tags (HTML, CSS, JS, React, etc.)

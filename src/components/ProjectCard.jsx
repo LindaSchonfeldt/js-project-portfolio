@@ -1,5 +1,6 @@
 import React from 'react'
 import projects from '../data/projects.json'
+import { Tag } from './Tag'
 
 // Card
 // image
@@ -10,23 +11,21 @@ import projects from '../data/projects.json'
 // Link to GitHub repo
 // Tags (HTML, CSS, JS, React, etc.)
 
-export const ProjectCard = ({ project }) => {
+export const Card = ({ project }) => {
   return (
-    <section className='projectCard'>
-      <div className='projectCard__image'>
+    <section className='cardSection'>
+      <div className='cardImage'>
         <img src={project.image} alt={project.title} />
       </div>
-      <div className='projectCard__title'></div>
+      <div className='card__title'></div>
       <h3>{project.title}</h3>
       <div className='projectCard__description'>
         <p>{project.description}</p>
       </div>
-      <div className='projectCard__buttons'></div>
-      <div className='projectCard__tags'>
+      <div className='cardButtons'></div>
+      <div className='cardTags'>
         {project.tags.map((tag, index) => (
-          <span key={index} className='projectCard__tag'>
-            {tag}
-          </span>
+          <Tag key={index} tag={tag} />
         ))}
       </div>
     </section>
