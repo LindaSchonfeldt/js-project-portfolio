@@ -3,14 +3,18 @@ import projects from './data/projects.json' // Importing projects data from JSON
 import { HeroSection } from './components/HeroSection'
 import { SocialLinks } from './components/SocialLinks'
 import { SkillSection } from './components/SkillSection'
-import { CardSection } from './components/CardSection'
+import { ProjectsSection } from './components/ProjectsSection'
 
 export const App = () => {
+  // Debug what you're importing
+  console.log('App level projects:', projects)
+
   return (
     <>
       <HeroSection />
       <SocialLinks />
       <SkillSection />
+      <ProjectsSection projects={projects} />
     </>
   )
 }

@@ -1,3 +1,3 @@
 export const Tag = ({ tag }) => {
-  return <span className='tag'>{tag}</span>
+  return <span className='tag'>{project.tag}</span>
 }
