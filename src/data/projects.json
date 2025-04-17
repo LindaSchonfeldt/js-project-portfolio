@@ -27,5 +27,6 @@
       "netlify": "link",
       "github": "link"
     }
-  ]
+  ],
+  "uxui": {}
 }
