@@ -2,6 +2,8 @@ import React from 'react'
 import { TagList } from './TagList'
 
 export const ProjectCard = ({ project }) => {
+  console.log('ProjectCard received:', project)
+
   return (
     <section className='projectCard'>
       {/*   <div className='projectCardImage'>

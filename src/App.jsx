@@ -17,7 +17,7 @@ export const App = () => {
       <HeroSection />
       <SocialLinks />
       <SkillSection />
-      <ProjectSection projects={projects.code} />
+      <ProjectSection projects={projects} />
       <TechSection content={content.techStack} />
       <ContactSection />
     </>
