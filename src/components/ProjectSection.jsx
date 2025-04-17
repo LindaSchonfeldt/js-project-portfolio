@@ -4,10 +4,6 @@ import { useState } from 'react'
 import CardGrid from './CardGrid'
 
 export const ProjectSection = ({ projects }) => {
-  console.log('Projects data structure:', projects)
-  console.log('Projects type:', typeof projects)
-  console.log('Projects keys:', Object.keys(projects))
-
   // Safety check for when projects may not be available yet
   if (!projects) {
     console.log('No projects data available:', projects)
