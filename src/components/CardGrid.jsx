@@ -1,23 +1,21 @@
 // CardGrid to display a grid of cards
 // This component can be used to display a grid of cards, such as project cards
 
-export default function CardGrid({ cards }) {
+export default function CardGrid({ projects }) {
   // Safety check for when cards may not be available yet
-  if (!cards || !Array.isArray(cards) || cards.length === 0) {
-    console.log('No cards data available:', cards)
+  if (!projects || !Array.isArray(projects) || projects.length === 0) {
+    console.log('No cards data available:', projects)
     return (
       <section className='cardGrid'>
-        <p>Cards coming soon!</p>
+        <p>Projects coming soon!</p>
       </section>
     )
   }
   return (
     <section className='cardGrid'>
       <div className='gridContainer'>
-        {cards.map((card) => (
-          <div key={card.id} className='gridCard'>
-            {card.content}
-          </div>
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </section>

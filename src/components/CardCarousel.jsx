@@ -1,13 +1,13 @@
 // Carousel component for displaying cards
 // This component can be used to display a carousel of cards, such as project cards
 
-export default function CardCarousel({ cards }) {
+export default function CardCarousel({ projects }) {
   // Safety check for when cards may not be available yet
-  if (!cards || !Array.isArray(cards) || cards.length === 0) {
-    console.log('No cards data available:', cards)
+  if (!projects || !Array.isArray(projects) || projects.length === 0) {
+    console.log('No cards data available:', projects)
     return (
       <section className='cardCarousel'>
-        <p>Cards coming soon!</p>
+        <p>Projects coming soon!</p>
       </section>
     )
   }
@@ -15,10 +15,8 @@ export default function CardCarousel({ cards }) {
   return (
     <section className='cardCarousel'>
       <div className='carouselContainer'>
-        {cards.map((card) => (
-          <div key={card.id} className='carouselCard'>
-            {card.content}
-          </div>
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </section>

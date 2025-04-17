@@ -1,9 +1,3 @@
-import React from 'react'
-import linkedinSvg from '../assets/linkedin.svg' // Import the SVG
-import githubSvg from '../assets/github.svg'
-import dribbbleSvg from '../assets/dribbble.svg'
-import instagramSvg from '../assets/instagram.svg'
-
 export const SocialLinks = () => {
   return (
     <div className='socialContainer'>
@@ -18,7 +12,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my LinkedIn profile'
         >
-          <img src={linkedinSvg} alt='' className='socialIcon' />
+          <img src='/assets/linkedin.svg' alt='' className='socialIcon' />
         </a>
 
         {/* GitHub */}
@@ -29,7 +23,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my GitHub'
         >
-          <img src={githubSvg} alt='' className='socialIcon' />
+          <img src='/assets/github.svg' alt='' className='socialIcon' />
         </a>
 
         {/* Dribbble */}
@@ -40,7 +34,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my Dribble'
         >
-          <img src={dribbbleSvg} alt='' className='socialIcon' />
+          <img src='/assets/dribbble.svg' alt='' className='socialIcon' />
         </a>
 
         {/* Instagram */}
@@ -51,7 +45,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my Instagram'
         >
-          <img src={instagramSvg} alt='' className='socialIcon' />
+          <img src='/assets/instagram.svg' alt='' className='socialIcon' />
         </a>
       </div>
     </div>

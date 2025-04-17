@@ -153,12 +153,12 @@ p {
 }
 
 /* PROJECT SECTION */
-.projectsContainer {
+.projectContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 /* Small devices (landscape phones, 576px and up) */
