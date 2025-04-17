@@ -1,9 +1,9 @@
 import React from 'react'
-import { Tag } from './Tag'
+import { TagList } from './TagList'
 
 export const ProjectCard = ({ project }) => {
   return (
-    <section className='projectCardSection'>
+    <section className='projectCard'>
       {/*   <div className='projectCardImage'>
         <img src={project.image} alt={project.title} />
       </div> */}
@@ -15,8 +15,7 @@ export const ProjectCard = ({ project }) => {
       </div>
       <div className='projectCardButtons'></div>
       <div className='cardTags'>
-        {Array.isArray(project.tags) &&
-          project.tags.map((tag, index) => <Tag key={index} tag={tag} />)}
+        <TagList tags={project.tags} />
       </div>
     </section>
   )

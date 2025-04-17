@@ -34,8 +34,8 @@ export const ProjectSection = ({ projects }) => {
       {/* Content changes based on active tab */}
       {activeTab === 'Code' && <CodeProjects />}
       {activeTab === 'UX/UI' && <UXUIProjects />}
-      <CardGrid projects={projects.projects} />
       {/* Display Code or UX/UI projects in a grid- or carousel format depending on screen-size */}
+      <CardGrid projects={projects.projects} />
     </section>
   )
 }

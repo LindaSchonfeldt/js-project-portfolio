@@ -189,6 +189,16 @@ p {
   color: var(--color-background);
 }
 
+.projectCard {
+  width: 300px;
+  height: 400px;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: var(--color-background);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   body {
@@ -251,6 +261,16 @@ p {
   .heroImage {
     width: 100%;
   }
+
+  .cardGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -281,5 +301,15 @@ p {
   }
   .skillTitle {
     font-size: 5rem;
+  }
+
+  .cardGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
   }
 }
