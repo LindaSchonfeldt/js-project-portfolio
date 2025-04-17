@@ -4,8 +4,8 @@
       "id": "1",
       "title": "Portfolio Website",
       "image": "",
-      "description": "A responsive portfolio built with React and CSS.",
-      "tags": ["React", "CSS3", "JavaScript"],
+      "description": "A responsive portfolio built with React and Vite.",
+      "tags": ["React", "Vite", "CSS3", "JavaScript"],
       "netlify": "link",
       "github": "link"
     },
@@ -28,5 +28,22 @@
       "github": "link"
     }
   ],
-  "uxui": {}
+  "uxui": [
+    {
+      "id": "1",
+      "title": "Portfolio Design",
+      "image": "",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "tags": ["Figma", "Design System", "Design Principles", "Typography"],
+      "figma": "link"
+    },
+    {
+      "id": "2",
+      "title": "Product Roadmap",
+      "image": "",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.",
+      "tags": [],
+      "figma": "link"
+    }
+  ]
 }
