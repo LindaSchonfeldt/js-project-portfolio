@@ -15,8 +15,12 @@ export default function CardCarousel({ projects }) {
   return (
     <section className='cardCarousel'>
       <div className='carouselContainer'>
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+        {/* Map through projects with index as fallback key */}
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={project.id || `project-${index}`}
+            project={project}
+          />
         ))}
       </div>
     </section>

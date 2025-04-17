@@ -1,20 +1,21 @@
 {
   "techStack": [
-    "HTML",
-    "CSS",
-    "Flexbox",
-    "JavaScript",
-    "ES6",
-    "JSX",
-    "React",
-    "React Hooks",
-    "Node.js",
-    "Vite",
-    "Mongo DB",
-    "Web Accessibility",
-    "APIs",
-    "mob-programming",
-    "pair-programming",
-    "GitHub"
+    { "id": "html5", "name": "HTML5" },
+    { "id": "css3", "name": "CSS3" },
+    { "id": "javascript", "name": "JavaScript" },
+    { "id": "flexbox", "name": "Flexbox" },
+    { "id": "grid", "name": "Grid" },
+    { "id": "tailwind", "name": "Tailwind" },
+    { "id": "react", "name": "React" },
+    { "id": "react-hooks", "name": "React Hooks" },
+    { "id": "typescript", "name": "TypeScript" },
+    { "id": "nodejs", "name": "Node.js" },
+    { "id": "git", "name": "Git" },
+    { "id": "mongodb", "name": "MongoDB" },
+    { "id": "vite", "name": "Vite" },
+    { "id": "npm", "name": "NPM" },
+    { "id": "api", "name": "APIs" },
+    { "id": "mob-programming", "name": "Mob Programming" },
+    { "id": "pair-programming", "name": "Pair Programming" }
   ]
 }
