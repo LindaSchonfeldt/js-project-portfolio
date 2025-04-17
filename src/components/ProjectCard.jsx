@@ -4,9 +4,9 @@ import { Tag } from './Tag'
 export const ProjectCard = ({ project }) => {
   return (
     <section className='projectCardSection'>
-      <div className='projectCardImage'>
+      {/*   <div className='projectCardImage'>
         <img src={project.image} alt={project.title} />
-      </div>
+      </div> */}
       <div className='projectCard__title'>
         <h3>{project.title}</h3>
       </div>

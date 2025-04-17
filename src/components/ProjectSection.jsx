@@ -2,10 +2,20 @@
 // Can display projects in a grid or carousel format
 
 import TabButtons from './TabButtons'
+import { CodeProjects } from './CodeProjects'
+import { UXUIProjects } from './UXUIProjects'
+import { useState } from 'react'
+import CardGrid from './CardGrid'
 
 export const ProjectSection = ({ projects }) => {
+  const [activeTab, setActiveTab] = useState('Code') // Default to first tab
+  console.log('ProjectSection projects:', projects) // Debug what you're importing
   // Safety check for when projects may not be available yet
-  if (!projects || !Array.isArray(projects) || projects.length === 0) {
+  if (
+    !projects ||
+    !Array.isArray(projects.projects) ||
+    projects.projects.length === 0
+  ) {
     console.log('No projects data available:', projects)
     return (
       <section className='projectContainer'>
@@ -19,13 +29,13 @@ export const ProjectSection = ({ projects }) => {
   return (
     <section className='projectContainer'>
       <h2 className='sectionTitle'>Projects</h2>
-      <TabButtons />
+      <TabButtons activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      <div className='projectsGrid'>
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
+      {/* Content changes based on active tab */}
+      {activeTab === 'Code' && <CodeProjects />}
+      {activeTab === 'UX/UI' && <UXUIProjects />}
+      <CardGrid projects={projects.projects} />
+      {/* Display Code or UX/UI projects in a grid- or carousel format depending on screen-size */}
     </section>
   )
 }

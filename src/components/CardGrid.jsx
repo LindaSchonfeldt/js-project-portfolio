@@ -1,5 +1,6 @@
 // CardGrid to display a grid of cards
 // This component can be used to display a grid of cards, such as project cards
+import { ProjectCard } from './ProjectCard'
 
 export default function CardGrid({ projects }) {
   // Safety check for when cards may not be available yet
