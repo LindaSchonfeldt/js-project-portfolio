@@ -15,9 +15,9 @@ export const ProjectCard = ({ project }) => {
       </div>
       <div className='projectCardButtons'></div>
       <div className='cardTags'>
-        {project.tags.map((tag, index) => (
-          <Tag key={index} tag={tag} />
-        ))}
+        {/* This is the correct way to map through tags */}
+        {Array.isArray(project.tags) &&
+          project.tags.map((tag, index) => <Tag key={index} tag={tag} />)}
       </div>
     </section>
   )

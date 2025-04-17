@@ -1,3 +1,3 @@
-export const Tag = ({ tag }) => {
-  return <span className='tag'>{project.tag}</span>
+export const Tag = ({ projects }) => {
+  return <div className='tag'>{projects.tag}</div>
 }
