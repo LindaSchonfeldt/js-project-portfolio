@@ -1,6 +1,5 @@
 import React from 'react'
-import { PrimaryButton } from './PrimaryButton'
-import { SecondaryButton } from './SecondaryButton'
+import Button from './Button'
 import { TagList } from './TagList'
 
 /**
@@ -47,17 +46,13 @@ export const Card = ({
       {actions.length > 0 && (
         <div className='cardActions'>
           {actions.map((action, i) => {
-            const common = {
-              key: i,
-              text: action.text,
-              href: action.href,
-              onClick: action.onClick,
-              target: action.target
-            }
+            const { text, href, onClick, target, variant: btnVariant } = action
+            const common = { text, href, onClick, target, variant: btnVariant }
+
             return action.variant === 'primary' ? (
-              <PrimaryButton {...common} />
+              <Button key={`action-${i}`} {...common} />
             ) : (
-              <SecondaryButton {...common} />
+              <Button key={`action-${i}`} {...common} />
             )
           })}
         </div>

@@ -1,0 +1,31 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "My first Code Review",
+      "image": "",
+      "date": "2023-10-01",
+      "description": "A responsive portfolio built with React and Vite.",
+      "tags": ["React", "Vite", "CSS3", "JavaScript"],
+      "link": "https://www.example.com/article1"
+    },
+    {
+      "id": "2",
+      "title": "My second Code Review",
+      "image": "",
+      "date": "2023-10-02",
+      "description": "A simple weather application using API integration",
+      "tags": ["HTML5", "CSS3", "JavaScript", "TypeScript", "APIs"],
+      "link": "https://www.example.com/article2"
+    },
+    {
+      "id": "3",
+      "title": "Recipe Library",
+      "image": "",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "tags": ["HTML5", "CSS3", "JavaScript", "APIs"],
+      "netlify": "link",
+      "github": "link"
+    }
+  ]
+}

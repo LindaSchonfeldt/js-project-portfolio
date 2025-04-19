@@ -1,23 +1,16 @@
 export const SecondaryButton = ({ text, onClick, href, target = '_self' }) => {
   const className = 'secondaryButton'
 
-  // Render as anchor if href provided
-  if (href) {
-    return (
-      <a
-        href={href}
-        target={target}
-        rel={target === '_blank' ? 'noopener noreferrer' : undefined}
-        className={className}
-      >
-        {text}
-      </a>
-    )
+  const handleClick = () => {
+    if (href) {
+      window.open(href, target, 'noopener,noreferrer')
+    } else if (onClick) {
+      onClick()
+    }
   }
 
-  // Otherwise render as a normal button
   return (
-    <button className={className} onClick={onClick}>
+    <button className={className} onClick={handleClick}>
       {text}
     </button>
   )
