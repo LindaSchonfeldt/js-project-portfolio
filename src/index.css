@@ -70,7 +70,7 @@ p {
 }
 
 /* HERO SECTION */
-.logo {
+.heroLogo {
   height: 1.7rem;
   margin-bottom: 0.2rem;
 }
@@ -197,6 +197,15 @@ p {
   background-color: var(--color-background);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
+}
+
+/* CONTACT */
+.contactContainer {
+  margin-top: 4rem;
+}
+.contactLogo {
+  height: 6rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Small devices (landscape phones, 576px and up) */

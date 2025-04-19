@@ -1,10 +1,11 @@
 import React from 'react'
+import { Logo } from './Logo'
 
 export const HeroSection = () => {
   return (
     <section className='heroContainer'>
       <div className='heroContent'>
-        <img src='/assets/tree.svg' className='logo' alt='' />
+        <Logo className='heroLogo' />
         <h2 className='heroSubtitle'>I am Linda Schönfeldt</h2>
         <h1 className='heroTitle'>Web Developer with UX Skills</h1>
         <div className='heroText'>
