@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button'
 import { TagList } from './TagList'
+import './Card.css'
 
 /**
  * props:

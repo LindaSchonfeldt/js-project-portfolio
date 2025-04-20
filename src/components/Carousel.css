@@ -1,0 +1,44 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carouselViewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.carouselItem {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.carousel button:first-of-type {
+  left: 0.5em;
+}
+
+.carousel button:last-of-type {
+  right: 0.5em;
+}
+
+.carouselCounter {
+  text-align: center;
+  margin-top: 0.5em;
+}

@@ -1,41 +1,84 @@
 import React, { useState } from 'react'
-import { Card } from './Card' // Importing the ProjectCard component
+import { Card } from './Card'
+import './Carousel.css'
 
-export const Carousel = (items) => {
+export const Carousel = ({ items, variant }) => {
   const [index, setIndex] = useState(0)
-  const length = items.length
+  const length = Array.isArray(items) ? items.length : 0
+
+  // Determine if these are “article” cards by checking for excerpt
+  const isArticle = items.length > 0 && items[0].hasOwnProperty('excerpt')
 
   const handlePrevious = () => {
-    const newIndex = index - 1
-    setIndex(newIndex < 0 ? length - 1 : newIndex)
+    setIndex((i) => (i === 0 ? length - 1 : i - 1))
   }
 
   const handleNext = () => {
-    const newIndex = index + 1
-    setIndex(newIndex >= length ? 0 : newIndex)
+    setIndex((i) => (i === length - 1 ? 0 : i + 1))
   }
 
-  if (!Array.isArray(items) || length === 0) {
+  if (length === 0) {
     return <p>No items to display</p>
   }
 
-  console.log('About to render Carousel with:', projectsToDisplay)
-
   return (
     <div className='carousel'>
-      <button onClick={handlePrevious}>Previous</button>
-      <div className='carouselContent'>
-        {items.map((project, i) => (
-          <div
-            key={project.id || i}
-            className={`carouselItem ${i === index ? 'active' : ''}`}
-          >
-            <Card project={project} />
-          </div>
-        ))}
+      <button onClick={handlePrevious}>‹</button>
+      <div className='carouselViewport'>
+        <div
+          className='carouselTrack'
+          style={{ transform: `translateX(-${index * 100}%)` }}
+        >
+          {items.map((item, i) => {
+            // Render an “article” style card
+            if (isArticle) {
+              return (
+                <div key={item.id || i} className='carouselItem'>
+                  <Card
+                    image={item.image}
+                    title={item.title}
+                    subtitle={item.publishedDate}
+                    content={item.excerpt}
+                    actions={[
+                      {
+                        text: 'Read Article',
+                        href: item.link,
+                        variant: 'secondary'
+                      }
+                    ]}
+                  />
+                </div>
+              )
+            }
+            // Otherwise render a “project” card
+            return (
+              <div key={item.id || i} className='carouselItem'>
+                <Card
+                  variant={variant}
+                  image={item.image}
+                  title={item.title}
+                  content={item.description}
+                  tags={item.tags}
+                  actions={[
+                    {
+                      text: 'Live Demo',
+                      href: item.link,
+                      variant: 'primary'
+                    },
+                    {
+                      text: 'View Code',
+                      href: item.github,
+                      variant: 'secondary'
+                    }
+                  ]}
+                />
+              </div>
+            )
+          })}
+        </div>
       </div>
-      <button onClick={handleNext}>Next</button>
-      <p>
+      <button onClick={handleNext}>›</button>
+      <p className='carouselCounter'>
         {index + 1} / {length}
       </p>
     </div>
