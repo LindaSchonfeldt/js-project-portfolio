@@ -1,6 +1,4 @@
-import Button from './Button'
 import { SectionTitle } from './SectionTitle'
-
 import CardGrid from './CardGrid'
 
 export const ArticleSection = ({ articles }) => {

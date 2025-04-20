@@ -17,7 +17,7 @@ export default function CardGrid({ projects, articles, variant }) {
     <div className='cardGrid'>
       {items.map((item, i) => {
         if (articles) {
-          // render an “article” card
+          // Render an “article” card
           return (
             <Card
               key={item.id || `article-${i}`}
@@ -31,7 +31,7 @@ export default function CardGrid({ projects, articles, variant }) {
             />
           )
         } else {
-          // render a “project” card
+          // Render a “project” card
           return (
             <Card
               key={item.id || `project-${i}`}
