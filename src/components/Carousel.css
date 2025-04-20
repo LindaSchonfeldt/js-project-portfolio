@@ -6,39 +6,39 @@
 .carouselViewport {
   overflow: hidden;
   width: 100%;
+  margin-right: 0;
+  overflow-x: auto; /* allow horizontal scroll */
+  -webkit-overflow-scrolling: touch; /* momentum scroll on iOS */
+  scroll-snap-type: x mandatory; /* auto‑snap to items */
 }
 
 .carouselTrack {
   display: flex;
-  transition: transform 0.3s ease;
 }
 
 .carouselItem {
-  flex: 0 0 100%;
-  box-sizing: border-box;
+  flex: 0 0 100%; /* one slide per “page” */
+  scroll-snap-align: start; /* snap at start of each item */
 }
 
-.carousel button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 0.5em;
-  cursor: pointer;
+.carousel > button {
+  display: none;
 }
 
-.carousel button:first-of-type {
-  left: 0.5em;
+@media (min-width: 576px) {
 }
 
-.carousel button:last-of-type {
-  right: 0.5em;
+@media (min-width: 768px) {
 }
 
-.carouselCounter {
-  text-align: center;
-  margin-top: 0.5em;
+@media (min-width: 992px) {
+  .carousel {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel {
+    display: none;
+  }
 }

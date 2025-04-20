@@ -4,6 +4,7 @@ import { SectionTitle } from './SectionTitle'
 import TabButtons from './TabButtons'
 import CardGrid from './CardGrid'
 import { Carousel } from './Carousel'
+import './ProjectSection.css'
 
 export const ProjectSection = ({ projects }) => {
   const [activeTab, setActiveTab] = useState('Code') // Default to first tab

@@ -1,3 +1,5 @@
+import './SkillSection.css'
+
 export const SkillSection = () => {
   return (
     <section className='skillContainer'>

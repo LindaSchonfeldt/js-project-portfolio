@@ -1,3 +1,4 @@
+import './CardGrid.css'
 import { Card } from './Card'
 
 export default function CardGrid({ projects, articles, variant }) {

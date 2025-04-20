@@ -69,145 +69,6 @@ p {
   border-width: 0;
 }
 
-/* HERO SECTION */
-.heroLogo {
-  height: 1.7rem;
-  margin-bottom: 0.2rem;
-}
-
-.heroContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.heroTitle {
-  font-size: 3rem;
-  line-height: 0.9;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  color: var(--primary-color);
-}
-
-.heroSubtitle {
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-.heroText {
-  width: 100%;
-}
-
-.heroImage {
-  width: 100%;
-  height: auto;
-}
-
-/* SOCIAL LINKS */
-.socialContainer {
-  margin-top: 2rem;
-}
-
-.socialIcons {
-  display: flex;
-  flex-direction: row;
-}
-
-.socialIcon {
-  width: 32px;
-  height: auto;
-  color: var(--secondary-color);
-  transition: all 0.3s ease-in-out;
-}
-
-/* SKILL SECTION */
-.skillContainer,
-.skillTitle,
-.skillList {
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
-.skillContainer {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
-}
-.skillList {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0rem;
-  list-style-type: none;
-  padding: 0;
-}
-
-.divider {
-  width: 200px;
-  height: 0.5px;
-  background-color: var(--primary-color);
-  border-radius: 2px;
-  margin: 1rem;
-}
-
-/* PROJECT SECTION */
-.projectContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 4rem;
-}
-
-.tabButtons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-}
-
-.tabButton {
-  background-color: var(--color-background);
-  color: var(--primary-color);
-  padding: 0.5rem 1rem;
-  border: none;
-  border-bottom: 0.15rem solid var(--primary-color);
-  width: 30vw;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-.tabButton:hover {
-  background-color: var(--primary-color);
-  color: var(--color-background);
-}
-.tabButton.active {
-  background-color: var(--primary-color);
-  color: var(--color-background);
-}
-
-.projectCard {
-  width: 300px;
-  height: 400px;
-  padding: 1rem;
-  border-radius: 10px;
-  background-color: var(--color-background);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-}
-
-/* CONTACT */
-.contactContainer {
-  margin-top: 4rem;
-}
-.contactLogo {
-  height: 6rem;
-  margin-bottom: 1.5rem;
-}
-
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   body {
@@ -218,28 +79,12 @@ p {
     height: 2.2rem;
     margin-bottom: 0.4rem;
   }
-
-  .heroTitle {
-    font-size: 3rem;
-  }
-
-  .heroSubtitle {
-    font-size: 1.3rem;
-  }
-
-  .heroImage {
-    width: 80%;
-  }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   body {
     margin: 80px 64px 160px 64px;
-  }
-
-  .heroTitle {
-    font-size: 4rem;
   }
 
   .logo {
@@ -252,73 +97,11 @@ p {
   body {
     margin: 100px 128px 200px 128px;
   }
-
-  .heroContainer {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .heroTitle {
-    width: 50%;
-    font-size: 5rem;
-  }
-
-  .heroText {
-    width: 70%;
-  }
-
-  .heroImage {
-    width: 100%;
-  }
-
-  .cardGrid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   body {
     margin: 120px 180px 240px 180px;
-  }
-
-  .heroTitle {
-    font-size: 6rem;
-  }
-
-  .skillContainer {
-    flex-direction: column;
-  }
-  .skillSection {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    align-items: flex-start;
-  }
-
-  /* This transforms the dividers from horizontal to vertical */
-  .divider {
-    width: 1px;
-    height: 200px;
-    margin: 0 1rem;
-  }
-  .skillTitle {
-    font-size: 5rem;
-  }
-
-  .cardGrid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 2rem;
   }
 }

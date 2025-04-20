@@ -1,3 +1,5 @@
+import './SocialLinks.css'
+
 export const SocialLinks = () => {
   return (
     <div className='socialContainer'>
