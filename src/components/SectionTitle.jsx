@@ -1,3 +1,5 @@
+import './SectionTitle.css'
+
 export const SectionTitle = ({ title, subtitle }) => {
   return (
     <div className='sectionTitle'>

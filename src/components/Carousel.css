@@ -14,10 +14,11 @@
 
 .carouselTrack {
   display: flex;
+  gap: 16px; /* space between items */
 }
 
 .carouselItem {
-  flex: 0 0 100%; /* one slide per “page” */
+  flex: 0 0 100%; /* 1 slide per view by default */
   scroll-snap-align: start; /* snap at start of each item */
 }
 
@@ -29,15 +30,24 @@
 }
 
 @media (min-width: 768px) {
+  .carouselItem {
+    flex: 0 0 calc(50% - 8px); /* 50% minus half the gap */
+  }
 }
 
 @media (min-width: 992px) {
+  .carouselItem {
+    flex: 0 0 calc(33.333% - 10.666px); /* (100%/3) minus half the gap */
+  }
+}
+
+@media (min-width: 1200px) {
   .carousel {
     display: none;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1400px) {
   .carousel {
     display: none;
   }
