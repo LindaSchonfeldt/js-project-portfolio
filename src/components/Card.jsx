@@ -1,7 +1,25 @@
 import React from 'react'
 import Button from './Button'
 import { TagList } from './TagList'
-import './Card.css'
+import styled from 'styled-components'
+
+const CardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  padding: 16px;
+`
+
+const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+`
 
 /**
  * props:
