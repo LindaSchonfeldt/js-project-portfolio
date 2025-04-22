@@ -2,13 +2,14 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 const ButtonStyled = styled.button`
+  flex: 1;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
 
   /* Primary */
-  ${(props) =>
-    props.variant === 'primary' &&
+  ${({ $variant }) =>
+    $variant === 'primary' &&
     css`
       background-color: var(--primary-color);
       color: #fff;
@@ -16,8 +17,8 @@ const ButtonStyled = styled.button`
     `}
 
   /* Secondary */
-  ${(props) =>
-    props.variant === 'secondary' &&
+   ${({ $variant }) =>
+    $variant === 'secondary' &&
     css`
       background-color: transparent;
       color: var (--primary-color);
@@ -25,8 +26,8 @@ const ButtonStyled = styled.button`
     `}
 
   /* Tertiary */
-  ${(props) =>
-    props.variant === 'tertiary' &&
+  ${({ $variant }) =>
+    $variant === 'tertiary' &&
     css`
       background: none;
       color: #666;
@@ -36,12 +37,12 @@ const ButtonStyled = styled.button`
 `
 export const ButtonGroup = styled.div`
   display: flex;
-  gap: auto;
+  width: 100%;
+  gap: 0.5rem;
   margin-top: 1rem;
-  justify-content: flex-start;
-  width: 100%; /* full width of the parent */
-  flex-wrap: wrap;
-  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 `
 
 export default function Button({
@@ -59,7 +60,7 @@ export default function Button({
 
   return (
     <ButtonStyled
-      variant={variant} // pass it here
+      $variant={variant} // use transient prop here
       className={className}
       onClick={handleClick}
     >

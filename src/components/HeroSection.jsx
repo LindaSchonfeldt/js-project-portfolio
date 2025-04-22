@@ -1,10 +1,46 @@
 import React from 'react'
 import { Logo } from './Logo'
 import './HeroSection.css'
+import styled from 'styled-components'
+
+const HeroSectionStyled = styled.section`
+  .heroLogo {
+    height: 1.7rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .heroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+    line-height: 0.9;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+  }
+
+  .heroSubtitle {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .heroText {
+    width: 100%;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: auto;
+  }
+`
 
 export const HeroSection = () => {
   return (
-    <section className='heroSection'>
+    <HeroSectionStyled className='heroSection'>
       <div className='heroContent'>
         <Logo className='heroLogo' />
         <h2 className='heroSubtitle'>I am Linda Schönfeldt</h2>
@@ -31,6 +67,6 @@ export const HeroSection = () => {
         </div>
       </div>
       <img src='/assets/linda.svg' className='heroImage' alt='' />
-    </section>
+    </HeroSectionStyled>
   )
 }

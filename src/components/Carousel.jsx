@@ -1,6 +1,46 @@
 import React, { useState } from 'react'
 import { Card } from './Card'
 import './Carousel.css'
+import styled from 'styled-components'
+
+const CarouselStyled = styled.div`
+  .carousel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carouselViewport {
+    width: 100%; /* never grow wider than the carousel */
+    overflow-x: auto; /* allow horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* momentum scroll on iOS */
+    scroll-snap-type: x mandatory; /* auto‑snap to items */
+
+    /* keep all scroll behavior inside this box */
+    overscroll-behavior-x: contain; /* prevent scroll chaining */
+    scrollbar-width: none; /* hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* hide scrollbar in IE and Edge */
+  }
+
+  .carouselTrack {
+    display: flex;
+    gap: 16px; /* space between items */
+  }
+
+  .carouselItem {
+    flex: 0 0 auto; /* don’t stretch */
+    width: 280px; /* preset card width */
+    scroll-snap-align: start; /* snap at start of each item */
+  }
+
+  /* optional: make the card itself fill its container */
+  .carouselItem > .card {
+    width: 100%;
+  }
+
+  .carousel > button {
+    display: none;
+  }
+`
 
 export const Carousel = ({ items, variant }) => {
   const [index, setIndex] = useState(0)

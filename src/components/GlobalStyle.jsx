@@ -1,0 +1,86 @@
+import { createGlobalStyle } from 'styled-components'
+
+export const GlobalStyle = createGlobalStyle`
+:root {
+  --primary-color: #0d453a;
+  --secondary-color: #fd6f00;
+  --accent-color: #ff904b;
+  --color-background: #ffffff;
+  --color-text: #202020;
+  --text-headlines: 'Josefin Sans', sans-serif;
+  --text-body: 'Raleway', serif;
+}
+
+ *, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ body {
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--text-body);
+    margin: 40px 16px 80px;
+  }
+
+  /* Breakpoints for Body */
+  @media (min-width: 576px) {
+    body {
+      margin: 50px 32px 100px;
+    }
+  }
+  @media (min-width: 768px) {
+    body {
+      margin: 80px 64px 160px;
+    }
+  }
+  @media (min-width: 992px) {
+    body {
+      margin: 100px 128px 200px;
+    }
+  }
+  @media (min-width: 1200px) {
+    body {
+      margin: 120px 180px 240px;
+    }
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--text-headlines);
+  }
+  h3 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .sectionTitle {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+  }
+
+  .visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+`
