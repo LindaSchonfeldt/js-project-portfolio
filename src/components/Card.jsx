@@ -1,24 +1,18 @@
 import React from 'react'
-import Button from './Button'
+import Button, { ButtonGroup } from './Button'
 import { TagList } from './TagList'
 import styled from 'styled-components'
-
-const CardWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #fff;
-  border: 2px solid #000;
-  padding: 16px;
-`
 
 const CardContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: center;
-  width: 100%;
+  justify-content: start;
+  background-color: #fff;
+  border: 2px solid #000;
+  width: 20vw;
   height: auto;
+  min-height: 300px;
+  padding: 16px;
 `
 
 /**
@@ -31,6 +25,7 @@ const CardContent = styled.div`
  *  • actions?    { text, href?, onClick?, variant: 'primary'|'secondary' }[]
  *  • children?   ReactNode   // any extra custom JSX
  */
+
 export const Card = ({
   variant, // Code or UX/UI
   image,
@@ -46,7 +41,7 @@ export const Card = ({
   const cardClass = `card ${variant === 'Code' ? 'card–code' : 'card–uxui'}`
 
   return (
-    <div className={`card ${className}`}>
+    <CardContent className={`card ${className}`}>
       {image && <img src={image} alt={title} className='cardImage' />}
       {title && <h3 className='cardTitle'>{title}</h3>}
       {subtitle && <p className='cardSubtitle'>{subtitle}</p>}
@@ -63,19 +58,33 @@ export const Card = ({
       {tags.length > 0 && <TagList tags={tags} />}
 
       {actions.length > 0 && (
-        <div className='cardActions'>
-          {actions.map((action, i) => {
-            const { text, href, onClick, target, variant: btnVariant } = action
-            const common = { text, href, onClick, target, variant: btnVariant }
+        <ButtonGroup>
+          <div className='cardActions'>
+            {actions.map((action, i) => {
+              const {
+                text,
+                href,
+                onClick,
+                target,
+                variant: btnVariant
+              } = action
+              const common = {
+                text,
+                href,
+                onClick,
+                target,
+                variant: btnVariant
+              }
 
-            return action.variant === 'primary' ? (
-              <Button key={`action-${i}`} {...common} />
-            ) : (
-              <Button key={`action-${i}`} {...common} />
-            )
-          })}
-        </div>
+              return action.variant === 'primary' ? (
+                <Button key={`action-${i}`} {...common} />
+              ) : (
+                <Button key={`action-${i}`} {...common} />
+              )
+            })}
+          </div>
+        </ButtonGroup>
       )}
-    </div>
+    </CardContent>
   )
 }
