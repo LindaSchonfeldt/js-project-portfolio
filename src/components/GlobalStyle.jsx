@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { media } from './media'
 
 export const GlobalStyle = createGlobalStyle`
 :root {
@@ -21,30 +22,29 @@ export const GlobalStyle = createGlobalStyle`
     background: var(--color-background);
     color: var(--color-text);
     font-family: var(--text-body);
+
+@media ${media.mobile} {
+ body {
     margin: 40px 16px 80px;
   }
 
-  /* Breakpoints for Body */
-  @media (min-width: 576px) {
-    body {
-      margin: 50px 32px 100px;
-    }
-  }
-  @media (min-width: 768px) {
+  @media ${media.tablet} {
     body {
       margin: 80px 64px 160px;
     }
   }
-  @media (min-width: 992px) {
-    body {
-      margin: 100px 128px 200px;
-    }
-  }
-  @media (min-width: 1200px) {
+
+  @media ${media.desktop} {
     body {
       margin: 120px 180px 240px;
     }
   }
+
+  @media ${media.largeDesktop} {
+    body {        
+    margin: 160px 240px 320px;
+      }
+    }
 
   h1, h2, h3, h4 {
     font-family: var(--text-headlines);
@@ -82,5 +82,4 @@ export const GlobalStyle = createGlobalStyle`
     white-space: nowrap;
     border: 0;
   }
-
 `

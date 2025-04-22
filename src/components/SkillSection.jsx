@@ -1,8 +1,61 @@
-import './SkillSection.css'
+import styled from 'styled-components'
+import { media } from './media'
+
+const SkillSectionStyled = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+
+  .sectionTitle {
+    margin-bottom: 1rem;
+  }
+
+  .skillSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .skillList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .divider {
+    width: 200px;
+    height: 0.5px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    margin: 1rem 0;
+  }
+
+  @media ${media.desktop} {
+    /* Make the whole section row‐oriented */
+    flex-direction: column;
+
+    .skillSection {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    /* This transforms the dividers from horizontal to vertical */
+    .divider {
+      width: 1px;
+      height: 200px;
+      margin: 0 1rem;
+    }
+  }
+`
 
 export const SkillSection = () => {
   return (
-    <section className='skillContainer'>
+    <SkillSectionStyled className='skillContainer'>
       <h2 className='sectionTitle'>Skills</h2>
       <div className='skillSection'>
         <div className='skillList'>
@@ -59,6 +112,6 @@ export const SkillSection = () => {
           </ul>
         </div>
       </div>
-    </section>
+    </SkillSectionStyled>
   )
 }

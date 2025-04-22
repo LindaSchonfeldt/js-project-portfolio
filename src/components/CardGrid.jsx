@@ -1,5 +1,31 @@
 import { Card } from './Card'
-import './CardGrid.css'
+import { media } from './media'
+import styled from 'styled-components'
+
+const CardGridStyled = styled.div`
+  .cardGrid {
+    display: none;
+  }
+
+  @media ${media.tablet} {
+  .cardGrid {
+    display: none;
+  } 
+
+  @media ${media.desktop} {
+  .cardGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  @media ${media.largeDesktop} {
+  }
+`
 
 export default function CardGrid({ projects, articles, variant }) {
   // projects or articles, default to projects
@@ -15,7 +41,7 @@ export default function CardGrid({ projects, articles, variant }) {
   }
 
   return (
-    <div className='cardGrid'>
+    <CardGridStyled className='cardGrid'>
       {items.map((item, i) => {
         if (articles) {
           // Render an “article” card
@@ -49,6 +75,6 @@ export default function CardGrid({ projects, articles, variant }) {
           )
         }
       })}
-    </div>
+    </CardGridStyled>
   )
 }

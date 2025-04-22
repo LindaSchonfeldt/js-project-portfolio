@@ -2,21 +2,29 @@ import { Logo } from './Logo'
 import { SectionTitle } from './SectionTitle'
 import { SocialLinks } from './SocialLinks'
 import styled from 'styled-components'
+import { media } from './media'
 
 const ContactSectionStyled = styled.section`
   .contactContainer {
     margin-top: 4rem;
   }
-  .contactLogo {
-    height: 6rem;
-    margin-bottom: 1.5rem;
+
+  @media ${media.tablet} {
+    ${Logo} {
+      size: 'large';
+      margin-bottom: 1rem;
+    }
+  }
+  @media ${media.desktop} {
+  }
+  @media ${media.largeDesktop} {
   }
 `
 
 export const ContactSection = () => {
   return (
     <ContactSectionStyled className='contactContainer'>
-      <Logo className='contactLogo' />
+      <Logo size='medium' className='contactLogo' />
       <div className='contactContent'>
         <SectionTitle title="Let's talk" />
         <p className='contactText'>Linda Schönfeldt </p>

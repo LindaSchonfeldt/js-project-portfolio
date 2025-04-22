@@ -1,11 +1,10 @@
 import React from 'react'
 import { Logo } from './Logo'
-import './HeroSection.css'
 import styled from 'styled-components'
+import { media } from './media.js'
 
 const HeroSectionStyled = styled.section`
   .heroLogo {
-    height: 1.7rem;
     margin-bottom: 0.2rem;
   }
 
@@ -36,13 +35,87 @@ const HeroSectionStyled = styled.section`
     width: 100%;
     height: auto;
   }
+
+  @media ${media.mobile} {
+    .heroTitle {
+      font-size: 3.5rem;
+    }
+
+    .heroSubtitle {
+      font-size: 1.3rem;
+    }
+
+    .heroImage {
+      width: 80%;
+    }
+  }
+
+  @media ${media.tablet} {
+    .heroSection {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .heroContent {
+      width: 100%;
+    }
+
+    .heroTitle {
+      width: 100%;
+      font-size: 5rem;
+    }
+
+    .heroText {
+      width: 80%;
+    }
+
+    .heroImage {
+      width: 80%;
+    }
+  }
+
+  @media ${media.desktop} {
+    .heroContent {
+      width: 100%;
+    }
+
+    .heroTitle {
+      font-size: 5rem;
+    }
+
+    .heroText {
+      width: 80%;
+    }
+
+    .heroImage {
+      width: 80%;
+    }
+  }
+
+  @media ${media.largeDesktop} {
+    .heroContent {
+      width: 50%;
+    }
+
+    .heroTitle {
+      font-size: 8rem;
+    }
+
+    .heroText {
+      width: 80%;
+    }
+
+    .heroImage {
+      width: 80%;
+    }
+  }
 `
 
 export const HeroSection = () => {
   return (
     <HeroSectionStyled className='heroSection'>
       <div className='heroContent'>
-        <Logo className='heroLogo' />
+        <Logo size='small' className='heroLogo' />
         <h2 className='heroSubtitle'>I am Linda Schönfeldt</h2>
         <h1 className='heroTitle'>Web Developer with UX Skills</h1>
         <div className='heroText'>

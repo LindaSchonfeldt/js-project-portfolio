@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Card } from './Card'
-import './Carousel.css'
 import styled from 'styled-components'
+import { media } from './media'
 
 const CarouselStyled = styled.div`
   .carousel {
@@ -14,8 +14,6 @@ const CarouselStyled = styled.div`
     overflow-x: auto; /* allow horizontal scroll */
     -webkit-overflow-scrolling: touch; /* momentum scroll on iOS */
     scroll-snap-type: x mandatory; /* auto‑snap to items */
-
-    /* keep all scroll behavior inside this box */
     overscroll-behavior-x: contain; /* prevent scroll chaining */
     scrollbar-width: none; /* hide scrollbar in Firefox */
     -ms-overflow-style: none; /* hide scrollbar in IE and Edge */
@@ -37,9 +35,30 @@ const CarouselStyled = styled.div`
     width: 100%;
   }
 
-  .carousel > button {
+  /* Hide the prev/next buttons and counter */
+  & > button {
     display: none;
   }
+  & > .carouselCounter {
+    display: none;
+  }
+
+  @media ${media.tablet} {
+    .carouselItem {
+    flex: 0 0 calc(33.333% - 10.666px); /* (100%/3) minus half the gap */
+  }
+
+  @media ${media.desktop} {
+  .carousel {
+    display: none;
+  }
+
+  @media ${media.largeDesktop} {
+    .carousel {
+    display: none;
+    }
+  }
+  
 `
 
 export const Carousel = ({ items, variant }) => {
@@ -62,7 +81,7 @@ export const Carousel = ({ items, variant }) => {
   }
 
   return (
-    <div className='carousel'>
+    <CarouselStyled className='carousel'>
       <button onClick={handlePrevious}>‹</button>
       <div className='carouselViewport'>
         <div
@@ -121,6 +140,6 @@ export const Carousel = ({ items, variant }) => {
       <p className='carouselCounter'>
         {index + 1} / {length}
       </p>
-    </div>
+    </CarouselStyled>
   )
 }

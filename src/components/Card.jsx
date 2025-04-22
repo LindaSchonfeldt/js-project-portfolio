@@ -9,7 +9,6 @@ const CardContent = styled.div`
   justify-content: start;
   background-color: #fff;
   border: 2px solid #000;
-  width: 20vw;
   height: auto;
   min-height: 300px;
   padding: 16px;
