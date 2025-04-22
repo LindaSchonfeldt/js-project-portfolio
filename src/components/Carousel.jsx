@@ -27,7 +27,7 @@ const CarouselStyled = styled.div`
   }
 
   .carouselItem {
-    flex: 0 0 auto; /* don’t stretch */
+    flex: 0 0 auto; /* don't stretch */
     width: 280px; /* preset card width */
     scroll-snap-align: start; /* snap at start of each item */
   }
