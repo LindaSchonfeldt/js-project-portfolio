@@ -3,7 +3,7 @@ import Button, { ButtonGroup } from './Button'
 import { TagList } from './TagList'
 import styled from 'styled-components'
 
-const CardContent = styled.div`
+const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -40,7 +40,7 @@ export const Card = ({
   const cardClass = `card ${variant === 'Code' ? 'card–code' : 'card–uxui'}`
 
   return (
-    <CardContent className={`card ${className}`}>
+    <StyledCard className={`card ${className}`}>
       {image && <img src={image} alt={title} className='cardImage' />}
       {title && <h3 className='cardTitle'>{title}</h3>}
       {subtitle && <p className='cardSubtitle'>{subtitle}</p>}
@@ -84,6 +84,6 @@ export const Card = ({
           </div>
         </ButtonGroup>
       )}
-    </CardContent>
+    </StyledCard>
   )
 }

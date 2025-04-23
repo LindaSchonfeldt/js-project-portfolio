@@ -1,10 +1,38 @@
-// Set of buttons to switch between two tabs
+import styled from 'styled-components'
+
+const StyledTabButtons = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+
+  .tabButton {
+    background-color: var(--color-background);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-bottom: 0.15rem solid var(--primary-color);
+    width: 30vw;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .tabButton:hover {
+    background-color: var(--primary-color);
+    color: var(--color-background);
+  }
+  .tabButton.active {
+    background-color: var(--primary-color);
+    color: var(--color-background);
+  }
+`
 
 export default function TabButtons({ activeTab, setActiveTab }) {
   const tabs = ['Code', 'UX/UI'] // Define the tabs you want to display
 
   return (
-    <div className='tabButtons'>
+    <StyledTabButtons>
       {tabs.map((tab) => (
         <button
           key={tab}
@@ -14,6 +42,6 @@ export default function TabButtons({ activeTab, setActiveTab }) {
           {tab}
         </button>
       ))}
-    </div>
+    </StyledTabButtons>
   )
 }

@@ -4,7 +4,7 @@ import { SocialLinks } from './SocialLinks'
 import styled from 'styled-components'
 import { media } from './media'
 
-const ContactSectionStyled = styled.section`
+const StyledContactSection = styled.section`
   .contactContainer {
     margin-top: 4rem;
   }
@@ -23,7 +23,7 @@ const ContactSectionStyled = styled.section`
 
 export const ContactSection = () => {
   return (
-    <ContactSectionStyled className='contactContainer'>
+    <StyledContactSection className='contactContainer'>
       <Logo size='medium' className='contactLogo' />
       <div className='contactContent'>
         <SectionTitle title="Let's talk" />
@@ -32,6 +32,6 @@ export const ContactSection = () => {
         <p className='contactText'>linda.schonfeldt@gmail.com</p>
       </div>
       <SocialLinks />
-    </ContactSectionStyled>
+    </StyledContactSection>
   )
 }

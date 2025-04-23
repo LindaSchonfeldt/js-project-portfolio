@@ -3,7 +3,7 @@ import { Logo } from './Logo'
 import styled from 'styled-components'
 import { media } from './media.js'
 
-const HeroSectionStyled = styled.section`
+const StyledHeroSection = styled.section`
   .heroLogo {
     margin-bottom: 0.2rem;
   }
@@ -113,7 +113,7 @@ const HeroSectionStyled = styled.section`
 
 export const HeroSection = () => {
   return (
-    <HeroSectionStyled className='heroSection'>
+    <StyledHeroSection className='heroSection'>
       <div className='heroContent'>
         <Logo size='small' className='heroLogo' />
         <h2 className='heroSubtitle'>I am Linda Schönfeldt</h2>
@@ -140,6 +140,6 @@ export const HeroSection = () => {
         </div>
       </div>
       <img src='/assets/linda.svg' className='heroImage' alt='' />
-    </HeroSectionStyled>
+    </StyledHeroSection>
   )
 }

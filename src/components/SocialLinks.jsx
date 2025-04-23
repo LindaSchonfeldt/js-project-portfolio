@@ -1,10 +1,25 @@
-import './SocialLinks.css'
+import styled from 'styled-components'
+
+const StyledSocialLinks = styled.div`
+  margin-top: 2rem;
+
+  .socialIcons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .socialIcon {
+    width: 32px;
+    height: auto;
+    color: var(--secondary-color);
+    transition: all 0.3s ease-in-out;
+  }
+`
 
 export const SocialLinks = () => {
   return (
-    <div className='socialContainer'>
+    <StyledSocialLinks>
       <h2 className='visuallyHidden'>Connect With Me</h2>
-
       <div className='socialIcons'>
         {/* LinkedIn */}
         <a
@@ -50,6 +65,6 @@ export const SocialLinks = () => {
           <img src='/assets/instagram.svg' alt='' className='socialIcon' />
         </a>
       </div>
-    </div>
+    </StyledSocialLinks>
   )
 }

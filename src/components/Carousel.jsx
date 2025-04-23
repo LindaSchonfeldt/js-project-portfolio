@@ -3,7 +3,7 @@ import { Card } from './Card'
 import styled from 'styled-components'
 import { media } from './media'
 
-const CarouselStyled = styled.div`
+const StyledCarousel = styled.div`
   .carousel {
     position: relative;
     overflow: hidden;
@@ -81,7 +81,7 @@ export const Carousel = ({ items, variant }) => {
   }
 
   return (
-    <CarouselStyled className='carousel'>
+    <StyledCarousel className='carousel'>
       <button onClick={handlePrevious}>‹</button>
       <div className='carouselViewport'>
         <div
@@ -140,6 +140,6 @@ export const Carousel = ({ items, variant }) => {
       <p className='carouselCounter'>
         {index + 1} / {length}
       </p>
-    </CarouselStyled>
+    </StyledCarousel>
   )
 }

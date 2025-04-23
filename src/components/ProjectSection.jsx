@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useState } from 'react'
 import { SectionTitle } from './SectionTitle'
 import TabButtons from './TabButtons'
@@ -7,7 +6,13 @@ import { Carousel } from './Carousel'
 import styled from 'styled-components'
 import { media } from './media'
 
-const ProjectSectionStyled = styled.section`
+const StyledProjectSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+
   /* by default and up through tablet: show carousel, hide grid */
   .carouselWrapper {
     display: block;
@@ -16,7 +21,6 @@ const ProjectSectionStyled = styled.section`
     display: none;
   }
 
-  /* at desktop & up: hide carousel, show grid */
   @media ${media.desktop} {
     .carouselWrapper {
       display: none;
@@ -33,11 +37,11 @@ export const ProjectSection = ({ projects }) => {
   // Safety check for when projects may not be available yet
   if (!projects) {
     return (
-      <ProjectSectionStyled className='projectContainer'>
+      <StyledProjectSection>
         <SectionTitle title='Projects' />
         <TabButtons activeTab={activeTab} setActiveTab={setActiveTab} />
         <p>Projects coming soon!</p>
-      </ProjectSectionStyled>
+      </StyledProjectSection>
     )
   }
 
@@ -48,7 +52,7 @@ export const ProjectSection = ({ projects }) => {
   console.log('About to render cards with:', projectsToDisplay)
 
   return (
-    <ProjectSectionStyled className='projectContainer'>
+    <StyledProjectSection>
       <SectionTitle title='Projects' />
       <TabButtons activeTab={activeTab} setActiveTab={setActiveTab} />
       {projectsToDisplay.length > 0 ? (
@@ -71,6 +75,6 @@ export const ProjectSection = ({ projects }) => {
       ) : (
         <p>Something went wrong.</p>
       )}
-    </ProjectSectionStyled>
+    </StyledProjectSection>
   )
 }

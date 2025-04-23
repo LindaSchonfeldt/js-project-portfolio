@@ -23,6 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     color: var(--color-text);
     font-family: var(--text-body);
 
+/* Responsive margins */
 @media ${media.mobile} {
  body {
     margin: 40px 16px 80px;
@@ -45,7 +46,9 @@ export const GlobalStyle = createGlobalStyle`
     margin: 160px 240px 320px;
       }
     }
+}
 
+  /* Headings */
   h1, h2, h3, h4 {
     font-family: var(--text-headlines);
   }
@@ -54,24 +57,19 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom: 1rem;
   }
 
-  ul {
-    list-style: none;
-  }
-  li {
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-  }
-  p {
-    margin-bottom: 1rem;
-    line-height: 1.5;
-  }
+  /* Lists & paragraphs */
+  ul { list-style: none;}
+  li { margin-bottom: 0.5rem; line-height: 1.2; }
+  p { margin-bottom: 1rem; line-height: 1.5; }
 
+  /* Section titles */
   .sectionTitle {
     font-size: 3rem;
     margin-bottom: 1.5rem;
     color: var(--primary-color);
   }
 
+  /* Accessibility helper */
   .visuallyHidden {
     position: absolute;
     width: 1px;

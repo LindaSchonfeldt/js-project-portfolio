@@ -4,7 +4,7 @@ import CardGrid from './CardGrid'
 import { media } from './media'
 import styled from 'styled-components'
 
-const ArticleSectionStyled = styled.div`
+const StyledArticleSection = styled.div`
   @media (media.tablet) {
     margin: 0 16px;
   }
@@ -18,10 +18,10 @@ const ArticleSectionStyled = styled.div`
 
 export const ArticleSection = ({ articles }) => {
   return (
-    <ArticleSectionStyled className='articleSection'>
+    <StyledArticleSection className='articleSection'>
       <SectionTitle title='My Words' />
       <Carousel items={articles} variant='articles' />
       <CardGrid articles={articles} />
-    </ArticleSectionStyled>
+    </StyledArticleSection>
   )
 }

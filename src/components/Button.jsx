@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-const ButtonStyled = styled.button`
+const StyledButton = styled.button`
   flex: 1;
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -59,12 +59,12 @@ export default function Button({
   }
 
   return (
-    <ButtonStyled
+    <StyledButton
       $variant={variant} // use transient prop here
       className={className}
       onClick={handleClick}
     >
       {text}
-    </ButtonStyled>
+    </StyledButton>
   )
 }

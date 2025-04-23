@@ -2,7 +2,7 @@ import { Card } from './Card'
 import { media } from './media'
 import styled from 'styled-components'
 
-const CardGridStyled = styled.div`
+const StyledCardGrid = styled.div`
   .cardGrid {
     display: none;
   }
@@ -41,7 +41,7 @@ export default function CardGrid({ projects, articles, variant }) {
   }
 
   return (
-    <CardGridStyled className='cardGrid'>
+    <StyledCardGrid className='cardGrid'>
       {items.map((item, i) => {
         if (articles) {
           // Render an “article” card
@@ -75,6 +75,6 @@ export default function CardGrid({ projects, articles, variant }) {
           )
         }
       })}
-    </CardGridStyled>
+    </StyledCardGrid>
   )
 }
