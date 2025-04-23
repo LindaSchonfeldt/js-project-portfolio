@@ -2,12 +2,17 @@ import React from 'react'
 import { Logo } from './Logo'
 import styled from 'styled-components'
 import { media } from './media.js'
+import portrait from '../assets/linda.svg'
 
 const StyledHeroSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   .heroContent {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: flex-start;
   }
 
   .heroLogo {
@@ -17,8 +22,7 @@ const StyledHeroSection = styled.section`
   .heroTitle {
     font-size: 3rem;
     line-height: 0.9;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    margin: 1rem 0 0.5rem;
     color: var(--primary-color);
   }
 
@@ -32,23 +36,29 @@ const StyledHeroSection = styled.section`
   }
 
   .heroImage {
-    width: 100%;
+    width: 80%;
     height: auto;
   }
 
   @media ${media.tablet} {
-    .heroContent {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-    }
-
     .heroTitle {
       font-size: 5rem;
     }
   }
 
   @media ${media.desktop} {
+    flex-direction: row;
+    align-items: flex-start; /* align items to top */
+
+    .heroContent {
+      width: 50%;
+      padding: 2rem;
+    }
+
+    .heroImage {
+      width: 50%;
+    }
+
     .heroTitle {
       font-size: 5rem;
     }
@@ -89,7 +99,7 @@ export const HeroSection = () => {
           </p>
         </div>
       </div>
-      <img src='/assets/linda.svg' className='heroImage' alt='' />
+      <img src={portrait} className='heroImage' alt='' />
     </StyledHeroSection>
   )
 }

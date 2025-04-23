@@ -1,8 +1,3 @@
-import { ReactComponent as LinkedInIcon } from '../assets/linkedin.svg'
-import { ReactComponent as GitHubIcon } from '../assets/github.svg'
-import { ReactComponent as DribbbleIcon } from '../assets/dribbble.svg'
-import { ReactComponent as InstagramIcon } from '../assets/instagram.svg'
-
 import styled from 'styled-components'
 
 const StyledSocialLinks = styled.div`
@@ -42,9 +37,7 @@ export const SocialLinks = () => {
           rel='noopener noreferrer'
           role='img'
           aria-label='Visit my LinkedIn profile'
-        >
-          <LinkedInIcon className='socialIcon' alt='' />
-        </a>
+        ></a>
 
         {/* GitHub */}
         <a
@@ -54,7 +47,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my GitHub'
         >
-          <GitHubIcon className='socialIcon' alt='' />
+          {' '}
         </a>
 
         {/* Dribbble */}
@@ -64,9 +57,7 @@ export const SocialLinks = () => {
           rel='noopener noreferrer'
           role='img'
           aria-label='Visit my Dribble'
-        >
-          <DribbbleIcon className='socialIcon' alt='' />
-        </a>
+        ></a>
 
         {/* Instagram */}
         <a
@@ -75,9 +66,7 @@ export const SocialLinks = () => {
           rel='noopener noreferrer'
           role='img'
           aria-label='Visit my Instagram'
-        >
-          <InstagramIcon className='socialIcon' alt='' />
-        </a>
+        ></a>
       </div>
     </StyledSocialLinks>
   )

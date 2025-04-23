@@ -12,9 +12,6 @@ import { ArticleSection } from './components/ArticleSection'
 import { ContactSection } from './components/ContactSection'
 
 export const App = () => {
-  // Debug what you're importing
-  console.log('App level projects:', projects)
-
   return (
     <>
       <GlobalStyle />

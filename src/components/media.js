@@ -1,7 +1,7 @@
 export const media = {
   // Media queries for responsive design
-  mobile: '@media (max-width: 768px)',
-  tablet: '@media (min-width: 769px) and (max-width: 1024px)',
-  desktop: '@media (min-width: 1025px)',
-  largeDesktop: '@media (min-width: 1440px)'
+  mobile: '(max-width: 768px)',
+  tablet: '(min-width: 769px) and (max-width: 1024px)',
+  desktop: '(min-width: 1025px)',
+  largeDesktop: '(min-width: 1440px)'
 }

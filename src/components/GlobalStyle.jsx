@@ -18,33 +18,34 @@ export const GlobalStyle = createGlobalStyle`
   padding: 0;
 }
 
+/* ──────────── Base body styles ──────────── */
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--text-body);
+  margin: 40px 16px 80px;
+} 
+
+/* ──────────── Breakpoint overrides ──────────── */
+@media ${media.tablet} {
   body {
-    background: var(--color-background);
-    color: var(--color-text);
-    font-family: var(--text-body);
-    margin: 40px 16px 80px;
-  } 
-
-/* Responsive margins */
-  @media ${media.tablet} {
-    body {
-      margin: 80px 64px 160px;
-    }
+    margin: 80px 64px 160px;
   }
+}
 
-  @media ${media.desktop} {
-    body {
-      margin: 120px 180px 240px;
-    }
+@media ${media.desktop} {
+  body {
+    margin: 120px 180px 240px;
   }
+}
 
-  @media ${media.largeDesktop} {
-    body {        
+@media ${media.largeDesktop} {
+  body {        
     margin: 160px 240px 320px;
-      }
     }
+  }
 
-  /* Headings */
+  /* ──────────── Other globals ──────────── */
   h1, h2, h3, h4 {
     font-family: var(--text-headlines);
   }
@@ -53,7 +54,6 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom: 1rem;
   }
 
-  /* Lists & paragraphs */
   ul { list-style: none;}
   li { margin-bottom: 0.5rem; line-height: 1.2; }
   p { margin-bottom: 1rem; line-height: 1.5; }

@@ -6,7 +6,7 @@ import { media } from './media'
 const StyledCarousel = styled.div`
   position: relative;
   overflow: hidden;
-  
+
   .carouselViewport {
     width: 100%; /* never grow wider than the carousel */
     overflow-x: auto; /* allow horizontal scroll */
@@ -43,20 +43,17 @@ const StyledCarousel = styled.div`
 
   @media ${media.tablet} {
     .carouselItem {
-    flex: 0 0 calc(33.333% - 10.666px); /* (100%/3) minus half the gap */
+      flex: 0 0 calc(33.333% - 10.666px); /* (100%/3) minus half the gap */
+    }
   }
 
   @media ${media.desktop} {
-  .carousel {
     display: none;
   }
 
   @media ${media.largeDesktop} {
-    .carousel {
     display: none;
-    }
   }
-  
 `
 
 export const Carousel = ({ items, variant }) => {

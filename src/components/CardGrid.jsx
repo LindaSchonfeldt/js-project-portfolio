@@ -3,17 +3,14 @@ import { media } from './media'
 import styled from 'styled-components'
 
 const StyledCardGrid = styled.div`
-  .cardGrid {
+  /* hide grid by default (mobile) */
+  display: none;
+
+  @media ${media.tablet} {
     display: none;
   }
 
-  @media ${media.tablet} {
-  .cardGrid {
-    display: none;
-  } 
-
   @media ${media.desktop} {
-  .cardGrid {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

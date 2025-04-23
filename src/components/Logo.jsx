@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import treeSrc from '../assets/tree.svg'
 
 // Transient prop $size so it doesn’t leak to the DOM
 const LogoImage = styled.img`
@@ -18,11 +19,6 @@ export const Logo = ({
   size = 'small' // 'small' | 'medium' | 'large'
 }) => {
   return (
-    <LogoImage
-      src='/assets/tree.svg'
-      alt={alt}
-      className={className}
-      $size={size}
-    />
+    <LogoImage src={treeSrc} alt={alt} className={className} $size={size} />
   )
 }
