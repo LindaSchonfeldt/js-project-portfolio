@@ -18,7 +18,7 @@ const StyledArticleSection = styled.div`
 
 export const ArticleSection = ({ articles }) => {
   return (
-    <StyledArticleSection className='articleSection'>
+    <StyledArticleSection className='pageSection'>
       <SectionTitle title='My Words' />
       <Carousel items={articles} variant='articles' />
       <CardGrid articles={articles} />

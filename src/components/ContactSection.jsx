@@ -23,7 +23,7 @@ const StyledContactSection = styled.section`
 
 export const ContactSection = () => {
   return (
-    <StyledContactSection className='contactContainer'>
+    <StyledContactSection className='pageSection'>
       <Logo size='medium' className='contactLogo' />
       <div className='contactContent'>
         <SectionTitle title="Let's talk" />

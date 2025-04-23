@@ -113,7 +113,7 @@ const StyledHeroSection = styled.section`
 
 export const HeroSection = () => {
   return (
-    <StyledHeroSection className='heroSection'>
+    <StyledHeroSection className='pageSection'>
       <div className='heroContent'>
         <Logo size='small' className='heroLogo' />
         <h2 className='heroSubtitle'>I am Linda Schönfeldt</h2>

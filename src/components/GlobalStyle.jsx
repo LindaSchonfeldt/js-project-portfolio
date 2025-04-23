@@ -48,6 +48,10 @@ export const GlobalStyle = createGlobalStyle`
     }
 }
 
+.pageSection {
+margin-top: 4rem; 
+}
+
   /* Headings */
   h1, h2, h3, h4 {
     font-family: var(--text-headlines);

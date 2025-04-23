@@ -56,7 +56,7 @@ const SkillSectionStyled = styled.section`
 
 export const SkillSection = () => {
   return (
-    <SkillSectionStyled>
+    <SkillSectionStyled className='pageSection'>
       <SectionTitle title='Skills' />
       <div className='skillSection'>
         <ul className='skillList'>
