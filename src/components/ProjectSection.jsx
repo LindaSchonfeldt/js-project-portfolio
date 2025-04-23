@@ -9,8 +9,6 @@ import { media } from './media'
 const StyledProjectSection = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin-top: 4rem;
 
   /* by default and up through tablet: show carousel, hide grid */

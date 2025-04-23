@@ -6,6 +6,7 @@ const StyledTabButtons = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0;
+  margin-bottom: 0.5rem;
 
   .tabButton {
     background-color: var(--color-background);

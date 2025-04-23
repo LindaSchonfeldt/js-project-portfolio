@@ -5,23 +5,31 @@ import { media } from './media'
 import styled from 'styled-components'
 
 const StyledArticleSection = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-top: 4rem;
 
-  @media ${media.tablet} {
-    margin: 0 16px;
+  .carouselWrapper {
+    display: block;
   }
+  .gridWrapper {
+    display: none;
+  }
+
   @media ${media.desktop} {
-    margin: 0 32px;
-  }
-  @media ${media.largeDesktop} {
-    margin: 0 64px;
+    .carouselWrapper {
+      display: none;
+    }
+    .gridWrapper {
+      display: flex;
+    }
   }
 `
 
 export const ArticleSection = ({ articles }) => {
   return (
     <StyledArticleSection>
-      <SectionTitle title='My Words' />
+      <SectionTitle title='My Words' className='sectionTitle' />
       <Carousel items={articles} variant='articles' />
       <CardGrid articles={articles} />
     </StyledArticleSection>

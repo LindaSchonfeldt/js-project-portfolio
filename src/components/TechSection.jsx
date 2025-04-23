@@ -26,8 +26,6 @@ const StyledTechSection = styled.section`
   }
 
   @media ${media.tablet} {
-    margin: 4rem 0;
-
     .contentWrapper {
       padding: 0 4rem; /* Increase padding for larger screens */
     }

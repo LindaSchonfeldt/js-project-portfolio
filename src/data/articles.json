@@ -17,6 +17,15 @@
       "description": "A simple weather application using API integration",
       "tags": ["HTML5", "CSS3", "JavaScript", "TypeScript", "APIs"],
       "link": "https://www.example.com/article2"
+    },
+    {
+      "id": "3",
+      "title": "My Third Code Review",
+      "image": "",
+      "publishedDate": "July 12th",
+      "description": "A simple weather application using API integration",
+      "tags": ["HTML5", "CSS3", "JavaScript", "TypeScript", "APIs"],
+      "link": "https://www.example.com/article2"
     }
   ]
 }
