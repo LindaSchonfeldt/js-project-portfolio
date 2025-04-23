@@ -4,11 +4,9 @@ import styled from 'styled-components'
 import { media } from './media'
 
 const StyledCarousel = styled.div`
-  .carousel {
-    position: relative;
-    overflow: hidden;
-  }
-
+  position: relative;
+  overflow: hidden;
+  
   .carouselViewport {
     width: 100%; /* never grow wider than the carousel */
     overflow-x: auto; /* allow horizontal scroll */
@@ -81,7 +79,7 @@ export const Carousel = ({ items, variant }) => {
   }
 
   return (
-    <StyledCarousel className='carousel'>
+    <StyledCarousel>
       <button onClick={handlePrevious}>‹</button>
       <div className='carouselViewport'>
         <div

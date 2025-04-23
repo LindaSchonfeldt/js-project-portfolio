@@ -1,3 +1,8 @@
+import { ReactComponent as LinkedInIcon } from '../assets/linkedin.svg'
+import { ReactComponent as GitHubIcon } from '../assets/github.svg'
+import { ReactComponent as DribbbleIcon } from '../assets/dribbble.svg'
+import { ReactComponent as InstagramIcon } from '../assets/instagram.svg'
+
 import styled from 'styled-components'
 
 const StyledSocialLinks = styled.div`
@@ -8,10 +13,19 @@ const StyledSocialLinks = styled.div`
     flex-direction: row;
   }
 
+  /* Wrap each link so we can add hover transforms */
+  .socialIcons a {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
   .socialIcon {
     width: 32px;
     height: auto;
-    color: var(--secondary-color);
+    fill: var(--secondary-color);
     transition: all 0.3s ease-in-out;
   }
 `
@@ -29,7 +43,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my LinkedIn profile'
         >
-          <img src='/assets/linkedin.svg' alt='' className='socialIcon' />
+          <LinkedInIcon className='socialIcon' alt='' />
         </a>
 
         {/* GitHub */}
@@ -40,7 +54,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my GitHub'
         >
-          <img src='/assets/github.svg' alt='' className='socialIcon' />
+          <GitHubIcon className='socialIcon' alt='' />
         </a>
 
         {/* Dribbble */}
@@ -51,7 +65,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my Dribble'
         >
-          <img src='/assets/dribbble.svg' alt='' className='socialIcon' />
+          <DribbbleIcon className='socialIcon' alt='' />
         </a>
 
         {/* Instagram */}
@@ -62,7 +76,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my Instagram'
         >
-          <img src='/assets/instagram.svg' alt='' className='socialIcon' />
+          <InstagramIcon className='socialIcon' alt='' />
         </a>
       </div>
     </StyledSocialLinks>

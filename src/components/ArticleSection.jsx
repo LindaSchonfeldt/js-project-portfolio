@@ -7,13 +7,13 @@ import styled from 'styled-components'
 const StyledArticleSection = styled.div`
   margin-top: 4rem;
 
-  @media (media.tablet) {
+  @media ${media.tablet} {
     margin: 0 16px;
   }
-  @media (media.desktop) {
+  @media ${media.desktop} {
     margin: 0 32px;
   }
-  @media (media.largedesktop) {
+  @media ${media.largeDesktop} {
     margin: 0 64px;
   }
 `
