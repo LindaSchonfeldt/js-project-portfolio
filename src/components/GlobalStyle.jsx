@@ -22,12 +22,11 @@ export const GlobalStyle = createGlobalStyle`
     background: var(--color-background);
     color: var(--color-text);
     font-family: var(--text-body);
+    margin: 40px 16px 80px; 
+
+}
 
 /* Responsive margins */
-@media ${media.mobile} {
- body {
-    margin: 40px 16px 80px;
-  }
 
   @media ${media.tablet} {
     body {
@@ -46,7 +45,6 @@ export const GlobalStyle = createGlobalStyle`
     margin: 160px 240px 320px;
       }
     }
-}
 
 .pageSection {
 margin-top: 4rem; 
