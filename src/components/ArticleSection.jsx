@@ -5,6 +5,8 @@ import { media } from './media'
 import styled from 'styled-components'
 
 const StyledArticleSection = styled.div`
+  margin-top: 4rem;
+
   @media (media.tablet) {
     margin: 0 16px;
   }
@@ -18,7 +20,7 @@ const StyledArticleSection = styled.div`
 
 export const ArticleSection = ({ articles }) => {
   return (
-    <StyledArticleSection className='pageSection'>
+    <StyledArticleSection>
       <SectionTitle title='My Words' />
       <Carousel items={articles} variant='articles' />
       <CardGrid articles={articles} />

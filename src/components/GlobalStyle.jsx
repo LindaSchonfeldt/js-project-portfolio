@@ -18,16 +18,14 @@ export const GlobalStyle = createGlobalStyle`
   padding: 0;
 }
 
- body {
+  body {
     background: var(--color-background);
     color: var(--color-text);
     font-family: var(--text-body);
-    margin: 40px 16px 80px; 
-
-}
+    margin: 40px 16px 80px;
+  } 
 
 /* Responsive margins */
-
   @media ${media.tablet} {
     body {
       margin: 80px 64px 160px;
@@ -45,10 +43,6 @@ export const GlobalStyle = createGlobalStyle`
     margin: 160px 240px 320px;
       }
     }
-
-.pageSection {
-margin-top: 4rem; 
-}
 
   /* Headings */
   h1, h2, h3, h4 {

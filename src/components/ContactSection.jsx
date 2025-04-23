@@ -5,9 +5,7 @@ import styled from 'styled-components'
 import { media } from './media'
 
 const StyledContactSection = styled.section`
-  .contactContainer {
-    margin-top: 4rem;
-  }
+  margin-top: 4rem;
 
   @media ${media.tablet} {
     ${Logo} {
@@ -23,7 +21,7 @@ const StyledContactSection = styled.section`
 
 export const ContactSection = () => {
   return (
-    <StyledContactSection className='pageSection'>
+    <StyledContactSection>
       <Logo size='medium' className='contactLogo' />
       <div className='contactContent'>
         <SectionTitle title="Let's talk" />

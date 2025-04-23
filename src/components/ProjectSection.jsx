@@ -37,7 +37,7 @@ export const ProjectSection = ({ projects }) => {
   // Safety check for when projects may not be available yet
   if (!projects) {
     return (
-      <StyledProjectSection className='pageSection'>
+      <StyledProjectSection>
         <SectionTitle title='Projects' />
         <TabButtons activeTab={activeTab} setActiveTab={setActiveTab} />
         <p>Projects coming soon!</p>
@@ -52,7 +52,7 @@ export const ProjectSection = ({ projects }) => {
   console.log('About to render cards with:', projectsToDisplay)
 
   return (
-    <StyledProjectSection className='pageSection'>
+    <StyledProjectSection>
       <SectionTitle title='Projects' />
       <TabButtons activeTab={activeTab} setActiveTab={setActiveTab} />
       {projectsToDisplay.length > 0 ? (

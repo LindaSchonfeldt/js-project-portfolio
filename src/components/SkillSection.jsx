@@ -7,7 +7,7 @@ const SkillSectionStyled = styled.section`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
 
   h3 {
     margin-bottom: 1rem;
@@ -56,7 +56,7 @@ const SkillSectionStyled = styled.section`
 
 export const SkillSection = () => {
   return (
-    <SkillSectionStyled className='pageSection'>
+    <SkillSectionStyled>
       <SectionTitle title='Skills' />
       <div className='skillSection'>
         <ul className='skillList'>

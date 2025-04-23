@@ -8,6 +8,7 @@ const StyledTechSection = styled.section`
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-top: 4rem;
 
   .techList {
     display: flex;
@@ -23,7 +24,7 @@ const StyledTechSection = styled.section`
 export const TechSection = ({ content }) => {
   if (!Array.isArray(content) || content.length === 0) {
     return (
-      <StyledTechSection className='pageSection'>
+      <StyledTechSection>
         <SectionTitle title='Tech' />
         <p>No technologies to display.</p>
       </StyledTechSection>
@@ -33,7 +34,7 @@ export const TechSection = ({ content }) => {
   const names = content.map((tech) => tech.name).join(', ')
 
   return (
-    <StyledTechSection className='pageSection'>
+    <StyledTechSection>
       <SectionTitle title='Tech' />
       <p className='techList'>{names}</p>
     </StyledTechSection>
