@@ -9,6 +9,7 @@ const SkillSectionStyled = styled.section`
   text-align: center;
   margin-top: 4rem;
 
+  /* Container for all skill lists */
   .skillContainer {
     display: flex;
     flex-direction: column;
@@ -20,9 +21,7 @@ const SkillSectionStyled = styled.section`
     @media ${media.desktop} {
      .skillContainer {
       flex-direction: row;
-      justify-content: space-around;
       flex-wrap: wrap;
-      gap: 1rem;
     }
   }
 
@@ -67,6 +66,7 @@ export const SkillSection = () => {
           <li>Styled Components</li>
         </ul>
         <hr className='divider' />
+
         <ul className='skillList'>
           <h3>Design</h3>
           <li>User Flows</li>
@@ -77,6 +77,7 @@ export const SkillSection = () => {
           <li>UX Research</li>
         </ul>
         <hr className='divider' />
+
         <ul className='skillList'>
           <h3>Toolbox</h3>
           <li>Adobe Illustrator</li>
@@ -87,6 +88,7 @@ export const SkillSection = () => {
           <li>Slack</li>
         </ul>
         <hr className='divider' />
+
         <ul className='skillList'>
           <h3>More</h3>
           <li>Strategy</li>

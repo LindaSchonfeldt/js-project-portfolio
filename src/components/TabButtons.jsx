@@ -20,11 +20,11 @@ const StyledTabButtons = styled.div`
   }
   .tabButton:hover {
     background-color: var(--primary-color);
-    color: var(--color-background);
+    color: var(--background-color);
   }
   .tabButton.active {
     background-color: var(--primary-color);
-    color: var(--color-background);
+    color: var(--background-color);
   }
 `
 

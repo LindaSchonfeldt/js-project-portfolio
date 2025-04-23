@@ -6,8 +6,8 @@ export const GlobalStyle = createGlobalStyle`
   --primary-color: #0d453a;
   --secondary-color: #fd6f00;
   --accent-color: #ff904b;
-  --color-background: #ffffff;
-  --color-text: #202020;
+  --background-color: #ffffff;
+  --text-color: #202020;
   --text-headlines: 'Josefin Sans', sans-serif;
   --text-body: 'Raleway', serif;
 }

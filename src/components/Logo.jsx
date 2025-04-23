@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import treeSrc from '../assets/tree.svg'
 
 // Transient prop $size so it doesn’t leak to the DOM
-const LogoImage = styled.img`
+const StyledLogo = styled.img`
   width: ${({ $size }) =>
     $size === 'medium'
       ? '4rem'
@@ -19,6 +19,6 @@ export const Logo = ({
   size = 'small' // 'small' | 'medium' | 'large'
 }) => {
   return (
-    <LogoImage src={treeSrc} alt={alt} className={className} $size={size} />
+    <StyledLogo src={treeSrc} alt={alt} className={className} $size={size} />
   )
 }
