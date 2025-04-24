@@ -7,8 +7,8 @@
       "alt": "",
       "description": "A responsive portfolio built with React and Vite.",
       "tags": ["React", "Vite", "Styled Components", "JavaScript"],
-      "netlify": "link",
-      "github": "link"
+      "netlify": "lindaschonfeldt.com",
+      "github": "https://github.com/LindaSchonfeldt/js-project-portfolio"
     },
     {
       "id": "2",
@@ -17,8 +17,8 @@
       "alt": "",
       "description": "A simple weather application using API integration",
       "tags": ["JavaScript", "TypeScript", "APIs"],
-      "netlify": "link",
-      "github": "link"
+      "netlify": "https://gorgeous-bubblegum-c0333a.netlify.app/",
+      "github": "https://github.com/LindaSchonfeldt/weather-app"
     },
     {
       "id": "3",
@@ -27,8 +27,8 @@
       "alt": "",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "tags": ["JavaScript", "APIs"],
-      "netlify": "link",
-      "github": "link"
+      "netlify": "https://recipe-library.netlify.app/",
+      "github": "https://github.com/LindaSchonfeldt/js-project-recipe-library"
     }
   ],
   "uxui": [

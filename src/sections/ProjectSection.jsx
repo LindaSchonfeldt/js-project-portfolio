@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { SectionTitle } from './SectionTitle'
-import TabButtons from './TabButtons'
-import CardGrid from './CardGrid'
-import { Carousel } from './Carousel'
+import { SectionTitle } from '../components/SectionTitle'
+import TabButtons from '../components/TabButtons'
+import CardGrid from '../components/CardGrid'
+import { Carousel } from '../components/Carousel'
 import styled from 'styled-components'
-import { media } from './media'
+import { media } from '../components/media'
 
 const StyledProjectSection = styled.section`
   display: flex;

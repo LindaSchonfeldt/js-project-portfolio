@@ -1,7 +1,7 @@
 import React from 'react'
-import { Logo } from './Logo'
+import { Logo } from '../components/Logo.jsx'
 import styled from 'styled-components'
-import { media } from './media.js'
+import { media } from '../components/media.js'
 import portrait from '../assets/linda.svg'
 
 const StyledHeroSection = styled.section`

@@ -1,6 +1,6 @@
-import { SectionTitle } from './SectionTitle'
+import { SectionTitle } from '../components/SectionTitle'
 import styled from 'styled-components'
-import { media } from './media'
+import { media } from '../components/media'
 
 const SkillSectionStyled = styled.section`
   display: flex;

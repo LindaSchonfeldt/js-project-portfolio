@@ -1,7 +1,7 @@
 import React from 'react'
-import { SectionTitle } from './SectionTitle'
+import { SectionTitle } from '../components/SectionTitle'
 import styled from 'styled-components'
-import { media } from './media'
+import { media } from '../components/media'
 
 const StyledTechSection = styled.section`
   width: 100vw; /* Full width of the viewport */

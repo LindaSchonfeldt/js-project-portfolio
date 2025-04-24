@@ -1,8 +1,8 @@
-import { Logo } from './Logo'
-import { SectionTitle } from './SectionTitle'
-import { SocialLinks } from './SocialLinks'
+import { Logo } from '../components/Logo'
+import { SectionTitle } from '../components/SectionTitle'
+import { SocialLinks } from '../components/SocialLinks'
 import styled from 'styled-components'
-import { media } from './media'
+import { media } from '../components/media'
 
 const StyledContactSection = styled.section`
   margin-top: 6rem;
