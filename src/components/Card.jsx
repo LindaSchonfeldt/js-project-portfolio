@@ -33,6 +33,17 @@ const StyledCard = styled.div`
     font-size: 0.8rem;
     font-weight: 700;
   }
+
+  .cardActions {
+    margin-top: auto; /* pushes buttons down */
+    display: flex;
+    width: 100%; /* make wrapper full width */
+    gap: 0.5rem; /* optional spacing */
+
+    > button {
+      flex: 1; /* each button takes equal share */
+    }
+  }
 `
 
 /**
@@ -49,23 +60,22 @@ const StyledCard = styled.div`
 export const Card = ({
   variant, // Code or UX/UI
   image,
+  alt,
   title,
   subtitle,
   content,
   tags = [],
   actions = [],
   children,
-  alt = '',
   className = ''
 }) => {
   // choose a class (or wrap in different layout)
   const cardClass = `card ${variant === 'Code' ? 'card–code' : 'card–uxui'}`
   const imgScr = image || defaultImg
-  const imgAlt = ''
 
   return (
     <StyledCard className={`${cardClass} ${className}`}>
-      <img src={imgScr} alt={imgAlt} className='cardImage' />{' '}
+      <img src={imgScr} alt={alt} className='cardImage' />{' '}
       {title && <h3 className='cardTitle'>{title}</h3>}
       {subtitle && <p className='cardSubtitle'>{subtitle}</p>}
       {content && (
@@ -75,7 +85,6 @@ export const Card = ({
       )}
       {/* any completely custom JSX */}
       {children}
-      {tags.length > 0 && <TagList tags={tags} />}
       {actions.length > 0 && (
         <ButtonGroup>
           <div className='cardActions'>
@@ -92,6 +101,7 @@ export const Card = ({
           </div>
         </ButtonGroup>
       )}
+      {tags.length > 0 && <TagList tags={tags} />}
     </StyledCard>
   )
 }

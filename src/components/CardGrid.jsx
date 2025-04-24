@@ -47,6 +47,7 @@ export default function CardGrid({ projects, articles, variant }) {
             <Card
               key={item.id || `article-${i}`}
               image={item.image}
+              alt={item.alt}
               title={item.title}
               subtitle={item.publishedDate}
               content={item.excerpt}

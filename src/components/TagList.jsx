@@ -4,15 +4,17 @@ const StyledTagList = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 1rem;
+  gap: 0.2rem 0.3rem;
+  width: 100%;
 
   .tag {
+    /* no margins needed any more */
     padding: 0.2rem 0.3rem;
-    margin: 0.2rem;
     background-color: var(--text-color);
     color: var(--background-color);
     font-size: 0.8rem;
-    font-weight: 500; /* Optional: make text bold */
-    white-space: nowrap; /* Prevent tags from breaking into multiple lines */
+    font-weight: 500;
+    white-space: nowrap;
     transition: background-color 0.3s ease, transform 0.2s ease;
   }
 `

@@ -16,7 +16,7 @@
       "image": "",
       "alt": "",
       "description": "A simple weather application using API integration",
-      "tags": ["HTML5", "CSS3", "JavaScript", "TypeScript", "APIs"],
+      "tags": ["JavaScript", "TypeScript", "APIs"],
       "netlify": "link",
       "github": "link"
     },
@@ -26,7 +26,7 @@
       "image": "",
       "alt": "",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "tags": ["HTML5", "CSS3", "JavaScript", "APIs"],
+      "tags": ["JavaScript", "APIs"],
       "netlify": "link",
       "github": "link"
     }

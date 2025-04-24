@@ -90,6 +90,7 @@ export const Carousel = ({ items, variant }) => {
                 <div key={item.id || i} className='carouselItem'>
                   <Card
                     image={item.image}
+                    alt={item.alt}
                     title={item.title}
                     subtitle={item.publishedDate}
                     content={item.excerpt}
