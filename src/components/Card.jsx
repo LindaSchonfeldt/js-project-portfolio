@@ -55,15 +55,17 @@ export const Card = ({
   tags = [],
   actions = [],
   children,
+  alt = '',
   className = ''
 }) => {
   // choose a class (or wrap in different layout)
   const cardClass = `card ${variant === 'Code' ? 'card–code' : 'card–uxui'}`
   const imgScr = image || defaultImg
+  const imgAlt = ''
 
   return (
     <StyledCard className={`${cardClass} ${className}`}>
-      <img src={imgScr} alt={title} className='cardImage' />{' '}
+      <img src={imgScr} alt={imgAlt} className='cardImage' />{' '}
       {title && <h3 className='cardTitle'>{title}</h3>}
       {subtitle && <p className='cardSubtitle'>{subtitle}</p>}
       {content && (
@@ -77,28 +79,16 @@ export const Card = ({
       {actions.length > 0 && (
         <ButtonGroup>
           <div className='cardActions'>
-            {actions.map((action, i) => {
-              const {
-                text,
-                href,
-                onClick,
-                target,
-                variant: btnVariant
-              } = action
-              const common = {
-                text,
-                href,
-                onClick,
-                target,
-                variant: btnVariant
-              }
-
-              return action.variant === 'primary' ? (
-                <Button key={`action-${i}`} {...common} />
-              ) : (
-                <Button key={`action-${i}`} {...common} />
-              )
-            })}
+            {actions.map(({ text, href, onClick, target, variant }, i) => (
+              <Button
+                key={i}
+                text={text}
+                href={href}
+                onClick={onClick}
+                target={target}
+                variant={variant}
+              />
+            ))}
           </div>
         </ButtonGroup>
       )}
