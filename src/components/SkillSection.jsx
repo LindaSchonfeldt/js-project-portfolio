@@ -9,26 +9,10 @@ const SkillSectionStyled = styled.section`
   text-align: center;
   margin-top: 4rem;
 
-  /* Container for all skill lists */
-  .skillContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 2rem;
-
-    /* This container becomes a row on tablet */
-    @media ${media.desktop} {
-     .skillContainer {
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-  }
-
   .skillList {
     list-style: none;
     padding: 0;
-    margin: 1rem;
+    margin: 1rem 0;
     text-align: center;
   }
 
@@ -42,11 +26,38 @@ const SkillSectionStyled = styled.section`
     height: 1px;
     background-color: var(--primary-color);
     margin: 1rem 0;
+  }
 
-    @media ${media.desktop} {
+  /* Container for all skill lists */
+  .skillContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  /* Move media query outside the skillContainer */
+  @media ${media.desktop} {
+    .skillContainer {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .skillList {
+      list-style: none;
+      padding: 0;
+      margin: 0 1rem;
+      text-align: center;
+      flex: 1;
+    }
+
+    .divider {
       width: 1px;
       height: 200px;
-      margin: 0 0.5rem;
+      margin: 0 1rem;
+      display: inline-block;
     }
   }
 `

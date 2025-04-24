@@ -11,6 +11,8 @@ const SectionTitleStyled = styled.h2`
   padding: 0;
 `
 
-export const SectionTitle = ({ title, color }) => (
-  <SectionTitleStyled color={color}>{title}</SectionTitleStyled>
+export const SectionTitle = ({ title, color, className }) => (
+  <SectionTitleStyled className={className} color={color}>
+    {title}
+  </SectionTitleStyled>
 )

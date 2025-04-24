@@ -10,7 +10,6 @@ const StyledHeroSection = styled.section`
   align-items: center;
 
   .heroContent {
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -20,7 +19,7 @@ const StyledHeroSection = styled.section`
   }
 
   .heroTitle {
-    font-size: 3rem;
+    font-size: 3.8rem;
     line-height: 0.9;
     margin: 1rem 0 0.5rem;
     color: var(--primary-color);
@@ -32,12 +31,12 @@ const StyledHeroSection = styled.section`
   }
 
   .heroText {
+    margin-top: 2rem;
     width: 100%;
   }
 
   .heroImage {
-    width: 80%;
-    height: auto;
+    width: 20rem;
   }
 
   @media ${media.tablet} {

@@ -33,7 +33,7 @@ const StyledTechSection = styled.section`
 
   @media ${media.desktop} {
     .contentWrapper {
-      padding: 0 10rem; /* Further increase padding for desktop */
+      padding: 5rem 10rem; /* Further increase padding for desktop */
     }
   }
 
