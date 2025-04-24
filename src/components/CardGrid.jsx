@@ -11,16 +11,17 @@ const StyledCardGrid = styled.div`
   }
 
   @media ${media.desktop} {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 1fr; /* all rows equal height */
+    gap: 1.5rem;
+    margin: 2rem auto 0;
+    max-width: 1200px;
+    padding: 0 2rem;
   }
 
   @media ${media.largeDesktop} {
+    padding: 0 4rem;
   }
 `
 

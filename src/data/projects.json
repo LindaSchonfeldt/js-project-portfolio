@@ -5,7 +5,7 @@
       "title": "Portfolio Website",
       "image": "",
       "description": "A responsive portfolio built with React and Vite.",
-      "tags": ["React", "Vite", "CSS3", "JavaScript"],
+      "tags": ["React", "Vite", "Styled Components", "JavaScript"],
       "netlify": "link",
       "github": "link"
     },
@@ -42,7 +42,7 @@
       "title": "Product Roadmap",
       "image": "",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.",
-      "tags": [],
+      "tags": ["Worskhops"],
       "figma": "link"
     }
   ]
