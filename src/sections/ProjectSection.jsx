@@ -32,6 +32,9 @@ const StyledProjectSection = styled.section`
 export const ProjectSection = ({ projects }) => {
   const [activeTab, setActiveTab] = useState('Code') // Default to first tab
 
+  // normalize the activeTab into the variant key your Card expects
+  const variantKey = activeTab.toLowerCase().replace(/\W/g, '')
+
   // Safety check for when projects may not be available yet
   if (!projects) {
     return (
@@ -47,8 +50,6 @@ export const ProjectSection = ({ projects }) => {
   const projectsToDisplay =
     activeTab === 'Code' ? projects.code || [] : projects.uxui || []
 
-  console.log('About to render cards with:', projectsToDisplay)
-
   return (
     <StyledProjectSection>
       <SectionTitle title='Projects' />
@@ -58,13 +59,13 @@ export const ProjectSection = ({ projects }) => {
           <div className='carouselWrapper'>
             <Carousel
               items={projectsToDisplay}
-              variant={activeTab} // <-- pass “Code” or “UX/UI”
+              variant={variantKey} // <-- pass “code” or “uxui”
             />
           </div>
           <div className='gridWrapper'>
             <CardGrid
               projects={projectsToDisplay}
-              variant={activeTab} // <-- pass “Code” or “UX/UI”
+              variant={variantKey} // <-- pass “code” or “uxui”
             />
           </div>
         </>

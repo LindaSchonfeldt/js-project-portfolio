@@ -15,15 +15,31 @@ const StyledContactSection = styled.section`
   }
 
   .contactContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     margin: 1rem;
   }
 
-  @media ${media.tablet} {
+  .socialLinks {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 1rem;
+  }
+
+  @media ${media.tablet} {
+    .contactContent {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contactText {
+      display: flex;
+      flex-direction: column;
+    }
 
     .contactLogo {
       width: 6rem;
@@ -32,7 +48,12 @@ const StyledContactSection = styled.section`
     .sectionTitle {
       justify-content: center;
     }
+
+    .socialLinks {
+      justify-content: center;
+    }
   }
+
   @media ${media.desktop} {
     .contactLogo {
       width: 8rem;
@@ -53,16 +74,18 @@ const StyledContactSection = styled.section`
 export const ContactSection = () => {
   return (
     <StyledContactSection>
-      <Logo size='medium' className='contactLogo' />
       <div className='contactContent'>
-        <SectionTitle className='sectionTitle' title="Let's talk" />
+        <Logo size='medium' className='contactLogo' />
         <div className='contactText'>
+          <SectionTitle className='sectionTitle' title="Let's talk" />
           <p>Linda Schönfeldt </p>
           <p>+46(0)73 042 0035 </p>
           <p>linda.schonfeldt@gmail.com</p>
         </div>
       </div>
-      <SocialLinks />
+      <div className='socialLinks'>
+        <SocialLinks />
+      </div>
     </StyledContactSection>
   )
 }

@@ -36,8 +36,12 @@ export const ArticleSection = ({ articles }) => {
   return (
     <StyledArticleSection>
       <SectionTitle title='My Words' className='sectionTitle' />
-      <Carousel items={articles} variant='articles' />
-      <CardGrid articles={articles} />
+      <div className='carouselWrapper'>
+        <Carousel items={articles} variant='article' />
+      </div>
+      <div className='gridWrapper'>
+        <CardGrid articles={articles} variant='article' />
+      </div>
     </StyledArticleSection>
   )
 }

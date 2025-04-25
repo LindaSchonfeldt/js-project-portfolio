@@ -3,6 +3,7 @@ import { Logo } from '../components/Logo.jsx'
 import styled from 'styled-components'
 import { media } from '../components/media.js'
 import portrait from '../assets/linda.svg'
+import { SocialLinks } from '../components/SocialLinks.jsx'
 
 const StyledHeroSection = styled.section`
   display: flex;
@@ -42,6 +43,10 @@ const StyledHeroSection = styled.section`
   @media ${media.tablet} {
     .heroTitle {
       font-size: 5rem;
+    }
+
+    .heroImage {
+      width: 30rem;
     }
   }
 
@@ -97,6 +102,7 @@ export const HeroSection = () => {
             empowering products.
           </p>
         </div>
+        <SocialLinks />
       </div>
       <img src={portrait} className='heroImage' alt='' />
     </StyledHeroSection>

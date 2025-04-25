@@ -1,3 +1,7 @@
+import { FaLinkedin } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
+import { FaDribbble } from 'react-icons/fa'
+import { FaInstagram } from 'react-icons/fa'
 import styled from 'styled-components'
 
 const StyledSocialLinks = styled.div`
@@ -6,6 +10,7 @@ const StyledSocialLinks = styled.div`
   .socialIcons {
     display: flex;
     flex-direction: row;
+    gap: 1.5rem;
   }
 
   /* Wrap each link so we can add hover transforms */
@@ -18,8 +23,6 @@ const StyledSocialLinks = styled.div`
   }
 
   .socialIcon {
-    width: 32px;
-    height: auto;
     fill: var(--secondary-color);
     transition: all 0.3s ease-in-out;
   }
@@ -37,7 +40,9 @@ export const SocialLinks = () => {
           rel='noopener noreferrer'
           role='img'
           aria-label='Visit my LinkedIn profile'
-        ></a>
+        >
+          <FaLinkedin className='socialIcon' size={32} />
+        </a>
 
         {/* GitHub */}
         <a
@@ -47,7 +52,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my GitHub'
         >
-          {' '}
+          <FaGithub className='socialIcon' size={32} />
         </a>
 
         {/* Dribbble */}
@@ -57,7 +62,9 @@ export const SocialLinks = () => {
           rel='noopener noreferrer'
           role='img'
           aria-label='Visit my Dribble'
-        ></a>
+        >
+          <FaDribbble className='socialIcon' size={32} />
+        </a>
 
         {/* Instagram */}
         <a
@@ -66,7 +73,9 @@ export const SocialLinks = () => {
           rel='noopener noreferrer'
           role='img'
           aria-label='Visit my Instagram'
-        ></a>
+        >
+          <FaInstagram className='socialIcon' size={32} />
+        </a>
       </div>
     </StyledSocialLinks>
   )

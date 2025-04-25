@@ -2,7 +2,7 @@
   "articles": [
     {
       "id": "1",
-      "title": "My first Code Review",
+      "title": "My First Code Review",
       "image": "",
       "alt": "",
       "publishedDate": "August 1st",
@@ -12,7 +12,7 @@
     },
     {
       "id": "2",
-      "title": "My second Code Review",
+      "title": "My Second Code Review",
       "image": "",
       "alt": "",
       "publishedDate": "July 12th",
