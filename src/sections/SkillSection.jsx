@@ -36,7 +36,6 @@ const SkillSectionStyled = styled.section`
     width: 100%;
   }
 
-  /* Move media query outside the skillContainer */
   @media ${media.desktop} {
     .skillContainer {
       flex-direction: row;
