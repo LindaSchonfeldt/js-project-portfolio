@@ -9,12 +9,11 @@ const BaseCard = styled.div`
   flex-direction: column;
   justify-content: start;
   background-color: var(--background-color);
-  border: 2px solid #000;
-  width: 250px;
+  width: 300px;
 
   .cardTitle {
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 600;
     margin-bottom: 0.5rem;
   }
 
@@ -45,21 +44,9 @@ const BaseCard = styled.div`
   }
 
   /* variant styles toggled by props */
-  ${({ $variant }) =>
-    $variant === 'code' &&
-    css`
-      border-color: #ff3e00;
-    `}
-  ${({ $variant }) =>
-    $variant === 'uxui' &&
-    css`
-      border-color: #009f7f;
-    `}
-  ${({ $variant }) =>
-    $variant === 'article' &&
-    css`
-      border-color: #0050ef;
-    `}
+  ${({ $variant }) => $variant === 'code' && css``}
+  ${({ $variant }) => $variant === 'uxui' && css``}
+  ${({ $variant }) => $variant === 'article' && css``}
 `
 
 // define per‐variant defaults

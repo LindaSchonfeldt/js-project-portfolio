@@ -7,7 +7,7 @@ const StyledTabButtons = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 
   .tabButton {
     background-color: var(--background-color);
@@ -22,7 +22,7 @@ const StyledTabButtons = styled.div`
     transition: all 0.3s ease-in-out;
   }
   .tabButton:hover {
-    background-color: var(--primary-color);
+    background-color: rgba(13, 69, 58, 0.8); /* --primary-color with opacity */
     color: var(--background-color);
   }
   .tabButton.active {

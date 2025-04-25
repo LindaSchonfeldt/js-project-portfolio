@@ -11,19 +11,21 @@ const StyledCardGrid = styled.div`
 
   @media ${media.desktop} {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-auto-rows: 1fr; /* all rows equal height */
-    gap: 1.5rem;
-    margin: 2rem auto 0;
-    padding: 0 2rem;
-
+    max-width: 1000px;
+    margin: 0 auto;
     justify-content: center;
     align-items: stretch; /* stretch items to fill the row height */
+
+    /* Grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 1fr; /* All rows have equal height */
+    gap: 1rem;
+    padding: 0 2rem;
   }
 
   @media ${media.largeDesktop} {
-    max-width: 1400px;
-    padding: 0 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 `
 
@@ -45,15 +47,15 @@ export default function CardGrid({ projects, articles, variant }) {
         <Card
           key={item.id ?? i}
           variant={variantKey}
-          // common props
+          // Common props
           image={item.image}
           alt={item.alt}
           title={item.title}
           tags={item.tags}
-          // per‐variant props
+          // Per‐variant props
           subtitle={articles ? item.publishedDate : undefined}
           content={articles ? item.description : item.description}
-          // defaults: Card will pick actions from defaultActions[variantKey]
+          // Defaults: Card will pick actions from defaultActions[variantKey]
           link={item.link}
           netlify={item.netlify}
           github={item.github}

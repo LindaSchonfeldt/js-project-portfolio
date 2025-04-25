@@ -16,6 +16,11 @@ const StyledButton = styled.button`
       background-color: var(--primary-color);
       color: var(--background-color);
       border: 2px solid var(--primary-color);
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+      }
     `}
 
   /* Secondary */
@@ -25,6 +30,11 @@ const StyledButton = styled.button`
       background-color: transparent;
       color: var (--primary-color);
       border: 2px solid var(--primary-color);
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        opacity: 0.6;
+      }
     `}
 
   /* Tertiary */
@@ -35,6 +45,11 @@ const StyledButton = styled.button`
       color: #666;
       text-decoration: underline;
       border: none;
+      transition: all 0.2s ease-in-out;
+      
+      &:hover {
+        color: var(--primary-color);
+        text-decoration: none;
     `}
 `
 export const ButtonGroup = styled.div`

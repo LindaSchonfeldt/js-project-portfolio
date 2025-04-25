@@ -34,21 +34,9 @@ const StyledCarousel = styled.div`
     margin: 0.5rem;
   }
 
-  /* Hide the prev/next buttons and counter */
-  & > button {
-    display: none;
-  }
-  & > .carouselCounter {
-    display: none;
-  }
-
   @media ${media.tablet} {
     .carouselTrack {
       gap: 24px;
-    }
-
-    .carouselItem {
-      flex: 0 0 calc(33.333% - 10.666px); /* (100%/3) minus half the gap */
     }
   }
 

@@ -15,7 +15,7 @@ const StyledTechSection = styled.section`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem 0; /* Add padding for top and bottom */
+  padding: 4rem 0;
   margin-top: 4rem;
 
   .contentWrapper {
