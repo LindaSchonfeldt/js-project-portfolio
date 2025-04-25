@@ -100,6 +100,10 @@ export const Card = ({
   content,
   tags = [],
   actions = [],
+  link,
+  netlify,
+  github,
+  figma,
   children,
   className = ''
 }) => {

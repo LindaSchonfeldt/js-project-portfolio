@@ -37,10 +37,10 @@ export const ArticleSection = ({ articles }) => {
     <StyledArticleSection>
       <SectionTitle title='My Words' className='sectionTitle' />
       <div className='carouselWrapper'>
-        <Carousel items={articles} variant='article' />
+        <Carousel items={articles} />
       </div>
       <div className='gridWrapper'>
-        <CardGrid articles={articles} variant='article' />
+        <CardGrid articles={articles} />
       </div>
     </StyledArticleSection>
   )
