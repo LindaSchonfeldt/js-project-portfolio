@@ -19,14 +19,12 @@ const StyledContactSection = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 1rem;
   }
 
   .socialLinks {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin: 0 1rem;
   }
 
   @media ${media.tablet} {
@@ -40,6 +38,7 @@ const StyledContactSection = styled.section`
     .contactText {
       display: flex;
       flex-direction: column;
+      margin-left: 1rem;
     }
 
     .contactLogo {

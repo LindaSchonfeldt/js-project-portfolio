@@ -5,7 +5,7 @@ import { FaInstagram } from 'react-icons/fa'
 import styled from 'styled-components'
 
 const StyledSocialLinks = styled.div`
-  margin-top: 2rem;
+  margin: 2rem 0 0 0;
 
   .socialIcons {
     display: flex;
