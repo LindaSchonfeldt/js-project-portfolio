@@ -67,6 +67,10 @@ const StyledHeroSection = styled.section`
     .heroTitle {
       font-size: 5rem;
     }
+
+    .socialLinks {
+      margin-top: 4rem;
+    }
   }
 
   @media ${media.largeDesktop} {
@@ -113,7 +117,7 @@ export const HeroSection = () => {
         </div>
         <div className='socialLinks'>
           <SocialLinks />
-        </div>{' '}
+        </div>
       </div>
       <img src={portrait} className='heroImage' alt='' />
     </StyledHeroSection>

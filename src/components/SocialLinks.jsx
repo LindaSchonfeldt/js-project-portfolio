@@ -10,7 +10,7 @@ const StyledSocialLinks = styled.div`
   .socialIcons {
     display: flex;
     flex-direction: row;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   /* Wrap each link so we can add hover transforms */
@@ -30,7 +30,7 @@ const StyledSocialLinks = styled.div`
 
 export const SocialLinks = () => {
   return (
-    <StyledSocialLinks>
+    <StyledSocialLinks role='region'>
       <h2 className='visuallyHidden'>Connect With Me</h2>
       <div className='socialIcons'>
         {/* LinkedIn */}
@@ -41,7 +41,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my LinkedIn profile'
         >
-          <FaLinkedin className='socialIcon' size={32} />
+          <FaLinkedin className='socialIcon' size={28} />
         </a>
 
         {/* GitHub */}
@@ -52,7 +52,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my GitHub'
         >
-          <FaGithub className='socialIcon' size={32} />
+          <FaGithub className='socialIcon' size={28} />
         </a>
 
         {/* Dribbble */}
@@ -63,7 +63,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my Dribble'
         >
-          <FaDribbble className='socialIcon' size={32} />
+          <FaDribbble className='socialIcon' size={28} />
         </a>
 
         {/* Instagram */}
@@ -74,7 +74,7 @@ export const SocialLinks = () => {
           role='img'
           aria-label='Visit my Instagram'
         >
-          <FaInstagram className='socialIcon' size={32} />
+          <FaInstagram className='socialIcon' size={28} />
         </a>
       </div>
     </StyledSocialLinks>

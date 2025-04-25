@@ -37,6 +37,11 @@ body {
   body {
     margin: 120px 180px 240px;
   }
+
+  h2 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 @media ${media.largeDesktop} {
