@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { media } from './media'
 
 const StyledTabButtons = styled.div`
   display: flex;
@@ -14,7 +15,8 @@ const StyledTabButtons = styled.div`
     padding: 0.5rem 1rem;
     border: none;
     border-bottom: 0.15rem solid var(--primary-color);
-    width: 30vw;
+    width: 45vw; /* Larger base width for mobile */
+    max-width: 200px;
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -26,6 +28,17 @@ const StyledTabButtons = styled.div`
   .tabButton.active {
     background-color: var(--primary-color);
     color: var(--background-color);
+  }
+
+  @media ${media.tablet} {
+    .tabButton {
+      width: 40vw;
+    }
+
+     @media ${media.desktop} {
+    .tabButton {
+      width: 250px; /* Fixed width on desktop for consistency */
+    }
   }
 `
 

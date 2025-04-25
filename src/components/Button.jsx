@@ -1,9 +1,11 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { media } from './media'
 
 const StyledButton = styled.button`
   flex: 1;
   padding: 0.5rem 1rem;
+  width: 100%;
   font-size: 1rem;
   cursor: pointer;
 
@@ -12,8 +14,8 @@ const StyledButton = styled.button`
     $variant === 'primary' &&
     css`
       background-color: var(--primary-color);
-      color: #fff;
-      border: 1px solid var(--primary-color);
+      color: var(--background-color);
+      border: 2px solid var(--primary-color);
     `}
 
   /* Secondary */
@@ -22,7 +24,7 @@ const StyledButton = styled.button`
     css`
       background-color: transparent;
       color: var (--primary-color);
-      border: 1px solid var(--primary-color);
+      border: 2px solid var(--primary-color);
     `}
 
   /* Tertiary */
@@ -37,12 +39,20 @@ const StyledButton = styled.button`
 `
 export const ButtonGroup = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
-  gap: 0.5rem;
   margin-top: 1rem;
-  justify-content: space-between;
-  align-items: center;
+  gap: 0.5rem;
   box-sizing: border-box;
+
+  @media ${media.desktop} {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  button {
+    flex: 1;
+  }
 `
 
 export default function Button({

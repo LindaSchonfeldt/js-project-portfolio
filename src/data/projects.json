@@ -6,7 +6,7 @@
       "image": "",
       "alt": "",
       "description": "A responsive portfolio built with React and Vite.",
-      "tags": ["React", "Vite", "Styled Components", "JavaScript"],
+      "tags": ["React", "Vite", "Styled Components"],
       "netlify": "lindaschonfeldt.com",
       "github": "https://github.com/LindaSchonfeldt/js-project-portfolio"
     },

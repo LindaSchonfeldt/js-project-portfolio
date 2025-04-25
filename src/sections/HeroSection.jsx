@@ -56,12 +56,12 @@ const StyledHeroSection = styled.section`
     align-items: flex-start; /* align items to top */
 
     .heroContent {
-      width: 50%;
-      padding: 2rem;
+      width: 60vw;
+      padding: 1rem;
     }
 
     .heroImage {
-      width: 50%;
+      width: 100%;
     }
 
     .heroTitle {
@@ -70,8 +70,16 @@ const StyledHeroSection = styled.section`
   }
 
   @media ${media.largeDesktop} {
+    .heroContent {
+      width: 40vw;
+      padding: 1rem;
+    }
+
     .heroTitle {
-      font-size: 8rem;
+      font-size: 6rem;
+    }
+    .herImage {
+      width: 60rem;
     }
   }
 `
@@ -103,7 +111,9 @@ export const HeroSection = () => {
             empowering products.
           </p>
         </div>
-        <SocialLinks />
+        <div className='socialLinks'>
+          <SocialLinks />
+        </div>{' '}
       </div>
       <img src={portrait} className='heroImage' alt='' />
     </StyledHeroSection>

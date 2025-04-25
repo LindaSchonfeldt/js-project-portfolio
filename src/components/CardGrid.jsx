@@ -3,7 +3,6 @@ import { media } from './media'
 import styled from 'styled-components'
 
 const StyledCardGrid = styled.div`
-  /* hide grid by default (mobile) */
   display: none;
 
   @media ${media.tablet} {
@@ -12,25 +11,25 @@ const StyledCardGrid = styled.div`
 
   @media ${media.desktop} {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-auto-rows: 1fr; /* all rows equal height */
     gap: 1.5rem;
     margin: 2rem auto 0;
-    max-width: 1200px;
     padding: 0 2rem;
+
+    justify-content: center;
+    align-items: stretch; /* stretch items to fill the row height */
   }
 
   @media ${media.largeDesktop} {
+    max-width: 1400px;
     padding: 0 4rem;
   }
 `
 
 export default function CardGrid({ projects, articles, variant }) {
-  // projects or articles, default to projects
   const items = projects ?? articles ?? []
-
-  // Single safety check for items
-  if (!Array.isArray(items) || items.length === 0) {
+  if (!items.length) {
     return (
       <div className='cardGrid'>
         <p>No items to display.</p>
@@ -38,42 +37,29 @@ export default function CardGrid({ projects, articles, variant }) {
     )
   }
 
+  const variantKey = articles ? 'article' : variant.toLowerCase()
+
   return (
-    <StyledCardGrid className='cardGrid'>
-      {items.map((item, i) => {
-        if (articles) {
-          // Render an “article” card
-          return (
-            <Card
-              key={item.id || `article-${i}`}
-              image={item.image}
-              alt={item.alt}
-              title={item.title}
-              subtitle={item.publishedDate}
-              content={item.excerpt}
-              actions={[
-                { text: 'Read Article', href: item.link, variant: 'secondary' }
-              ]}
-            />
-          )
-        } else {
-          // Render a “project” card
-          return (
-            <Card
-              key={item.id || `project-${i}`}
-              variant={variant} // “Code” or “UX/UI”
-              image={item.image}
-              title={item.title}
-              content={item.description}
-              tags={item.tags}
-              actions={[
-                { text: 'Live Demo', href: item.link, variant: 'primary' },
-                { text: 'View Code', href: item.github, variant: 'secondary' }
-              ]}
-            />
-          )
-        }
-      })}
+    <StyledCardGrid>
+      {items.map((item, i) => (
+        <Card
+          key={item.id ?? i}
+          variant={variantKey}
+          // common props
+          image={item.image}
+          alt={item.alt}
+          title={item.title}
+          tags={item.tags}
+          // per‐variant props
+          subtitle={articles ? item.publishedDate : undefined}
+          content={articles ? item.description : item.description}
+          // defaults: Card will pick actions from defaultActions[variantKey]
+          link={item.link}
+          netlify={item.netlify}
+          github={item.github}
+          figma={item.figma}
+        />
+      ))}
     </StyledCardGrid>
   )
 }

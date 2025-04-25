@@ -10,8 +10,7 @@ const BaseCard = styled.div`
   justify-content: start;
   background-color: var(--background-color);
   border: 2px solid #000;
-  width: 100%;
-  height: 100%;
+  width: 250px;
 
   .cardTitle {
     font-size: 1.5rem;
@@ -98,9 +97,9 @@ export const Card = ({
   title,
   subtitle,
   content,
+  description,
   tags = [],
   actions = [],
-  link,
   netlify,
   github,
   figma,
@@ -112,32 +111,38 @@ export const Card = ({
     actions.length > 0
       ? actions
       : (defaultActions[variant] || (() => []))({ netlify, github, figma })
+
+  // Use content if provided, otherwise fall back to description
+  const displayContent = content || description
+
   return (
     <BaseCard $variant={variant.toLowerCase()} className={className}>
       <img src={imgScr} alt={alt} className='cardImage' />{' '}
       {title && <h3 className='cardTitle'>{title}</h3>}
       {subtitle && <p className='cardSubtitle'>{subtitle}</p>}
-      {content && (
+      {displayContent && (
         <div className='cardContent'>
-          {typeof content === 'string' ? <p>{content}</p> : content}
+          {typeof displayContent === 'string' ? (
+            <p>{displayContent}</p>
+          ) : (
+            displayContent
+          )}
         </div>
       )}
       {/* any completely custom JSX */}
       {children}
       {actionList.length > 0 && (
         <ButtonGroup>
-          <div className='cardActions'>
-            {actionList.map(({ text, href, onClick, target, variant }, i) => (
-              <Button
-                key={i}
-                text={text}
-                href={href}
-                onClick={onClick}
-                target={target}
-                variant={variant}
-              />
-            ))}
-          </div>
+          {actionList.map(({ text, href, onClick, target, variant }, i) => (
+            <Button
+              key={i}
+              text={text}
+              href={href}
+              onClick={onClick}
+              target={target}
+              variant={variant}
+            />
+          ))}
         </ButtonGroup>
       )}
       {tags.length > 0 && <TagList tags={tags} />}

@@ -68,6 +68,9 @@ const StyledContactSection = styled.section`
     }
   }
   @media ${media.largeDesktop} {
+    p {
+      font-size: 20px;
+    }
   }
 `
 

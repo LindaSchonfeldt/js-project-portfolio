@@ -22,12 +22,7 @@ const StyledArticleSection = styled.div`
       display: none;
     }
     .gridWrapper {
-      display: grid;
-      max-width: 1200px;
-      grid-template-columns: minmax(0, 300px);
-      justify-content: center;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      grid-auto-rows: 1fr; /* equal‐height rows */
+      display: block;
     }
   }
 `
@@ -37,10 +32,10 @@ export const ArticleSection = ({ articles }) => {
     <StyledArticleSection>
       <SectionTitle title='My Words' className='sectionTitle' />
       <div className='carouselWrapper'>
-        <Carousel items={articles} />
+        <Carousel items={articles} variant='article' />
       </div>
       <div className='gridWrapper'>
-        <CardGrid articles={articles} />
+        <CardGrid articles={articles} variant='article' />
       </div>
     </StyledArticleSection>
   )
