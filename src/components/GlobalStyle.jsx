@@ -26,30 +26,6 @@ body {
   margin: 40px 16px 80px;
 } 
 
-/* ──────────── Breakpoint overrides ──────────── */
-@media ${media.tablet} {
-  body {
-    margin: 80px 64px 160px;
-  }
-}
-
-@media ${media.desktop} {
-  body {
-    margin: 120px 180px 240px;
-  }
-
-  h2 {
-    font-size: 5rem;
-    margin-bottom: 2rem;
-  }
-}
-
-@media ${media.largeDesktop} {
-  body {        
-    margin: 160px 240px 320px;
-    }
-  }
-
   /* ──────────── Other globals ──────────── */
   h1, h2, h3, h4 {
     font-family: var(--text-headlines);
@@ -64,13 +40,6 @@ body {
   li { margin-bottom: 0.5rem; line-height: 1.2; }
   p { margin-bottom: 1rem; line-height: 1.5; }
 
-  /* Section titles */
-  .sectionTitle {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-  }
-
   /* Accessibility helper */
   .visuallyHidden {
     position: absolute;
@@ -81,5 +50,24 @@ body {
     clip: rect(0,0,0,0);
     white-space: nowrap;
     border: 0;
+  }
+
+  /* ──────────── Breakpoint overrides ──────────── */
+@media ${media.tablet} {
+  body {
+    margin: 80px 64px 160px;
+  }
+}
+
+@media ${media.desktop} {
+  body {
+    margin: 120px 180px 240px;
+  }
+}
+
+@media ${media.largeDesktop} {
+  body {        
+    margin: 160px 240px 320px;
+    }
   }
 `

@@ -1,14 +1,24 @@
 import styled from 'styled-components'
+import { media } from './media'
 
 const SectionTitleStyled = styled.h2`
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: ${({ color }) => color || 'var(--primary-color)'};
   margin: 0;
   padding: 0;
+
+  @media ${media.tablet} {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  @media ${media.desktop} {
+    font-size: 4rem;
+  }
 `
 
 export const SectionTitle = ({ title, color, className }) => (

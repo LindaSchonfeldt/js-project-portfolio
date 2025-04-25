@@ -8,6 +8,7 @@ const StyledContactSection = styled.section`
   margin-top: 6rem;
   .sectionTitle {
     justify-content: left;
+    margin: 0.5rem 0 1rem 0;
   }
 
   p {

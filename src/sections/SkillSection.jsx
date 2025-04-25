@@ -34,7 +34,6 @@ const SkillSectionStyled = styled.section`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 2rem;
   }
 
   /* Move media query outside the skillContainer */
