@@ -20,8 +20,8 @@ export const GlobalStyle = createGlobalStyle`
 
 /* ──────────── Base body styles ──────────── */
 body {
-  background: var(--color-background);
-  color: var(--color-text);
+  background: var(--background-color);
+  color: var(--text-color);
   font-family: var(--text-body);
   margin: 40px 16px 80px;
 } 

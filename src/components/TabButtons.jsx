@@ -10,7 +10,7 @@ const StyledTabButtons = styled.div`
   margin-bottom: 0.5rem;
 
   .tabButton {
-    background-color: var(--color-background);
+    background-color: var(--background-color);
     color: var(--primary-color);
     padding: 0.5rem 1rem;
     border: none;
