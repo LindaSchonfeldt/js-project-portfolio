@@ -5,7 +5,7 @@
       "title": "Portfolio Website",
       "image": "",
       "alt": "",
-      "description": "A responsive portfolio built with React and Vite.",
+      "description": "A personal portfolio showcasing my passion for user-centered design. Focused on clean aesthetics, intuitive navigation, and highlighting real-world projects that combine creativity with functionality.",
       "tags": ["React", "Vite", "Styled Components"],
       "netlify": "lindaschonfeldt.com",
       "github": "https://github.com/LindaSchonfeldt/js-project-portfolio"
@@ -15,7 +15,7 @@
       "title": "Weather app",
       "image": "",
       "alt": "",
-      "description": "A simple weather application using API integration",
+      "description": "A responsive web-based application that fetches real-time weather data through API integration. Focused on a clear user flow and modern design.",
       "tags": ["JavaScript", "TypeScript", "APIs"],
       "netlify": "https://gorgeous-bubblegum-c0333a.netlify.app/",
       "github": "https://github.com/LindaSchonfeldt/weather-app"
@@ -25,37 +25,7 @@
       "title": "Recipe Library",
       "image": "",
       "alt": "",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "tags": ["JavaScript", "APIs"],
-      "netlify": "https://recipe-library.netlify.app/",
-      "github": "https://github.com/LindaSchonfeldt/js-project-recipe-library"
-    },
-    {
-      "id": "4",
-      "title": "Portfolio Website",
-      "image": "",
-      "alt": "",
-      "description": "A responsive portfolio built with React and Vite.",
-      "tags": ["React", "Vite", "Styled Components"],
-      "netlify": "lindaschonfeldt.com",
-      "github": "https://github.com/LindaSchonfeldt/js-project-portfolio"
-    },
-    {
-      "id": "5",
-      "title": "Weather app",
-      "image": "",
-      "alt": "",
-      "description": "A simple weather application using API integration",
-      "tags": ["JavaScript", "TypeScript", "APIs"],
-      "netlify": "https://gorgeous-bubblegum-c0333a.netlify.app/",
-      "github": "https://github.com/LindaSchonfeldt/weather-app"
-    },
-    {
-      "id": "6",
-      "title": "Recipe Library",
-      "image": "",
-      "alt": "",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "description": "A deliciously simple web app where users can explore a world of recipes. Designed for smooth navigation and a tasteful user experience.",
       "tags": ["JavaScript", "APIs"],
       "netlify": "https://recipe-library.netlify.app/",
       "github": "https://github.com/LindaSchonfeldt/js-project-recipe-library"
