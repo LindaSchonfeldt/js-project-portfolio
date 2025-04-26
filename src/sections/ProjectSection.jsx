@@ -4,30 +4,12 @@ import TabButtons from '../components/TabButtons'
 import CardGrid from '../components/CardGrid'
 import { Carousel } from '../components/Carousel'
 import styled from 'styled-components'
-import { media } from '../components/media'
 
 const StyledProjectSection = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 4rem;
   margin-bottom: 2rem;
-
-  /* by default and up through tablet: show carousel, hide grid */
-  .carouselWrapper {
-    display: block;
-  }
-  .gridWrapper {
-    display: none;
-  }
-
-  @media ${media.desktop} {
-    .carouselWrapper {
-      display: none;
-    }
-    .gridWrapper {
-      display: flex;
-    }
-  }
 `
 
 export const ProjectSection = ({ projects }) => {

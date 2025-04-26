@@ -30,7 +30,7 @@ const StyledSocialLinks = styled.div`
 
 export const SocialLinks = () => {
   return (
-    <StyledSocialLinks role='region'>
+    <StyledSocialLinks aria-label='Social media links'>
       <h2 className='visuallyHidden'>Connect With Me</h2>
       <div className='socialIcons'>
         {/* LinkedIn */}

@@ -52,6 +52,7 @@ export default function TabButtons({ activeTab, setActiveTab }) {
           key={tab}
           role='tab'
           id={`tab-${tab}`} // Unique tab id
+          tabIndex={activeTab === tab ? 0 : -1} // Focusable only if active
           aria-controls={`tabpanel-${tab}`}
           aria-selected={activeTab === tab} //True for the active tab
           className={`tabButton ${activeTab === tab ? 'active' : ''}`}

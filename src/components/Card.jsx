@@ -9,7 +9,8 @@ const BaseCard = styled.div`
   flex-direction: column;
   justify-content: start;
   background-color: var(--background-color);
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   margin: 1 rem auto;
   padding: 1rem;
 

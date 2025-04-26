@@ -56,12 +56,12 @@ const StyledHeroSection = styled.section`
     align-items: flex-start; /* align items to top */
 
     .heroContent {
-      width: 60vw;
+      width: 50vw;
       padding: 1rem;
     }
 
     .heroImage {
-      width: 18rem;
+      width: 24rem;
     }
 
     .heroTitle {
@@ -77,13 +77,14 @@ const StyledHeroSection = styled.section`
     .heroContent {
       width: 30vw;
       padding: 1rem;
+      margin-right: 2rem;
     }
 
     .heroTitle {
       font-size: 6rem;
     }
     .heroImage {
-      width: 60rem;
+      width: 30rem;
     }
   }
 `
