@@ -107,7 +107,7 @@ export const Card = ({
 
   return (
     <BaseCard $variant={variant.toLowerCase()} className={className}>
-      <img src={imgScr} alt={alt} className='cardImage' />{' '}
+      <img src={imgScr} alt={alt} className='cardImage' loading='lazy' />{' '}
       {title && <h3 className='cardTitle'>{title}</h3>}
       {subtitle && <p className='cardSubtitle'>{subtitle}</p>}
       {displayContent && (

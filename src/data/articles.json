@@ -5,29 +5,29 @@
       "title": "My First Code Review",
       "image": "",
       "alt": "",
-      "publishedDate": "August 1st",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "tags": ["React", "Vite", "CSS3", "JavaScript"],
+      "publishedDate": "March 16th",
+      "description": "My thoughts on doing my first code review. I learned a lot about the process and how to give constructive feedback.",
+      "tags": ["Code Review", "Feedback", "Learning"],
       "link": "https://www.example.com/article1"
     },
     {
       "id": "2",
-      "title": "My Second Code Review",
+      "title": "Re-useable Components",
       "image": "",
       "alt": "",
-      "publishedDate": "July 12th",
-      "description": "A simple weather application using API integration",
-      "tags": ["HTML5", "CSS3", "JavaScript", "TypeScript", "APIs"],
+      "publishedDate": "April 12th",
+      "description": "A deep dive into the importance of re-usable components in web development. I discuss how they can save time and improve code quality.",
+      "tags": ["React", "Styled Components"],
       "link": "https://www.example.com/article2"
     },
     {
       "id": "3",
-      "title": "My Third Code Review",
+      "title": "My thoughts on React",
       "image": "",
       "alt": "",
-      "publishedDate": "July 12th",
-      "description": "A simple weather application using API integration",
-      "tags": ["HTML5", "CSS3", "JavaScript", "TypeScript", "APIs"],
+      "publishedDate": "April 20th",
+      "description": "A reflection on my journey with React. I share my experiences, challenges, and the joy of building dynamic web applications.",
+      "tags": ["React", "Vite", "Styled Components"],
       "link": "https://www.example.com/article2"
     }
   ]

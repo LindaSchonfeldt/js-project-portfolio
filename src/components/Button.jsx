@@ -2,6 +2,13 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { media } from './media'
 
+const hover = css`
+  &:hover {
+    background-color: var(--primary-color);
+    opacity: 0.8;
+  }
+`
+
 const StyledButton = styled.button`
   flex: 1;
   padding: 0.5rem 1rem;
@@ -18,9 +25,7 @@ const StyledButton = styled.button`
       border: 2px solid var(--primary-color);
       transition: all 0.2s ease-in-out;
 
-      &:hover {
-        opacity: 0.8;
-      }
+      ${hover}
     `}
 
   /* Secondary */
@@ -28,13 +33,11 @@ const StyledButton = styled.button`
     $variant === 'secondary' &&
     css`
       background-color: transparent;
-      color: var (--primary-color);
+      color: var(--primary-color);
       border: 2px solid var(--primary-color);
       transition: all 0.2s ease-in-out;
 
-      &:hover {
-        opacity: 0.6;
-      }
+      ${hover}
     `}
 
   /* Tertiary */
@@ -46,10 +49,11 @@ const StyledButton = styled.button`
       text-decoration: underline;
       border: none;
       transition: all 0.2s ease-in-out;
-      
+
       &:hover {
         color: var(--primary-color);
         text-decoration: none;
+      }
     `}
 `
 export const ButtonGroup = styled.div`
