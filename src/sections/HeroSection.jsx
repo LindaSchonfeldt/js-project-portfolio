@@ -61,7 +61,7 @@ const StyledHeroSection = styled.section`
     }
 
     .heroImage {
-      width: 100%;
+      width: 18rem;
     }
 
     .heroTitle {
@@ -75,14 +75,14 @@ const StyledHeroSection = styled.section`
 
   @media ${media.largeDesktop} {
     .heroContent {
-      width: 40vw;
+      width: 30vw;
       padding: 1rem;
     }
 
     .heroTitle {
       font-size: 6rem;
     }
-    .herImage {
+    .heroImage {
       width: 60rem;
     }
   }
@@ -115,7 +115,7 @@ export const HeroSection = () => {
             empowering products.
           </p>
         </div>
-        <div className='socialLinks'>
+        <div className='socialLinks' aria-hidden='true'>
           <SocialLinks />
         </div>
       </div>
