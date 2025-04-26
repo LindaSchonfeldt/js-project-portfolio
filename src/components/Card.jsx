@@ -10,6 +10,8 @@ const BaseCard = styled.div`
   justify-content: start;
   background-color: var(--background-color);
   width: 300px;
+  margin: 1 rem auto;
+  padding: 1rem;
 
   .cardTitle {
     font-size: 1.5rem;

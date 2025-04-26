@@ -10,6 +10,7 @@ const StyledProjectSection = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 4rem;
+  margin-bottom: 2rem;
 
   /* by default and up through tablet: show carousel, hide grid */
   .carouselWrapper {

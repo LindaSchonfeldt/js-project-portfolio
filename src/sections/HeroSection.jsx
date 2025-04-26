@@ -102,12 +102,12 @@ export const HeroSection = () => {
             creates meaningful impact.{' '}
           </p>
           <p>
-            What drives me is the desire to bring clarity to complexity. I{' '}
-            <b>love </b> organizing — whether it's structuring information for
-            better usability, designing intuitive user flows, mapping out a
-            product roadmap, or learning to write cleaner, more maintainable
-            code. Turning chaos into something clear, purposeful, and
-            human-centered is where I thrive.
+            What drives me is the desire to bring clarity to complexity. I love
+            organizing — whether it's structuring information for better
+            usability, designing intuitive user flows, mapping out a product
+            roadmap, or learning to write cleaner, more maintainable code.
+            Turning chaos into something clear, purposeful, and human-centered
+            is where I thrive.
           </p>
           <p>
             I'm especially drawn to mission-driven teams that lead with empathy,

@@ -15,8 +15,8 @@ const StyledTechSection = styled.section`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem 0;
-  margin-top: 4rem;
+  padding: 3rem 0;
+  margin-top: 2rem;
 
   .contentWrapper {
     width: 100%;
@@ -27,13 +27,13 @@ const StyledTechSection = styled.section`
 
   @media ${media.tablet} {
     .contentWrapper {
-      padding: 0 4rem; /* Increase padding for larger screens */
+      padding: 3rem 4rem; /* Increase padding for larger screens */
     }
   }
 
   @media ${media.desktop} {
     .contentWrapper {
-      padding: 5rem 10rem; /* Further increase padding for desktop */
+      padding: 3rem 10rem; /* Further increase padding for desktop */
     }
   }
 

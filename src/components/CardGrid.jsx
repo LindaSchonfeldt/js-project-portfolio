@@ -10,17 +10,24 @@ const StyledCardGrid = styled.div`
   }
 
   @media ${media.desktop} {
+    .gridWrapper {
+      /* Override the default block display */
+      display: flex;
+      justify-content: center; /* centers its child CardGrid */
+    }
+
     display: grid;
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    justify-content: center;
-    align-items: stretch; /* stretch items to fill the row height */
+    padding: 0 2rem;
 
     /* Grid layout */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-auto-rows: 1fr; /* All rows have equal height */
     gap: 1rem;
-    padding: 0 2rem;
+    justify-content: center;
+    align-items: stretch; /* stretch items to fill the row height */
   }
 
   @media ${media.largeDesktop} {

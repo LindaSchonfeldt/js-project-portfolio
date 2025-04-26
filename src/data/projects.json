@@ -61,24 +61,5 @@
       "github": "https://github.com/LindaSchonfeldt/js-project-recipe-library"
     }
   ],
-  "uxui": [
-    {
-      "id": "1",
-      "title": "Portfolio Design",
-      "image": "",
-      "alt": "",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "tags": ["Figma", "Design System", "Design Principles", "Typography"],
-      "figma": "link"
-    },
-    {
-      "id": "2",
-      "title": "Product Roadmap",
-      "image": "",
-      "alt": "",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.",
-      "tags": ["Workshops"],
-      "figma": "link"
-    }
-  ]
+  "uxui": []
 }
