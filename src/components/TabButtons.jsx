@@ -46,10 +46,14 @@ export default function TabButtons({ activeTab, setActiveTab }) {
   const tabs = ['Code', 'UX/UI'] // Define the tabs you want to display
 
   return (
-    <StyledTabButtons>
+    <StyledTabButtons role='tablist' aria-label='Project category tabs'>
       {tabs.map((tab) => (
         <button
           key={tab}
+          role='tab'
+          id={`tab-${tab}`} // Unique tab id
+          aria-controls={`tabpanel-${tab}`}
+          aria-selected={activeTab === tab} //True for the active tab
           className={`tabButton ${activeTab === tab ? 'active' : ''}`}
           onClick={() => setActiveTab(tab)}
         >
