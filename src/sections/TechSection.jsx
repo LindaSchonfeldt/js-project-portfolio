@@ -15,25 +15,25 @@ const StyledTechSection = styled.section`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 3rem 0;
-  margin-top: 2rem;
+  padding: var(--space-xl) 0;
+  margin-top: var(--space-lg);
 
   .contentWrapper {
     width: 100%;
     max-width: 1200px;
-    padding: 0 2rem; /* Add padding to align with body margins */
+    padding: 0 var(--space-lg); /* Add padding to align with body margins */
     margin: 0 auto; /* Center the content */
   }
 
   @media ${media.tablet} {
     .contentWrapper {
-      padding: 3rem 4rem; /* Increase padding for larger screens */
+      padding: var(--space-xl) var(--space-xxl); /* Increase padding for larger screens */
     }
   }
 
   @media ${media.desktop} {
     .contentWrapper {
-      padding: 3rem 10rem; /* Further increase padding for desktop */
+      padding: var(--space-xl) 10rem; /* Further increase padding for desktop */
     }
   }
 

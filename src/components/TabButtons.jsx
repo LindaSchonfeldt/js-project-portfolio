@@ -7,12 +7,12 @@ const StyledTabButtons = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-md);
 
   .tabButton {
     background-color: var(--background-color);
     color: var(--primary-color);
-    padding: 0.5rem 1rem;
+    padding: var(--space-xs) var(--space-sm);
     border: none;
     border-bottom: 0.15rem solid var(--primary-color);
     width: 45vw; /* Larger base width for mobile */

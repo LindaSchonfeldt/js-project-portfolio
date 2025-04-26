@@ -7,17 +7,17 @@ const SkillSectionStyled = styled.section`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 4rem;
+  margin-top: var(--space-xxl);
 
   .skillList {
     list-style: none;
     padding: 0;
-    margin: 1rem 0;
+    margin: var(--space-sm) 0;
     text-align: center;
   }
 
   h3 {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-sm);
     color: var(--primary-color);
   }
 
@@ -25,7 +25,7 @@ const SkillSectionStyled = styled.section`
     width: 200px;
     height: 1px;
     background-color: var(--primary-color);
-    margin: 1rem 0;
+    margin: var(--space-sm) 0;
   }
 
   /* Container for all skill lists */
@@ -46,7 +46,7 @@ const SkillSectionStyled = styled.section`
     .skillList {
       list-style: none;
       padding: 0;
-      margin: 0 1rem;
+      margin: 0 var(--space-sm);
       text-align: center;
       flex: 1;
     }
@@ -54,7 +54,7 @@ const SkillSectionStyled = styled.section`
     .divider {
       width: 1px;
       height: 200px;
-      margin: 0 1rem;
+      margin: 0 var(--space-sm);
       display: inline-block;
     }
   }

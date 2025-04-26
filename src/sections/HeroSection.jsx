@@ -9,7 +9,7 @@ const StyledHeroSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: var(--space-sm);
 
   .heroContent {
     flex-direction: column;
@@ -17,13 +17,13 @@ const StyledHeroSection = styled.section`
   }
 
   .heroLogo {
-    margin-bottom: 0.2rem;
+    margin-bottom: var(--space-xxs);
   }
 
   .heroTitle {
     font-size: 3.8rem;
     line-height: 0.9;
-    margin: 1rem 0 0.5rem;
+    margin: var(--space-sm) var(--space-xs);
     color: var(--primary-color);
   }
 
@@ -33,7 +33,7 @@ const StyledHeroSection = styled.section`
   }
 
   .heroText {
-    margin-top: 2rem;
+    margin-top: var(--space-lg);
     width: 100%;
   }
 
@@ -57,7 +57,7 @@ const StyledHeroSection = styled.section`
 
     .heroContent {
       width: 50vw;
-      padding: 1rem;
+      padding: var(--space-sm);
     }
 
     .heroImage {
@@ -69,15 +69,15 @@ const StyledHeroSection = styled.section`
     }
 
     .socialLinks {
-      margin-top: 4rem;
+      margin-top: var(--space-xxl);
     }
   }
 
   @media ${media.largeDesktop} {
     .heroContent {
       width: 30vw;
-      padding: 1rem;
-      margin-right: 2rem;
+      padding: var(--space-sm);
+      margin-right: var(--space-lg);
     }
 
     .heroTitle {

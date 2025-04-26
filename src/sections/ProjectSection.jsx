@@ -8,8 +8,8 @@ import styled from 'styled-components'
 const StyledProjectSection = styled.section`
   display: flex;
   flex-direction: column;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-top: var(--space-xxl);
+  margin-bottom: var(--space-lg);
 `
 
 export const ProjectSection = ({ projects }) => {

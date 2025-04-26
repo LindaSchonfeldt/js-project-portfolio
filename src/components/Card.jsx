@@ -11,7 +11,7 @@ const BaseCard = styled.div`
   background-color: var(--background-color);
   width: 100%;
   max-width: 300px;
-  margin: 1 rem auto;
+  margin: 0 auto;
   padding: 1rem;
 
   .cardTitle {
@@ -21,9 +21,10 @@ const BaseCard = styled.div`
   }
 
   .cardImage {
+    display: block;
     width: 100%;
     object-fit: cover;
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-sm);
   }
 
   .cardContent {
@@ -39,7 +40,7 @@ const BaseCard = styled.div`
     margin-top: auto; /* pushes buttons down */
     display: flex;
     width: 100%; /* make wrapper full width */
-    gap: 0.5rem; /* optional spacing */
+    gap: var(--space-xs);
   }
 
   > button {

@@ -5,12 +5,12 @@ import { FaInstagram } from 'react-icons/fa'
 import styled from 'styled-components'
 
 const StyledSocialLinks = styled.div`
-  margin: 2rem 0 0 0;
+  margin: var(--space-lg) 0 0 0;
 
   .socialIcons {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: var(--space-lg);
   }
 
   /* Wrap each link so we can add hover transforms */

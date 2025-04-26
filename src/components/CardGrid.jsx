@@ -20,12 +20,12 @@ const StyledCardGrid = styled.div`
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 var(--space-lg);
 
     /* Grid layout */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-auto-rows: 1fr; /* All rows have equal height */
-    gap: 1rem;
+    gap: var(--space-sm);
     justify-content: center;
     align-items: stretch; /* stretch items to fill the row height */
   }

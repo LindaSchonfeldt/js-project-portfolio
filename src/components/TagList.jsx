@@ -3,13 +3,12 @@ import styled from 'styled-components'
 const StyledTagList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 1rem;
-  gap: 0.2rem 0.3rem;
+  margin-top: var(--space-sm);
+  gap: var(--space-xxs);
   width: 100%;
 
   .tag {
-    /* no margins needed any more */
-    padding: 0.2rem 0.3rem;
+    padding: var(--space-xxs);
     background-color: var(--text-color);
     color: var(--background-color);
     font-size: 0.8rem;

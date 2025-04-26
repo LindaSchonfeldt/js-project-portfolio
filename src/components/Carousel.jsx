@@ -7,20 +7,20 @@ const StyledCarousel = styled.div`
   overflow: hidden;
 
   .carouselViewport {
-    width: 100%; /* never grow wider than the carousel */
-    overflow-x: auto; /* allow horizontal scroll */
-    -webkit-overflow-scrolling: touch; /* momentum scroll on iOS */
-    scroll-snap-type: x mandatory; /* auto‑snap to items */
-    padding: 0 16px; /* add side padding */
+    width: 100%; /* Never grow wider than the carousel */
+    overflow-x: auto; /* Allow horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* Momentum scroll on iOS */
+    scroll-snap-type: x mandatory; /* Auto‑snap to items */
+    padding: 0 var(--space-sm); /* Add side padding */
 
-    overscroll-behavior-x: contain; /* prevent scroll chaining */
-    scrollbar-width: none; /* hide scrollbar in Firefox */
-    -ms-overflow-style: none; /* hide scrollbar in IE and Edge */
+    overscroll-behavior-x: contain; /* Prevent scroll chaining */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
   }
 
   .carouselTrack {
     display: flex;
-    gap: 16px;
+    gap: var(--space-sm);
     width: max-content; /* expand to fit all items */
   }
 
@@ -31,12 +31,12 @@ const StyledCarousel = styled.div`
 
   .carouselItem > .card {
     width: 100%;
-    margin: 0.5rem;
+    margin: var(--space-xs);
   }
 
   @media ${media.tablet} {
     .carouselTrack {
-      gap: 24px;
+      gap: var(--space-md);
     }
   }
 

@@ -60,13 +60,13 @@ export const ButtonGroup = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 1rem;
-  gap: 0.5rem;
+  margin-top: var(--space-sm);
+  gap: var(--space-xs);
   box-sizing: border-box;
 
   @media ${media.desktop} {
     flex-direction: row;
-    gap: 1rem;
+    gap: var(--space-sm);
   }
 
   button {
@@ -89,7 +89,7 @@ export default function Button({
 
   return (
     <StyledButton
-      $variant={variant} // use transient prop here
+      $variant={variant} // Transient prop
       className={className}
       onClick={handleClick}
     >

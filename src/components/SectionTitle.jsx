@@ -6,14 +6,14 @@ const SectionTitleStyled = styled.h2`
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-lg);
   color: ${({ color }) => color || 'var(--primary-color)'};
   margin: 0;
   padding: 0;
 
   @media ${media.tablet} {
     font-size: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-lg);
   }
 
   @media ${media.desktop} {

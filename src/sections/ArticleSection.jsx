@@ -6,8 +6,8 @@ import styled from 'styled-components'
 const StyledArticleSection = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-top: var(--space-xxl);
+  margin-bottom: var(--space-lg);
 `
 
 export const ArticleSection = ({ articles }) => {

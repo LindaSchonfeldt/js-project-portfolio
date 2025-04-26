@@ -64,7 +64,7 @@ const StyledContactSection = styled.section`
     }
 
     .contactContent {
-      margin: 2rem;
+      margin-right: 2rem;
     }
   }
   @media ${media.largeDesktop} {

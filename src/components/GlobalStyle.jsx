@@ -3,13 +3,25 @@ import { media } from './media'
 
 export const GlobalStyle = createGlobalStyle`
 :root {
+  /* ──── Color Palette ──── */
   --primary-color: #0d453a;
   --secondary-color: #fd6f00;
   --accent-color: #ff904b;
   --background-color: #ffffff;
   --text-color: #202020;
+
+  /* ──── Font Families ──── */
   --text-headlines: 'Josefin Sans', sans-serif;
   --text-body: 'Raleway', serif;
+
+   /* ─── Spacing Scale ─── */
+  --space-xxs: 0.25rem;  /* 4px */
+  --space-xs:  0.5rem;   /* 8px */
+  --space-sm:  1rem;     /* 16px */
+  --space-md:  1.5rem;   /* 24px */
+  --space-lg:  2rem;     /* 32px */
+  --space-xl:  3rem;     /* 48px */
+  --space-xxl: 4rem;     /* 64px */
 }
 
  *, *::before, *::after {
