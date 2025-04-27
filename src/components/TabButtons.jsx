@@ -34,8 +34,9 @@ const StyledTabButtons = styled.div`
     .tabButton {
       width: 40vw;
     }
+  }
 
-     @media ${media.desktop} {
+  @media ${media.desktop} {
     .tabButton {
       width: 250px; /* Fixed width on desktop for consistency */
     }
@@ -45,22 +46,29 @@ const StyledTabButtons = styled.div`
 export default function TabButtons({ activeTab, setActiveTab }) {
   const tabs = ['Code', 'UX/UI'] // Define the tabs you want to display
 
+  // Helper that turns "UX/UI" to "uxui" (only lowercase letters/numbers)
+  const makeSafeId = (tab) => tab.toLowerCase().replace(/[^a-z0-9]+/g, '')
+
   return (
     <StyledTabButtons role='tablist' aria-label='Project category tabs'>
-      {tabs.map((tab) => (
-        <button
-          key={tab}
-          role='tab'
-          id={`tab-${tab}`} // Unique tab id
-          tabIndex={activeTab === tab ? 0 : -1} // Focusable only if active
-          aria-controls={`tabpanel-${tab}`}
-          aria-selected={activeTab === tab} //True for the active tab
-          className={`tabButton ${activeTab === tab ? 'active' : ''}`}
-          onClick={() => setActiveTab(tab)}
-        >
-          {tab}
-        </button>
-      ))}
+      {tabs.map((tab) => {
+        const safe = makeSafeId(tab)
+        return (
+          <button
+            key={tab}
+            role='tab'
+            id={`tab-${safe}`} // Unique tab id
+            aria-labelledby={`tab-${safe}`} // Points back to the tab
+            aria-controls={`tabpanel-${safe}`} // Points to the content
+            aria-selected={activeTab === tab} //True for the active tab
+            tabIndex={activeTab === tab ? 0 : -1} // Focusable only if active
+            className={`tabButton ${activeTab === tab ? 'active' : ''}`}
+            onClick={() => setActiveTab(tab)}
+          >
+            {tab}
+          </button>
+        )
+      })}
     </StyledTabButtons>
   )
 }
