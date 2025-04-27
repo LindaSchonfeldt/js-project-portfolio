@@ -13,7 +13,6 @@ const StyledSocialLinks = styled.nav`
     gap: var(--space-lg);
   }
 
-  /* Wrap each link so we can add hover transforms */
   .socialIcons a {
     display: inline-block;
     transition: transform 0.2s ease;

@@ -42,7 +42,6 @@ export const ProjectSection = ({ projects }) => {
           role='tabpanel'
           id={`tabpanel-${safe}`}
           aria-labelledby={`tab-${safe}`}
-          hidden={activeTab !== activeTab}
         >
           <div className='carouselWrapper'>
             <Carousel
