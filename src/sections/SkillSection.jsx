@@ -65,52 +65,64 @@ export const SkillSection = () => {
     <SkillSectionStyled>
       <SectionTitle title='Skills' />
       <div className='skillContainer'>
-        <ul className='skillList'>
+        <div className='skillList'>
           <h3>Code</h3>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript ES6</li>
-          <li>React</li>
-          <li>Node.js</li>
-          <li>Styled Components</li>
-        </ul>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript ES6</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Styled Components</li>
+          </ul>
+        </div>
         <hr className='divider' />
 
-        <ul className='skillList'>
+        <div className='skillList'>
           <h3>Design</h3>
-          <li>User Flows</li>
-          <li>Wireframing</li>
-          <li>Prototyping</li>
-          <li>User Interviews</li>
-          <li>Facilitating workshops</li>
-          <li>UX Research</li>
-        </ul>
+          <ul>
+            <li>User Flows</li>
+            <li>Wireframing</li>
+            <li>Prototyping</li>
+            <li>User Interviews</li>
+            <li>Facilitating workshops</li>
+            <li>UX Research</li>
+          </ul>
+        </div>
+
         <hr className='divider' />
 
-        <ul className='skillList'>
+        <div className='skillList'>
           <h3>Toolbox</h3>
-          <li>Adobe Illustrator</li>
-          <li>Figma</li>
-          <li>Github</li>
-          <li>Notion</li>
-          <li>Trello</li>
-          <li>Slack</li>
-        </ul>
+          <ul>
+            <li>Adobe Illustrator</li>
+            <li>Figma</li>
+            <li>Github</li>
+            <li>Notion</li>
+            <li>Trello</li>
+            <li>Slack</li>
+          </ul>
+        </div>
+
         <hr className='divider' />
 
-        <ul className='skillList'>
+        <div className='skillList'>
           <h3>More</h3>
-          <li>Strategy</li>
-          <li>Process Design</li>
-          <li>Concept Development</li>
-          <li>Agile Methodology</li>
-        </ul>
+          <ul>
+            <li>Strategy</li>
+            <li>Process Design</li>
+            <li>Concept Development</li>
+            <li>Agile Methodology</li>
+          </ul>
+        </div>
         <hr className='divider' />
 
-        <ul className='skillList'>
+        <div className='skillList'>
           <h3>Upcoming</h3>
-          <li>MongoDB</li>
-        </ul>
+          <ul>
+            <li>MongoDB</li>
+          </ul>
+        </div>
       </div>
     </SkillSectionStyled>
   )
