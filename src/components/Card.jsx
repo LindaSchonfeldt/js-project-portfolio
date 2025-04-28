@@ -55,17 +55,24 @@ const BaseCard = styled.div`
 
 // define per‐variant defaults
 const defaultActions = {
-  code: ({ netlify, github }) => [
-    { text: 'Live Demo', href: netlify, variant: 'primary' },
-    { text: 'View Code', href: github, variant: 'secondary' }
-  ],
-  uxui: ({ figma, github }) => [
-    { text: 'View Design', href: figma, variant: 'primary' },
-    { text: 'View Code', href: github, variant: 'secondary' }
-  ],
-  article: ({ link }) => [
-    { text: 'Read Article', href: link, variant: 'secondary' }
-  ]
+  code: ({ netlify, github }) => {
+    const actions = []
+    if (netlify)
+      actions.push({ text: 'Live Demo', href: netlify, variant: 'primary' })
+    if (github)
+      actions.push({ text: 'View Code', href: github, variant: 'secondary' })
+    return actions
+  },
+  uxui: ({ figma, github }) => {
+    const actions = []
+    if (figma)
+      actions.push({ text: 'View Design', href: figma, variant: 'primary' })
+    if (github)
+      actions.push({ text: 'View Code', href: github, variant: 'secondary' })
+    return actions
+  },
+  article: ({ link }) =>
+    link ? [{ text: 'Read Article', href: link, variant: 'secondary' }] : []
 }
 
 /**

@@ -8,6 +8,13 @@ const hover = css`
     opacity: 0.8;
   }
 `
+const secondaryHover = css`
+  &:hover {
+    background-color: var(--primary-color);
+    opacity: 0.8;
+    color: var(--background-color);
+  }
+`
 
 const StyledButton = styled.button`
   flex: 1;
@@ -37,7 +44,7 @@ const StyledButton = styled.button`
       border: 2px solid var(--primary-color);
       transition: all 0.2s ease-in-out;
 
-      ${hover}
+      ${secondaryHover}
     `}
 
   /* Tertiary */
