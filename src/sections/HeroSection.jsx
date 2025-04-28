@@ -70,7 +70,7 @@ const StyledHeroSection = styled.section`
     }
 
     .socialLinks {
-      margin-top: var(--space-xxl);
+      margin-top: var(--space-lg);
     }
   }
 
