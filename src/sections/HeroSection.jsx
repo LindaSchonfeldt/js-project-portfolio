@@ -12,6 +12,7 @@ const StyledHeroSection = styled.section`
   gap: var(--space-sm);
 
   .heroContent {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -33,7 +34,7 @@ const StyledHeroSection = styled.section`
   }
 
   .heroText {
-    margin-top: var(--space-lg);
+    margin-top: var(--space-xs);
     width: 100%;
   }
 
