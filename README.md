@@ -17,5 +17,7 @@ The portfolio is built using:
 - Styled Components for writing CSS in JavaScript
 - Netlify for hosting and continuous deployment
 
+Accessibility and usability are important to me; I’ve aimed to follow accessibility best practices in the design and development of this site to ensure it’s inclusive and easy to navigate for all users.
+
 I created this site as a platform to share my work, experiment with new tools, and grow as a designer and developer. 
 Feel free to explore and reach out!
