@@ -25,6 +25,7 @@ const StyledContactSection = styled.section`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-top: var(--space-lg);
   }
 
   @media ${media.tablet} {

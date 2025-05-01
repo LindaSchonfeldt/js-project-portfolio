@@ -76,16 +76,25 @@ const defaultActions = {
 }
 
 /**
- * props:
- *  • variant     'Code' | 'UX/UI' | 'default'
- *  • image?      string URL
- * *• alt?        string
- *  • title?      string
- *  • subtitle?   string
- *  • content?    ReactNode or string
- *  • tags?       string[]
- *  • actions?    { text, href?, onClick?, variant: 'primary'|'secondary' }[]
- *  • children?   ReactNode   // any extra custom JSX
+ * Card Component
+ *
+ * @param {Object} props
+ * @param {'default'|'code'|'uxui'|'article'} [props.variant='default'] - Card style variant
+ * @param {string} [props.image] - URL for card image (uses default if not provided)
+ * @param {string} [props.alt] - Alt text for image
+ * @param {string} [props.title] - Card title
+ * @param {string} [props.subtitle] - Smaller text below the title (e.g. date)
+ * @param {React.ReactNode|string} [props.content] - Main card content
+ * @param {string} [props.description] - Alternative to content (used if content not provided)
+ * @param {string[]} [props.tags=[]] - Tags to display at the bottom
+ * @param {Object[]} [props.actions=[]] - Custom action buttons
+ * @param {string} [props.netlify] - URL for "Live Demo" button (code variant)
+ * @param {string} [props.github] - URL for "View Code" button (code/uxui variants)
+ * @param {string} [props.figma] - URL for "View Design" button (uxui variant)
+ * @param {string} [props.link] - URL for "Read Article" button (article variant)
+ * @param {React.ReactNode} [props.children] - Any additional JSX to render
+ * @param {string} [props.className=''] - Additional CSS class names
+ * @returns {React.ReactElement}
  */
 
 export const Card = ({
@@ -101,6 +110,7 @@ export const Card = ({
   netlify,
   github,
   figma,
+  link,
   children,
   className = ''
 }) => {
@@ -108,7 +118,12 @@ export const Card = ({
   const actionList =
     actions.length > 0
       ? actions
-      : (defaultActions[variant] || (() => []))({ netlify, github, figma })
+      : (defaultActions[variant] || (() => []))({
+          netlify,
+          github,
+          figma,
+          link
+        })
 
   // Use content if provided, otherwise fall back to description
   const displayContent = content || description
