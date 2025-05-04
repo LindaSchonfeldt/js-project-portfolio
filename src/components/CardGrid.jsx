@@ -1,5 +1,5 @@
 import { Card } from './Card'
-import { media } from './media'
+import { media } from '../media.js'
 import styled from 'styled-components'
 
 const StyledCardGrid = styled.div`

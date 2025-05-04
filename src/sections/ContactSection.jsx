@@ -2,7 +2,7 @@ import { Logo } from '../components/Logo'
 import { SectionTitle } from '../components/SectionTitle'
 import { SocialLinks } from '../components/SocialLinks'
 import styled from 'styled-components'
-import { media } from '../components/media'
+import { media } from '../media'
 
 const StyledContactSection = styled.section`
   margin-top: 6rem;

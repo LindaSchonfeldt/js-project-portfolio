@@ -1,6 +1,6 @@
 import { Card } from './Card'
 import styled from 'styled-components'
-import { media } from './media'
+import { media } from '../media.js'
 
 const StyledCarousel = styled.div`
   position: relative;
