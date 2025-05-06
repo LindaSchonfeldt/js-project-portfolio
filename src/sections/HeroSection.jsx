@@ -24,7 +24,7 @@ const StyledHeroSection = styled.section`
   .heroTitle {
     font-size: 3.8rem;
     line-height: 0.9;
-    margin: var(--space-sm) var(--space-xs);
+    margin: var(--space-sm) var(--space-xs) var(--space-sm) 0;
     color: var(--primary-color);
   }
 
