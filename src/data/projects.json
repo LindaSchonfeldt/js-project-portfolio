@@ -41,5 +41,17 @@
       "github": "https://github.com/LindaSchonfeldt/js-project-recipe-library"
     }
   ],
-  "uxui": []
+  "uxui": [
+    {
+      "id": "",
+      "title": "",
+      "image": "",
+      "alt": "",
+      "description": "",
+      "caseStudyId": "",
+      "tags": [],
+      "netlify": "",
+      "github": ""
+    }
+  ]
 }

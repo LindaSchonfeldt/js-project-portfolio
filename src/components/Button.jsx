@@ -87,11 +87,19 @@ export default function Button({
   onClick,
   target = '_self',
   variant = 'primary', // 'primary' | 'secondary' | 'tertiary'
+  internal = false,
   className = ''
 }) {
   const handleClick = () => {
-    if (href) window.open(href, target, 'noopener,noreferrer')
-    else onClick?.()
+    if (href) {
+      if (internal) {
+        navigate(href)
+      } else {
+        window.open(href, target, 'noopener,noreferrer')
+      }
+    } else if (onClick) {
+      onClick()
+    }
   }
 
   return (

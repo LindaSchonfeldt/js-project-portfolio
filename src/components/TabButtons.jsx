@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { makeSafeId } from '../utils/stringUtils.js'
 import { media } from '../media.js'
 
 const StyledTabButtons = styled.div`
@@ -45,9 +46,6 @@ const StyledTabButtons = styled.div`
 
 export default function TabButtons({ activeTab, setActiveTab }) {
   const tabs = ['Code', 'UX/UI'] // Define the tabs you want to display
-
-  // Helper that turns "UX/UI" to "uxui" (only lowercase letters/numbers)
-  const makeSafeId = (tab) => tab.toLowerCase().replace(/[^a-z0-9]+/g, '')
 
   return (
     <StyledTabButtons role='tablist' aria-label='Project category tabs'>

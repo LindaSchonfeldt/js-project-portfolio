@@ -3,9 +3,10 @@ import { SectionTitle } from '../components/SectionTitle'
 import TabButtons from '../components/TabButtons'
 import CardGrid from '../components/CardGrid'
 import { Carousel } from '../components/Carousel'
+import { makeSafeId } from '../utils/stringUtils.js'
 import styled from 'styled-components'
 
-const StyledProjectSection = styled.section`
+export const StyledProjectSection = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: var(--space-xxl);
@@ -15,8 +16,7 @@ const StyledProjectSection = styled.section`
 export const ProjectSection = ({ projects }) => {
   const [activeTab, setActiveTab] = useState('Code') // Default to first tab
 
-  // normalize the activeTab into the variant key your Card expects
-  const safe = activeTab.toLowerCase().replace(/\W/g, '')
+  const safe = makeSafeId(activeTab)
 
   // Safety check for when projects may not be available yet
   if (!projects) {

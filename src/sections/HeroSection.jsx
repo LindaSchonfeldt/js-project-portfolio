@@ -1,11 +1,10 @@
-import React from 'react'
 import { Logo } from '../components/Logo.jsx'
 import styled from 'styled-components'
 import { media } from '../media.js'
 import portrait from '../assets/linda.svg'
 import { SocialLinks } from '../components/SocialLinks.jsx'
 
-const StyledHeroSection = styled.section`
+export const StyledHeroSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,7 +100,7 @@ export const HeroSection = () => {
           <p>
             With a background in service and interaction design, I'm passionate
             about building technology that truly understands user needs and
-            creates meaningful impact.{' '}
+            creates meaningful impact.
           </p>
           <p>
             What drives me is the desire to bring clarity to complexity. I love
