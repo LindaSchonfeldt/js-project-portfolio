@@ -5,6 +5,7 @@ import { media } from '../media'
 import Button from '../components/Button'
 import caseStudies from '../data/caseStudies.json'
 import { NavigationBar } from '../components/NavigationBar'
+import { UnderConstruction } from '../components/UnderConstruction'
 
 export const StyledCaseStudy = styled.section`
   display: flex;
@@ -264,6 +265,7 @@ export const CaseStudyPage = () => {
           </div>
         )}
       </section>
+      <UnderConstruction overlay={true} />
     </StyledCaseStudy>
   )
 }

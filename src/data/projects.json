@@ -13,7 +13,7 @@
     {
       "id": 2,
       "title": "Happy Thoughts",
-      "image": "",
+      "image": "/src/assets/happythoughts.png",
       "alt": "",
       "description": "A feel-good app where users can share positive thoughts and like each other's messages. Designed to spread joy through a simple, intuitive interface that encourages connection and kindness.",
       "tags": ["React", "Vite", "Styled Components", "APIs"],
