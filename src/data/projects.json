@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Portfolio Website",
-      "image": "/src/assets/tree.svg",
+      "image": "/assets/tree.svg",
       "alt": "",
       "description": "You're looking at it. This is a showcase of user-centered design in action. Explore projects that merge creativity and functionality, all wrapped in clean aesthetics and intuitive navigation.",
       "tags": ["React", "Vite", "Styled Components"],
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "title": "Happy Thoughts",
-      "image": "/src/assets/happythoughts.png",
+      "image": "/assets/happythoughts.png",
       "alt": "",
       "description": "A feel-good app where users can share positive thoughts and like each other's messages. Designed to spread joy through a simple, intuitive interface that encourages connection and kindness.",
       "tags": ["React", "Vite", "Styled Components", "APIs"],
@@ -23,7 +23,7 @@
     {
       "id": 3,
       "title": "Screamflix",
-      "image": "/src/assets/screamflix.png",
+      "image": "/assets/screamflix.png",
       "alt": "Screenshot of Screamflix horror movie browser",
       "description": "Together with Cathi, I created Screamflix, a curated archive that lets users explore horror films by decade. The design and concept were inspired by the aesthetics of classic horror, and the goal was to offer a fun and slightly spooky way to browse cult classics and hidden gems.",
       "tags": ["React", "Custom Hooks", "Vite", "APIs"],
