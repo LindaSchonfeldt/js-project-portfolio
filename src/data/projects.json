@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Portfolio Website",
-      "image": "",
+      "image": "/src/assets/tree.svg",
       "alt": "",
       "description": "You're looking at it. This is a showcase of user-centered design in action. Explore projects that merge creativity and functionality, all wrapped in clean aesthetics and intuitive navigation.",
       "tags": ["React", "Vite", "Styled Components"],
@@ -32,7 +32,7 @@
     },
     {
       "id": 4,
-      "title": "Weather app",
+      "title": "Weather App",
       "image": "",
       "alt": "",
       "description": "A responsive web-based application that fetches real-time weather data through API integration. Focused on a clear user flow and modern design.",
@@ -51,5 +51,16 @@
       "github": "https://github.com/LindaSchonfeldt/js-project-recipe-library"
     }
   ],
-  "uxui": []
+  "uxui": [
+    {
+      "id": 1,
+      "title": "Guiding the Product Vision and Roadmap for a Webinar Platform",
+      "image": "",
+      "video": "/src/assets/portfolio-demo.mp4",
+      "alt": "",
+      "description": "I joined Univid, a startup focused on building an interactive webinar platform, as a UX Design Intern. In a fast-moving, cross-functional team, I helped shape the product vision and roadmap while ensuring that design decisions aligned with both user needs and business goals.",
+      "tags": ["Workshops", "UX Design", "Product Design"],
+      "caseStudyId": 1
+    }
+  ]
 }

@@ -42,6 +42,7 @@ const BaseCard = styled.div`
   .cardImage {
     display: block;
     width: 100%;
+    height: 200px;
     object-fit: cover;
     transition: transform 0.3s ease; /* Smooth transition for zoom */
   }
@@ -88,10 +89,17 @@ const defaultActions = {
       actions.push({ text: 'View Code', href: github, variant: 'secondary' })
     return actions
   },
-  uxui: ({ figma, github }) => {
+  uxui: ({ figma, github, caseStudyId }) => {
     const actions = []
+    if (caseStudyId)
+      actions.push({
+        text: 'Case Study',
+        href: `/case-study/${caseStudyId}`,
+        variant: 'primary',
+        internal: true
+      })
     if (figma)
-      actions.push({ text: 'View Design', href: figma, variant: 'primary' })
+      actions.push({ text: 'View Design', href: figma, variant: 'secondary' })
     if (github)
       actions.push({ text: 'View Code', href: github, variant: 'secondary' })
     return actions
@@ -130,6 +138,7 @@ const defaultActions = {
  * @param {Object} props
  * @param {'default'|'code'|'uxui'|'article'} [props.variant='default'] - Card style variant
  * @param {string} [props.image] - URL for card image (uses default if not provided)
+ * @param {string} [props.video] - URL for card video (mp4 format)
  * @param {string} [props.alt] - Alt text for image
  * @param {string} [props.title] - Card title
  * @param {string} [props.subtitle] - Smaller text below the title (e.g. date)
@@ -149,6 +158,7 @@ const defaultActions = {
 export const Card = ({
   variant = 'default', // Code, UX/UI, article or default
   image,
+  video,
   alt,
   title,
   subtitle,
@@ -161,6 +171,7 @@ export const Card = ({
   figma,
   link,
   id,
+  caseStudyId,
   children,
   className = ''
 }) => {
@@ -175,7 +186,8 @@ export const Card = ({
           github,
           figma,
           link,
-          id
+          id,
+          caseStudyId
         })
 
   console.log('Action list generated:', actionList)
@@ -186,7 +198,14 @@ export const Card = ({
   return (
     <BaseCard $variant={variant.toLowerCase()} id={id} className={className}>
       <div className='imageContainer'>
-        <img src={imgScr} alt={alt} className='cardImage' loading='lazy' />
+        {video ? (
+          <video className='cardImage' autoPlay muted loop playsInline>
+            <source src={video} type='video/mp4' />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <img src={imgScr} alt={alt} className='cardImage' loading='lazy' />
+        )}
       </div>
       {title && <h3 className='cardTitle'>{title}</h3>}
       {subtitle && <p className='cardSubtitle'>{subtitle}</p>}
