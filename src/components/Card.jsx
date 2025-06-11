@@ -14,17 +14,42 @@ const BaseCard = styled.div`
   margin: 0 auto;
   padding: 1rem;
 
-  .cardTitle {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+  .imageContainer {
+    position: relative;
+    margin-bottom: var(--space-sm);
+    overflow: hidden; /* Important: contains the zoomed image */
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 144, 75, 0.5);
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover::after {
+      opacity: 0; /* Hide overlay on hover */
+    }
+
+    &:hover .cardImage {
+      transform: scale(1.1); /* Zoom effect on hover */
+    }
   }
 
   .cardImage {
     display: block;
     width: 100%;
     object-fit: cover;
-    margin-bottom: var(--space-sm);
+    transition: transform 0.3s ease; /* Smooth transition for zoom */
+  }
+
+  .cardTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
   }
 
   .cardContent {
@@ -160,7 +185,9 @@ export const Card = ({
 
   return (
     <BaseCard $variant={variant.toLowerCase()} id={id} className={className}>
-      <img src={imgScr} alt={alt} className='cardImage' loading='lazy' />
+      <div className='imageContainer'>
+        <img src={imgScr} alt={alt} className='cardImage' loading='lazy' />
+      </div>
       {title && <h3 className='cardTitle'>{title}</h3>}
       {subtitle && <p className='cardSubtitle'>{subtitle}</p>}
       {displayContent && (
