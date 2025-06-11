@@ -1,4 +1,7 @@
-{
+import { create } from 'zustand'
+
+// Project data
+const projectData = {
   "code": [
     {
       "id": 1,
@@ -41,5 +44,41 @@
       "github": "https://github.com/LindaSchonfeldt/js-project-recipe-library"
     }
   ],
-  "uxui": []
+  "uxui": [
+    {
+      "id": 1,
+      "title": "Example Project 1",
+      "image": "",
+      "alt": "",
+      "description": "Example project description goes here. This project showcases my skills in UX/UI design, focusing on user-centered design principles and best practices.",
+      "caseStudyId": 1,
+      "tags": [
+        "Figma",
+        "Adobe XD",
+        "User Research",
+        "Wireframing",
+        "Prototyping"
+      ],
+      "netlify": "",
+      "github": ""
+    }
+  ]
 }
+
+// Create the store
+const useProjectStore = create((set) => ({
+  projects: projectData,
+  activeTab: 'code',
+  setActiveTab: (tab) => set({ activeTab: tab }),
+  
+  // You could add other functions like:
+  getProjectById: (id) => {
+    const allProjects = [
+      ...projectData.code,
+      ...projectData.uxui
+    ]
+    return allProjects.find(project => project.id === id)
+  }
+}))
+
+export default useProjectStore

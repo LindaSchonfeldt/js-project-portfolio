@@ -1,8 +1,9 @@
-import { Logo } from '../components/Logo.jsx'
 import styled from 'styled-components'
-import { media } from '../media.js'
+
 import portrait from '../assets/linda.svg'
+import { Logo } from '../components/Logo.jsx'
 import { SocialLinks } from '../components/SocialLinks.jsx'
+import { media } from '../media.js'
 
 export const StyledHeroSection = styled.section`
   display: flex;
@@ -20,6 +21,12 @@ export const StyledHeroSection = styled.section`
     margin-bottom: var(--space-xxs);
   }
 
+  .heroPreTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
   .heroTitle {
     font-size: 3.8rem;
     line-height: 0.9;
@@ -28,7 +35,8 @@ export const StyledHeroSection = styled.section`
   }
 
   .heroSubtitle {
-    font-size: 1.2rem;
+    font-size: 2rem;
+    font-weight: 800;
     margin: 0;
   }
 
@@ -94,8 +102,11 @@ export const HeroSection = () => {
     <StyledHeroSection>
       <div className='heroContent'>
         <Logo size='small' className='heroLogo' />
-        <h2 className='heroSubtitle'>I am Linda Schönfeldt</h2>
-        <h1 className='heroTitle'>Web Developer with UX Skills</h1>
+        <h3 className='heroPreTitle'>I am Linda Schönfeldt</h3>
+        <h1 className='heroTitle'>Web Developer</h1>
+        <h2 className='heroSubtitle'>
+          With a Bachelor's Degree in Interaction Design
+        </h2>
         <div className='heroText'>
           <p>
             With a background in service and interaction design, I'm passionate

@@ -1,6 +1,6 @@
-import React from 'react'
-import { SectionTitle } from '../components/SectionTitle'
 import styled from 'styled-components'
+
+import { SectionTitle } from '../components/SectionTitle'
 import { media } from '../media.js'
 
 const StyledTechSection = styled.section`

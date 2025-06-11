@@ -71,8 +71,32 @@ const defaultActions = {
       actions.push({ text: 'View Code', href: github, variant: 'secondary' })
     return actions
   },
-  article: ({ link }) =>
-    link ? [{ text: 'Read Article', href: link, variant: 'secondary' }] : []
+  article: ({ link, id }) => {
+    const actions = []
+    console.log('Article action creator ID:', id) // Add debug
+
+    // Add internal link to ArticlePage if there's an ID
+    if (id) {
+      actions.push({
+        text: 'Read Full Article',
+        href: `/article/${id}`,
+        variant: 'primary',
+        internal: true
+      })
+    }
+
+    // Keep the existing PDF download link if available
+    if (link) {
+      actions.push({
+        text: 'Download PDF',
+        href: link,
+        variant: id ? 'secondary' : 'primary'
+      })
+    }
+
+    console.log('Return actions:', actions) // Add debug
+    return actions
+  }
 }
 
 /**
@@ -111,9 +135,12 @@ export const Card = ({
   github,
   figma,
   link,
+  id,
   children,
   className = ''
 }) => {
+  console.log('Card rendered with props:', { variant, id, link })
+
   const imgScr = image || defaultImg
   const actionList =
     actions.length > 0
@@ -122,15 +149,18 @@ export const Card = ({
           netlify,
           github,
           figma,
-          link
+          link,
+          id
         })
+
+  console.log('Action list generated:', actionList)
 
   // Use content if provided, otherwise fall back to description
   const displayContent = content || description
 
   return (
-    <BaseCard $variant={variant.toLowerCase()} className={className}>
-      <img src={imgScr} alt={alt} className='cardImage' loading='lazy' />{' '}
+    <BaseCard $variant={variant.toLowerCase()} id={id} className={className}>
+      <img src={imgScr} alt={alt} className='cardImage' loading='lazy' />
       {title && <h3 className='cardTitle'>{title}</h3>}
       {subtitle && <p className='cardSubtitle'>{subtitle}</p>}
       {displayContent && (
@@ -146,16 +176,19 @@ export const Card = ({
       {children}
       {actionList.length > 0 && (
         <ButtonGroup>
-          {actionList.map(({ text, href, onClick, target, variant }, i) => (
-            <Button
-              key={i}
-              text={text}
-              href={href}
-              onClick={onClick}
-              target={target}
-              variant={variant}
-            />
-          ))}
+          {actionList.map(
+            ({ text, href, onClick, target, variant, internal }, i) => (
+              <Button
+                key={i}
+                text={text}
+                href={href}
+                onClick={onClick}
+                target={target}
+                variant={variant}
+                internal={internal}
+              />
+            )
+          )}
         </ButtonGroup>
       )}
       {tags.length > 0 && <TagList tags={tags} />}

@@ -1,5 +1,6 @@
-import { SectionTitle } from '../components/SectionTitle'
 import styled from 'styled-components'
+
+import { SectionTitle } from '../components/SectionTitle'
 import { media } from '../media.js'
 
 const SkillSectionStyled = styled.section`
@@ -74,6 +75,7 @@ export const SkillSection = () => {
             <li>React</li>
             <li>Node.js</li>
             <li>Styled Components</li>
+            <li>MongoDB/Mongoose</li>
           </ul>
         </div>
         <hr className='divider' />
@@ -120,7 +122,7 @@ export const SkillSection = () => {
         <div className='skillList'>
           <h3>Upcoming</h3>
           <ul>
-            <li>MongoDB</li>
+            <li>TypeScript</li>
           </ul>
         </div>
       </div>

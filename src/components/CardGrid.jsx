@@ -62,6 +62,7 @@ export default function CardGrid({ projects, articles, variant }) {
           // Per‐variant props
           subtitle={articles ? item.publishedDate : undefined}
           content={articles ? item.description : item.description}
+          caseStudyId={item.caseStudyId}
           // Defaults: Card will pick actions from defaultActions[variantKey]
           link={item.link}
           netlify={item.netlify}

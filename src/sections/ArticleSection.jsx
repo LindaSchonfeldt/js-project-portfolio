@@ -2,6 +2,7 @@ import { SectionTitle } from '../components/SectionTitle'
 import { Carousel } from '../components/Carousel'
 import CardGrid from '../components/CardGrid'
 import styled from 'styled-components'
+import { useArticleStore } from '../stores/useArticleStore'
 
 const StyledArticleSection = styled.div`
   display: flex;
@@ -10,10 +11,12 @@ const StyledArticleSection = styled.div`
   margin-bottom: var(--space-lg);
 `
 
-export const ArticleSection = ({ articles }) => {
+export const ArticleSection = () => {
+  const articles = useArticleStore((state) => state.articles)
+
   return (
     <StyledArticleSection>
-      <SectionTitle title='My Words' className='sectionTitle' />
+      <SectionTitle title='Articles' className='sectionTitle' />
       <div className='carouselWrapper'>
         <Carousel items={articles} variant='article' />
       </div>

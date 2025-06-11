@@ -1,5 +1,6 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled, { css } from 'styled-components'
+
 import { media } from '../media.js'
 
 const hover = css`
@@ -88,8 +89,11 @@ export default function Button({
   target = '_self',
   variant = 'primary', // 'primary' | 'secondary' | 'tertiary'
   internal = false,
-  className = ''
+  className = '',
+  children
 }) {
+  const navigate = useNavigate()
+
   const handleClick = () => {
     if (href) {
       if (internal) {
@@ -108,7 +112,7 @@ export default function Button({
       className={className}
       onClick={handleClick}
     >
-      {text}
+      {text || children}
     </StyledButton>
   )
 }

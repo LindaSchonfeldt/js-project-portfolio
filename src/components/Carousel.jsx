@@ -49,8 +49,9 @@ const StyledCarousel = styled.div`
   }
 `
 
-export const Carousel = ({ items, variant }) => {
-  const length = items.length
+export const Carousel = ({ items = [], variant }) => {
+  const length = items?.length || 0
+
   if (!length) return <p>No items to display</p>
 
   return (
@@ -59,7 +60,7 @@ export const Carousel = ({ items, variant }) => {
         <div className='carouselTrack'>
           {items.map((item, i) => (
             <div key={item.id || i} className='carouselItem'>
-              <Card variant={variant} {...item} />
+              <Card variant={variant} {...item} id={item.id} />
             </div>
           ))}
         </div>

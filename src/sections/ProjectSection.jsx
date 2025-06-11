@@ -13,6 +13,38 @@ export const StyledProjectSection = styled.section`
   margin-bottom: var(--space-lg);
 `
 
+const EmptyStateMessage = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  text-align: center;
+  padding: var(--space-md);
+  margin-top: var(--space-md);
+  background-color: var(--background-light);
+  border-radius: var(--border-radius);
+  border: 1px dashed var(--border-color);
+
+  p {
+    font-size: var(--font-size-md);
+    color: var(--text-muted);
+    margin-bottom: var(--space-sm);
+  }
+
+  /* You could add an icon if desired */
+  svg {
+    font-size: 2rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Add a button to encourage user action if appropriate */
+  button {
+    margin-top: var(--space-sm);
+  }
+`
+
 export const ProjectSection = ({ projects }) => {
   const [activeTab, setActiveTab] = useState('Code') // Default to first tab
 
@@ -57,7 +89,9 @@ export const ProjectSection = ({ projects }) => {
           </div>
         </div>
       ) : projectsToDisplay.length === 0 ? (
-        <p>No projects available for {activeTab}.</p>
+        <EmptyStateMessage>
+          <p>No projects available for {activeTab}.</p>
+        </EmptyStateMessage>
       ) : (
         <p>Something went wrong.</p>
       )}

@@ -21,14 +21,31 @@ const actionCreators = {
         internal: true
       })
     if (figma)
-      actions.push({ text: 'View Design', href: figma, variant: 'primary' })
+      actions.push({ text: 'View Design', href: figma, variant: 'secondary' })
     if (github)
       actions.push({ text: 'View Code', href: github, variant: 'secondary' })
     return actions
   },
 
-  article: ({ link }) =>
-    link ? [{ text: 'Read Article', href: link, variant: 'secondary' }] : []
+  article: ({ link, id }) => {
+    const actions = []
+    if (id) {
+      actions.push({
+        text: 'Read Full Article',
+        href: `/article/${id}`,
+        variant: 'primary',
+        internal: true
+      })
+    }
+    if (link) {
+      actions.push({
+        text: 'Download PDF',
+        href: link,
+        variant: id ? 'secondary' : 'primary'
+      })
+    }
+    return actions
+  }
 }
 
 /**
@@ -50,12 +67,13 @@ export function useCardActions({
   github,
   figma,
   link,
-  caseStudyId = '' // Add default empty string to prevent undefined issues
+  caseStudyId = '',
+  id = ''
 }) {
   return useMemo(() => {
     if (actions.length > 0) return actions
 
     const creator = actionCreators[variant] || (() => [])
-    return creator({ netlify, github, figma, link, caseStudyId })
-  }, [variant, actions, netlify, github, figma, link, caseStudyId])
+    return creator({ netlify, github, figma, link, caseStudyId, id })
+  }, [variant, actions, netlify, github, figma, link, caseStudyId, id])
 }
