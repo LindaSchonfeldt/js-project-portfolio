@@ -1,11 +1,13 @@
-import styled from 'styled-components'
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { media } from '../media'
+import styled from 'styled-components'
+
 import Button from '../components/Button'
-import caseStudies from '../data/caseStudies.json'
 import { NavigationBar } from '../components/NavigationBar'
 import { UnderConstruction } from '../components/UnderConstruction'
+import caseStudies from '../data/caseStudies.json'
+import siteConfig from '../data/siteConfig.json'
+import { media } from '../media'
 
 export const StyledCaseStudy = styled.section`
   display: flex;
@@ -107,6 +109,10 @@ export const CaseStudyPage = () => {
       </div>
     )
   }
+
+  const isUnderConstruction = siteConfig.underConstruction.caseStudies.includes(
+    study.id
+  )
 
   return (
     <StyledCaseStudy>
@@ -265,7 +271,8 @@ export const CaseStudyPage = () => {
           </div>
         )}
       </section>
-      <UnderConstruction overlay={true} />
+
+      {isUnderConstruction && <UnderConstruction overlay={true} />}
     </StyledCaseStudy>
   )
 }

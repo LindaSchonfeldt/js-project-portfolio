@@ -3,7 +3,10 @@ import { media } from '../media.js'
 import { SectionTitle } from '../components/SectionTitle'
 import Button from '../components/Button'
 import { useArticleStore } from '../stores/useArticleStore'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { UnderConstruction } from '../components/UnderConstruction'
+import siteConfig from '../data/siteConfig.json'
 
 const StyledArticlePage = styled.div`
   display: flex;
@@ -51,12 +54,22 @@ const StyledArticlePage = styled.div`
 
 export const ArticlePage = () => {
   const { id } = useParams()
+
   const getArticleById = useArticleStore((state) => state.getArticleById)
   const article = getArticleById(id)
+  const isUnderConstruction = siteConfig.underConstruction.articles.includes(
+    Number(id)
+  )
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [id])
 
   if (!article) {
     return <div>Article not found</div>
   }
+
+  const { title, subtitle } = article
 
   return (
     <StyledArticlePage key={id}>
@@ -171,6 +184,8 @@ export const ArticlePage = () => {
           from exploitation.
         </p>
       </section>
+      {/* Show overlay if under construction */}
+      {isUnderConstruction && <UnderConstruction overlay={true} />}
     </StyledArticlePage>
   )
 }

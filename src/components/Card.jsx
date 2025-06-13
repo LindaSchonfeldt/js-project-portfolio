@@ -1,8 +1,11 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import React, { useMemo } from 'react'
+import styled, { css } from 'styled-components'
+
+import defaultImg from '../assets/img.png'
+import siteConfig from '../data/siteConfig.json'
 import Button, { ButtonGroup } from './Button'
 import { TagList } from './TagList'
-import styled, { css } from 'styled-components'
-import defaultImg from '../assets/img.png'
 
 const BaseCard = styled.div`
   display: flex;
@@ -165,7 +168,6 @@ export const Card = ({
   content,
   description,
   tags = [],
-  actions = [],
   netlify,
   github,
   figma,
@@ -175,22 +177,88 @@ export const Card = ({
   children,
   className = ''
 }) => {
-  console.log('Card rendered with props:', { variant, id, link })
+  const navigate = useNavigate()
 
   const imgScr = image || defaultImg
-  const actionList =
-    actions.length > 0
-      ? actions
-      : (defaultActions[variant] || (() => []))({
-          netlify,
-          github,
-          figma,
-          link,
-          id,
-          caseStudyId
-        })
+  const isUnderConstruction =
+    (variant === 'uxui' &&
+      siteConfig.underConstruction.caseStudies.includes(caseStudyId)) ||
+    (variant === 'article' &&
+      siteConfig.underConstruction.articles.includes(id))
 
-  console.log('Action list generated:', actionList)
+  const handleCaseStudyClick = () => {
+    if (isUnderConstruction) {
+      alert('This case study is currently under construction. Check back soon!')
+    } else {
+      navigate(`/case-study/${caseStudyId}`)
+    }
+  }
+
+  const handleArticleClick = () => {
+    if (isUnderConstruction) {
+      alert('This article is currently under construction. Check back soon!')
+    } else {
+      navigate(`/article/${id}`)
+    }
+  }
+
+  const actionList = useMemo(() => {
+    const actions = []
+
+    // Custom actions based on variant
+    if (variant === 'code') {
+      if (netlify)
+        actions.push({ text: 'Live Demo', href: netlify, variant: 'primary' })
+      if (github)
+        actions.push({ text: 'View Code', href: github, variant: 'secondary' })
+    } else if (variant === 'uxui') {
+      if (caseStudyId) {
+        actions.push({
+          text: isUnderConstruction
+            ? '🚧 Under Construction'
+            : 'View Case Study',
+          href: null,
+          onClick: handleCaseStudyClick,
+          variant: isUnderConstruction ? 'secondary' : 'primary',
+          internal: true
+        })
+      }
+      if (figma)
+        actions.push({ text: 'View Design', href: figma, variant: 'secondary' })
+      if (github)
+        actions.push({ text: 'View Code', href: github, variant: 'secondary' })
+    } else if (variant === 'article') {
+      if (id) {
+        actions.push({
+          text: isUnderConstruction
+            ? '🚧 Under Construction'
+            : 'Read Full Article',
+          href: null,
+          onClick: handleArticleClick,
+          variant: isUnderConstruction ? 'secondary' : 'primary',
+          internal: true
+        })
+      }
+      if (link) {
+        actions.push({
+          text: 'Download PDF',
+          href: link,
+          variant: id ? 'secondary' : 'primary'
+        })
+      }
+    }
+
+    return actions
+  }, [
+    variant,
+    netlify,
+    github,
+    figma,
+    link,
+    id,
+    caseStudyId,
+    isUnderConstruction
+  ])
 
   // Use content if provided, otherwise fall back to description
   const displayContent = content || description
