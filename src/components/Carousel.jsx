@@ -1,6 +1,7 @@
-import { Card } from './Card'
 import styled from 'styled-components'
+
 import { media } from '../media.js'
+import { Card } from './Card'
 
 const StyledCarousel = styled.div`
   position: relative;
@@ -63,7 +64,12 @@ export const Carousel = ({ items = [], variant }) => {
             console.log('Rendering item:', item)
             return (
               <div key={item.id || i} className='carouselItem'>
-                <Card variant={variant} {...item} id={item.id} />
+                <Card
+                  variant={variant}
+                  {...item}
+                  id={item.id}
+                  caseStudyId={variant === 'uxui' ? item.id : undefined}
+                />
               </div>
             )
           })}
