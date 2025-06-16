@@ -26,14 +26,15 @@ const CaseStudyData = [
         'The startup needed to define a clear product vision and roadmap while balancing user needs with business constraints...',
 
       myRole:
-        'UX Design Intern working closely with product managers, developers, and stakeholders to shape the product direction.',
+        'UX Design Intern working closely with founders, developers, and stakeholders to shape the product direction.',
 
       duration: '3 months',
       team: [
-        'Product Manager',
-        'Lead Developer',
-        'UX Designer (me)',
-        '2 Frontend Developers'
+        'Two Founders (one Sales focused and one Code focused)',
+        'One Fullstack Developer',
+        'Customer Success Manager',
+        'One Marketing Intern',
+        'UX Designer Intern (me)'
       ],
 
       sections: [

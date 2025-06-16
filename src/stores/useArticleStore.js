@@ -63,13 +63,20 @@ export const useArticleStore = create((set, get) => ({
 
   getArticleById: (id) => {
     console.log('getArticleById called with:', id, 'type:', typeof id)
-    console.log('Available articles:', get().articles)
-    const found = get().articles.find((article) => {
-      console.log(`Comparing article.id: ${article.id} (${typeof article.id}) with id: ${id} (${typeof id})`)
-      return article.id === id
+    const articles = get().articles
+    console.log('Available articles:', articles)
+
+    const foundArticle = articles.find((article) => {
+      console.log(
+        `Comparing article.id: ${
+          article.id
+        } (${typeof article.id}) with id: ${id} (${typeof id})`
+      )
+      return article.id === Number(id) // Convert id to number for comparison
     })
-    console.log('Found article:', found)
-    return found
+
+    console.log('Found article:', foundArticle)
+    return foundArticle
   },
 
   getAllArticles: () => {

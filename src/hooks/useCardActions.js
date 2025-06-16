@@ -59,15 +59,23 @@ export function useCardActions({
     // UX/UI variant
     else if (variant === 'uxui') {
       if (caseStudyId) {
-        defaultActions.push({
-          text: isUnderConstruction
-            ? '🚧 Under Construction'
-            : 'View Case Study',
-          href: null,
-          onClick: isUnderConstruction ? null : handleCaseStudyClick,
-          variant: isUnderConstruction ? 'disabled' : 'primary',
-          internal: true
-        })
+        if (isUnderConstruction) {
+          defaultActions.push({
+            text: '🚧 Under Construction',
+            href: null,
+            onClick: null,
+            variant: 'disabled',
+            internal: true
+          })
+        } else {
+          defaultActions.push({
+            text: 'View Case Study',
+            href: null,
+            onClick: handleCaseStudyClick,
+            variant: 'primary',
+            internal: true
+          })
+        }
       }
       if (figma)
         defaultActions.push({
@@ -86,15 +94,23 @@ export function useCardActions({
     // Article variant
     else if (variant === 'article') {
       if (id) {
-        defaultActions.push({
-          text: isUnderConstruction
-            ? '🚧 Under Construction'
-            : 'Read Full Article',
-          href: null,
-          onClick: isUnderConstruction ? null : handleArticleClick,
-          variant: isUnderConstruction ? 'disabled' : 'primary',
-          internal: true
-        })
+        if (isUnderConstruction) {
+          defaultActions.push({
+            text: '🚧 Under Construction',
+            href: null,
+            onClick: null,
+            variant: 'disabled',
+            internal: true
+          })
+        } else {
+          defaultActions.push({
+            text: 'Read Full Article',
+            href: null,
+            onClick: handleArticleClick,
+            variant: 'primary',
+            internal: true
+          })
+        }
       }
       if (link) {
         defaultActions.push({

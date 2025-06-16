@@ -1,8 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 import { GlobalStyle } from './GlobalStyle'
-import HomePage from './pages/HomePage'
-import { CaseStudyPage } from './pages/CaseStudyPage'
 import { ArticlePage } from './pages/ArticlePage'
+import { CaseStudyPage } from './pages/CaseStudyPage'
+import HomePage from './pages/HomePage'
 
 export const App = () => {
   return (

@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 import Button from '../components/Button'
 import { NavigationBar } from '../components/NavigationBar'
-import { UnderConstruction } from '../components/UnderConstruction'
 import caseStudies from '../data/caseStudies.json'
 import siteConfig from '../data/siteConfig.json'
 import { media } from '../media'
@@ -271,8 +270,6 @@ export const CaseStudyPage = () => {
           </div>
         )}
       </section>
-
-      {isUnderConstruction && <UnderConstruction overlay={true} />}
     </StyledCaseStudy>
   )
 }

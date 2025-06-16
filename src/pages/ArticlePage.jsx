@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 import Button from '../components/Button'
 import { TagList } from '../components/TagList'
-import { UnderConstruction } from '../components/UnderConstruction'
 import siteConfig from '../data/siteConfig.json'
 import { media } from '../media.js'
 import { useArticleStore } from '../stores/useArticleStore'
@@ -108,50 +107,36 @@ const StyledArticlePage = styled.div`
     }
   }
 
-  .sticky-toc {
-    position: sticky;
-    top: 2rem;
-    background: var(--background-color);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+  .breadcrumb-toc {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
     padding: 1rem;
+    background: var(--background-light);
+    border-radius: var(--border-radius);
     margin-bottom: 2rem;
-    max-height: calc(100vh - 4rem);
-    overflow-y: auto;
 
-    h3 {
-      margin: 0 0 1rem 0;
-      font-size: 1rem;
+    .toc-label {
+      font-weight: 600;
       color: var(--text-color);
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 0.5rem;
-    }
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
+      margin-right: 0.5rem;
     }
 
     a {
-      color: var(--text-muted);
+      color: var(--primary-color);
       text-decoration: none;
       font-size: 0.9rem;
-      line-height: 1.4;
       transition: color 0.2s ease;
 
       &:hover {
-        color: var(--primary-color);
+        text-decoration: underline;
       }
+    }
 
-      &.active {
-        color: var(--primary-color);
-        font-weight: 600;
-      }
+    .separator {
+      color: var(--text-muted);
+      font-size: 0.8rem;
     }
   }
 
@@ -177,7 +162,12 @@ export const ArticlePage = () => {
   const getArticleById = useArticleStore((state) => state.getArticleById)
   const article = getArticleById(id)
 
-  const isUnderConstruction = siteConfig.underConstruction.articles.includes(
+  // Add these checks
+  if (!id) {
+    return <div>No article ID provided</div>
+  }
+
+  const isUnderConstruction = siteConfig.underConstruction.articles?.includes(
     Number(id)
   )
 
@@ -218,7 +208,7 @@ export const ArticlePage = () => {
           <span>Published: {article.publishedDate}</span>
         </div>
 
-        {article.tags && article.tags.length > 0 && (
+        {article.tags && article.tags?.length > 0 && (
           <TagList tags={article.tags} />
         )}
       </header>
@@ -240,10 +230,10 @@ export const ArticlePage = () => {
       </div>
 
       {article.fullContent?.sections?.length > 0 && (
-        <nav className='sticky-toc'>
-          <h3>On this page</h3>
+        <nav className='horizontal-toc'>
+          <h3>On this page:</h3>
           <ul>
-            {article.fullContent.sections.map((section, index) => (
+            {article.fullContent?.sections.map((section, index) => (
               <li key={index}>
                 <a
                   href={`#section-${index}`}
@@ -273,31 +263,28 @@ export const ArticlePage = () => {
           <section key={index} id={`section-${index}`}>
             <h2>{section.title}</h2>
             <p>{section.content}</p>
-            {section.images &&
-              section.images.map((img, imgIndex) => (
-                <img
-                  key={imgIndex}
-                  src={img}
-                  alt={`${section.title} ${imgIndex + 1}`}
-                />
-              ))}
+            {section.images?.map((img, imgIndex) => (
+              <img
+                key={imgIndex}
+                src={img}
+                alt={`${section.title} ${imgIndex + 1}`}
+              />
+            ))}
           </section>
         ))}
 
         {article.fullContent?.references &&
-          article.fullContent.references.length > 0 && (
+          article.fullContent?.references.length > 0 && (
             <section className='references'>
               <h2>References</h2>
               <ol>
-                {article.fullContent.references.map((reference, index) => (
+                {article.fullContent?.references.map((reference, index) => (
                   <li key={index}>{reference}</li>
                 ))}
               </ol>
             </section>
           )}
       </article>
-
-      {isUnderConstruction && <UnderConstruction overlay={true} />}
     </StyledArticlePage>
   )
 }
