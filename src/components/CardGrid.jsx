@@ -37,40 +37,34 @@ const StyledCardGrid = styled.div`
 `
 
 export default function CardGrid({ projects, articles, variant }) {
-  const items = projects ?? articles ?? []
-  if (!items.length) {
-    return (
-      <div className='cardGrid'>
-        <p>No items to display.</p>
-      </div>
-    )
-  }
+  console.log('CardGrid received:', { projects, articles, variant }) // Add debug
 
-  const variantKey = articles ? 'article' : variant.toLowerCase()
+  const items = projects || articles || []
 
   return (
     <StyledCardGrid>
-      {items.map((item, i) => (
-        <Card
-          key={item.id ?? i}
-          variant={variantKey}
-          // Common props
-          image={item.image}
-          alt={item.alt}
-          title={item.title}
-          tags={item.tags}
-          // Per‐variant props
-          subtitle={articles ? item.publishedDate : undefined}
-          content={articles ? item.description : item.description}
-          caseStudyId={item.caseStudyId}
-          // Defaults: Card will pick actions from defaultActions[variantKey]
-          link={item.link}
-          netlify={item.netlify}
-          github={item.github}
-          figma={item.figma}
-          id={articles ? item.id : undefined}
-        />
-      ))}
+      {items.map((item) => {
+        console.log('CardGrid rendering item:', item) // Add debug
+        return (
+          <Card
+            key={item.id}
+            variant={variant}
+            id={item.id}
+            caseStudyId={variant === 'uxui' ? item.id : undefined} // Important for UX/UI
+            title={item.title}
+            subtitle={item.subtitle}
+            description={item.description}
+            tags={item.tags}
+            image={item.image}
+            video={item.video}
+            alt={item.alt}
+            netlify={item.netlify}
+            github={item.github}
+            figma={item.figma}
+            link={item.link}
+          />
+        )
+      })}
     </StyledCardGrid>
   )
 }

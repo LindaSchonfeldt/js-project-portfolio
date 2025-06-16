@@ -146,22 +146,15 @@ export const Card = ({
     <BaseCard $variant={variant.toLowerCase()} id={id} className={className}>
       <div className='imageContainer'>
         {video ? (
-          <>
-            {console.log('Rendering video:', video)}
-            <video className='cardImage' autoPlay muted loop playsInline>
-              <source src={video} type='video/mp4' />
-              Your browser does not support the video tag.
-            </video>
-          </>
-        ) : image ? (
-          <>
-            <img src={image} alt={alt} className='cardImage' loading='lazy' />
-          </>
+          <video className='cardImage' autoPlay muted loop playsInline>
+            <source src={video} type='video/mp4' />
+            Your browser does not support the video tag.
+          </video>
         ) : (
-          // Optional: render a placeholder or nothing
-          <div className='cardImage'></div>
+          <img src={imgScr} alt={alt} className='cardImage' loading='lazy' />
         )}
       </div>
+
       {title && <h3 className='cardTitle'>{title}</h3>}
       {subtitle && <p className='cardSubtitle'>{subtitle}</p>}
 
