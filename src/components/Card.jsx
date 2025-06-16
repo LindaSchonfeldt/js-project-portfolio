@@ -59,7 +59,7 @@ const BaseCard = styled.div`
   }
 
   .cardSubtitle {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 700;
   }
 

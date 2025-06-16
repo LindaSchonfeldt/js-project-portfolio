@@ -4,7 +4,7 @@ const CaseStudyData = [
   {
     id: 1,
     title: 'Guiding the Product Vision and Roadmap for a Webinar Platform',
-    subtitle: 'UX Design Internship at Interactive Platform Startup',
+    subtitle: '2024',
     image: '',
     video: '/assets/workshops.mp4',
     alt: '',

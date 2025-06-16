@@ -108,6 +108,53 @@ const StyledArticlePage = styled.div`
     }
   }
 
+  .sticky-toc {
+    position: sticky;
+    top: 2rem;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+
+    h3 {
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+      color: var(--text-color);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+
+      &.active {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+    }
+  }
+
   @media ${media.tablet} {
     .article-header h1 {
       font-size: 2.5rem;
@@ -192,6 +239,28 @@ export const ArticlePage = () => {
         />
       </div>
 
+      {article.fullContent?.sections?.length > 0 && (
+        <nav className='sticky-toc'>
+          <h3>On this page</h3>
+          <ul>
+            {article.fullContent.sections.map((section, index) => (
+              <li key={index}>
+                <a
+                  href={`#section-${index}`}
+                  onClick={() => {
+                    document
+                      .getElementById(`section-${index}`)
+                      ?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                >
+                  {section.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
       <article className='article-content'>
         {article.fullContent?.abstract && (
           <section className='abstract'>
@@ -201,18 +270,26 @@ export const ArticlePage = () => {
         )}
 
         {article.fullContent?.sections?.map((section, index) => (
-          <section key={index} className='section'>
+          <section key={index} id={`section-${index}`}>
             <h2>{section.title}</h2>
             <p>{section.content}</p>
+            {section.images &&
+              section.images.map((img, imgIndex) => (
+                <img
+                  key={imgIndex}
+                  src={img}
+                  alt={`${section.title} ${imgIndex + 1}`}
+                />
+              ))}
           </section>
         ))}
 
-        {article.content?.references &&
-          article.content.references.length > 0 && (
+        {article.fullContent?.references &&
+          article.fullContent.references.length > 0 && (
             <section className='references'>
               <h2>References</h2>
               <ol>
-                {article.content.references.map((reference, index) => (
+                {article.fullContent.references.map((reference, index) => (
                   <li key={index}>{reference}</li>
                 ))}
               </ol>
