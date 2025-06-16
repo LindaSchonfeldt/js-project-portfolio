@@ -50,6 +50,7 @@ const StyledCarousel = styled.div`
 `
 
 export const Carousel = ({ items = [], variant }) => {
+  console.log('Carousel received items:', items, 'variant:', variant)
   const length = items?.length || 0
 
   if (!length) return <p>No items to display</p>
@@ -58,11 +59,14 @@ export const Carousel = ({ items = [], variant }) => {
     <StyledCarousel>
       <div className='carouselViewport'>
         <div className='carouselTrack'>
-          {items.map((item, i) => (
-            <div key={item.id || i} className='carouselItem'>
-              <Card variant={variant} {...item} id={item.id} />
-            </div>
-          ))}
+          {items.map((item, i) => {
+            console.log('Rendering item:', item)
+            return (
+              <div key={item.id || i} className='carouselItem'>
+                <Card variant={variant} {...item} id={item.id} />
+              </div>
+            )
+          })}
         </div>
       </div>
     </StyledCarousel>

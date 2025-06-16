@@ -1,65 +1,8 @@
 import { useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-// Define action creators per variant
-const actionCreators = {
-  code: ({ netlify, github }) => {
-    const actions = []
-    if (netlify)
-      actions.push({ text: 'Live Demo', href: netlify, variant: 'primary' })
-    if (github)
-      actions.push({ text: 'View Code', href: github, variant: 'secondary' })
-    return actions
-  },
+import { useUnderConstruction } from './useUnderConstruction'
 
-  uxui: ({ figma, github, caseStudyId }) => {
-    const actions = []
-    if (caseStudyId)
-      actions.push({
-        text: 'Case Study',
-        href: `/case-study/${caseStudyId}`,
-        variant: 'primary',
-        internal: true
-      })
-    if (figma)
-      actions.push({ text: 'View Design', href: figma, variant: 'secondary' })
-    if (github)
-      actions.push({ text: 'View Code', href: github, variant: 'secondary' })
-    return actions
-  },
-
-  article: ({ link, id }) => {
-    const actions = []
-    if (id) {
-      actions.push({
-        text: 'Read Full Article',
-        href: `/article/${id}`,
-        variant: 'primary',
-        internal: true
-      })
-    }
-    if (link) {
-      actions.push({
-        text: 'Download PDF',
-        href: link,
-        variant: id ? 'secondary' : 'primary'
-      })
-    }
-    return actions
-  }
-}
-
-/**
- * Hook to generate card actions based on variant and available links
- *
- * @param {Object} options
- * @param {'default'|'code'|'uxui'|'article'} options.variant - Card style variant
- * @param {Object[]} [options.actions=[]] - Custom action buttons (override defaults)
- * @param {string} [options.netlify] - URL for "Live Demo" button
- * @param {string} [options.github] - URL for "View Code" button
- * @param {string} [options.figma] - URL for "View Design" button
- * @param {string} [options.link] - URL for "Read Article" button
- * @returns {Array} List of action objects with text, href, and variant
- */
 export function useCardActions({
   variant = 'default',
   actions = [],
@@ -70,10 +13,111 @@ export function useCardActions({
   caseStudyId = '',
   id = ''
 }) {
+  const navigate = useNavigate()
+  const isUnderConstruction = useUnderConstruction(
+    variant === 'uxui' ? 'casestudy' : 'article',
+    variant === 'uxui' ? caseStudyId : id
+  )
+
+  const handleCaseStudyClick = () => {
+    if (isUnderConstruction) {
+      alert('This case study is currently under construction. Check back soon!')
+    } else {
+      navigate(`/case-study/${caseStudyId}`)
+    }
+  }
+
+  const handleArticleClick = () => {
+    if (isUnderConstruction) {
+      alert('This article is currently under construction. Check back soon!')
+    } else {
+      navigate(`/article/${id}`)
+    }
+  }
+
   return useMemo(() => {
     if (actions.length > 0) return actions
 
-    const creator = actionCreators[variant] || (() => [])
-    return creator({ netlify, github, figma, link, caseStudyId, id })
-  }, [variant, actions, netlify, github, figma, link, caseStudyId, id])
+    const defaultActions = []
+
+    // Code variant
+    if (variant === 'code') {
+      if (netlify)
+        defaultActions.push({
+          text: 'Live Demo',
+          href: netlify,
+          variant: 'primary'
+        })
+      if (github)
+        defaultActions.push({
+          text: 'View Code',
+          href: github,
+          variant: 'secondary'
+        })
+    }
+
+    // UX/UI variant
+    else if (variant === 'uxui') {
+      if (caseStudyId) {
+        defaultActions.push({
+          text: isUnderConstruction
+            ? '🚧 Under Construction'
+            : 'View Case Study',
+          href: null,
+          onClick: isUnderConstruction ? null : handleCaseStudyClick,
+          variant: isUnderConstruction ? 'disabled' : 'primary',
+          internal: true
+        })
+      }
+      if (figma)
+        defaultActions.push({
+          text: 'View Design',
+          href: figma,
+          variant: 'secondary'
+        })
+      if (github)
+        defaultActions.push({
+          text: 'View Code',
+          href: github,
+          variant: 'secondary'
+        })
+    }
+
+    // Article variant
+    else if (variant === 'article') {
+      if (id) {
+        defaultActions.push({
+          text: isUnderConstruction
+            ? '🚧 Under Construction'
+            : 'Read Full Article',
+          href: null,
+          onClick: isUnderConstruction ? null : handleArticleClick,
+          variant: isUnderConstruction ? 'disabled' : 'primary', // Already using 'disabled'
+          internal: true
+        })
+      }
+      if (link) {
+        defaultActions.push({
+          text: 'Download PDF (Swedish)',
+          href: link,
+          variant: id ? 'secondary' : 'primary',
+          target: '_blank'
+        })
+      }
+    }
+
+    return defaultActions
+  }, [
+    variant,
+    actions,
+    netlify,
+    github,
+    figma,
+    link,
+    caseStudyId,
+    id,
+    isUnderConstruction,
+    handleCaseStudyClick,
+    handleArticleClick
+  ])
 }

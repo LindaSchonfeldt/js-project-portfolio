@@ -1,83 +1,14 @@
 import { create } from 'zustand'
+import projectData from '../data/projects.json'
 
-// Project data
-const projectData = {
-  "code": [
-    {
-      "id": 1,
-      "title": "Portfolio Website",
-      "image": "",
-      "alt": "",
-      "description": "You're looking at it. This is a showcase of user-centered design in action. Explore projects that merge creativity and functionality, all wrapped in clean aesthetics and intuitive navigation.",
-      "tags": ["React", "Vite", "Styled Components"],
-      "netlify": "",
-      "github": "https://github.com/LindaSchonfeldt/js-project-portfolio"
-    },
-    {
-      "id": 2,
-      "title": "Happy Thoughts",
-      "image": "",
-      "alt": "",
-      "description": "A feel-good app where users can share positive thoughts and like each other's messages. Designed to spread joy through a simple, intuitive interface that encourages connection and kindness.",
-      "tags": ["React", "Vite", "Styled Components", "APIs"],
-      "netlify": "https://creative-hotteok-2e5655.netlify.app/",
-      "github": "https://github.com/LindaSchonfeldt/js-project-happy-thoughts/tree/main"
-    },
-    {
-      "id": 3,
-      "title": "Weather app",
-      "image": "",
-      "alt": "",
-      "description": "A responsive web-based application that fetches real-time weather data through API integration. Focused on a clear user flow and modern design.",
-      "tags": ["JavaScript", "TypeScript", "APIs"],
-      "netlify": "https://gorgeous-bubblegum-c0333a.netlify.app/",
-      "github": "https://github.com/LindaSchonfeldt/weather-app"
-    },
-    {
-      "id": 4,
-      "title": "Recipe Library",
-      "image": "",
-      "alt": "",
-      "description": "A deliciously simple web app where users can explore a world of recipes. Designed for smooth navigation and a tasteful user experience.",
-      "tags": ["JavaScript", "APIs"],
-      "netlify": "https://recipe-library.netlify.app/",
-      "github": "https://github.com/LindaSchonfeldt/js-project-recipe-library"
-    }
-  ],
-  "uxui": [
-    {
-      "id": 1,
-      "title": "Example Project 1",
-      "image": "",
-      "alt": "",
-      "description": "Example project description goes here. This project showcases my skills in UX/UI design, focusing on user-centered design principles and best practices.",
-      "caseStudyId": 1,
-      "tags": [
-        "Figma",
-        "Adobe XD",
-        "User Research",
-        "Wireframing",
-        "Prototyping"
-      ],
-      "netlify": "",
-      "github": ""
-    }
-  ]
-}
-
-// Create the store
 const useProjectStore = create((set) => ({
   projects: projectData,
   activeTab: 'code',
   setActiveTab: (tab) => set({ activeTab: tab }),
-  
-  // You could add other functions like:
+
   getProjectById: (id) => {
-    const allProjects = [
-      ...projectData.code,
-      ...projectData.uxui
-    ]
-    return allProjects.find(project => project.id === id)
+    const allProjects = [...projectData.code, ...projectData.uxui]
+    return allProjects.find((project) => project.id === id)
   }
 }))
 

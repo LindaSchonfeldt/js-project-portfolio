@@ -1,62 +1,135 @@
-import styled from 'styled-components'
-import { media } from '../media.js'
-import { SectionTitle } from '../components/SectionTitle'
-import Button from '../components/Button'
-import { useArticleStore } from '../stores/useArticleStore'
-import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import styled from 'styled-components'
+
+import Button from '../components/Button'
+import { TagList } from '../components/TagList'
 import { UnderConstruction } from '../components/UnderConstruction'
 import siteConfig from '../data/siteConfig.json'
+import { media } from '../media.js'
+import { useArticleStore } from '../stores/useArticleStore'
 
 const StyledArticlePage = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
   padding: var(--space-lg);
-  width: 100%;
+  line-height: 1.6;
 
-  h2 {
-    font-size: 3rem;
-    margin-bottom: var(--space-lg);
-    color: var(--primary-color);
-  }
-  h3 {
-    font-size: 2.5rem;
-    margin-bottom: var(--space-md);
-    color: var(--primary-color);
+  .article-header {
+    margin-bottom: var(--space-xl);
+    text-align: center;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: var(--space-md);
+      color: var(--primary-color);
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      margin-bottom: var(--space-md);
+    }
+
+    .meta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
   }
 
-  .subHeading {
-    font-size: 2rem;
-    margin-bottom: var(--space-md);
-    color: var(--secondary-color);
-  }
-  .purpose,
-  .background,
-  .researchQuestions,
-  .methodology,
-  .results,
-  .conclusions,
-  .finalThoughts {
+  .back-button {
     margin-bottom: var(--space-lg);
+  }
+
+  .article-actions {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    margin-bottom: var(--space-xl);
+
+    @media ${media.mobile} {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .article-content {
+    .section {
+      margin-bottom: var(--space-xl);
+
+      h2 {
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: var(--space-md);
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: var(--space-xs);
+      }
+
+      p {
+        margin-bottom: var(--space-md);
+        text-align: justify;
+      }
+    }
+
+    .abstract {
+      background-color: var(--background-light);
+      padding: var(--space-lg);
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--primary-color);
+      margin-bottom: var(--space-xl);
+
+      h2 {
+        margin-top: 0;
+        border: none;
+        padding: 0;
+      }
+    }
+
+    .references {
+      margin-top: var(--space-xl);
+
+      h2 {
+        color: var(--primary-color);
+      }
+
+      ol {
+        padding-left: var(--space-lg);
+
+        li {
+          margin-bottom: var(--space-sm);
+          text-align: justify;
+        }
+      }
+    }
   }
 
   @media ${media.tablet} {
+    .article-header h1 {
+      font-size: 2.5rem;
+    }
   }
 
-  @media ${media.desktop} {
-  }
+  @media ${media.mobile} {
+    padding: var(--space-md);
 
-  @media ${media.largeDesktop} {
+    .article-header h1 {
+      font-size: 2rem;
+    }
   }
 `
 
 export const ArticlePage = () => {
   const { id } = useParams()
+  const navigate = useNavigate()
 
   const getArticleById = useArticleStore((state) => state.getArticleById)
   const article = getArticleById(id)
+
   const isUnderConstruction = siteConfig.underConstruction.articles.includes(
     Number(id)
   )
@@ -65,126 +138,88 @@ export const ArticlePage = () => {
     window.scrollTo(0, 0)
   }, [id])
 
-  if (!article) {
-    return <div>Article not found</div>
+  const handleGoBack = () => {
+    navigate(-1)
   }
 
-  const { title, subtitle } = article
+  if (!article) {
+    return (
+      <StyledArticlePage>
+        <div className='back-button'>
+          <Button text='← Back' onClick={handleGoBack} variant='tertiary' />
+        </div>
+        <div style={{ textAlign: 'center', padding: 'var(--space-xl)' }}>
+          <h1>Article Not Found</h1>
+          <p>Sorry, we couldn't find that article.</p>
+          <Button text='Back to Home' internal href='/' variant='primary' />
+        </div>
+      </StyledArticlePage>
+    )
+  }
 
   return (
-    <StyledArticlePage key={id}>
-      <SectionTitle title={title} />
-      <h2 className='subHeading'>{subtitle}</h2>
-      <section className='purpose'>
-        <h3>Purpose</h3>
-        <p>
-          The purpose of this study is to examine the prevalence and effects of
-          Dark Patterns in the mobile applications of the nine most used social
-          media platforms in Sweden.
-        </p>
-        <Button />
-      </section>
-      <section className='background'>
-        <h3>Background</h3>
-        <p>
-          Dark Patterns are manipulative design practices used to steer users
-          toward decisions that benefit the system rather than the individual.
-          While previous research has focused primarily on e-commerce, this
-          study turns its attention to social networking services (SNS) and
-          their mobile applications. In an economy where user attention holds
-          monetary value, psychological vulnerabilities are exploited through
-          addictive design patterns like infinite scroll and social validation.
-        </p>
-      </section>
-      <section className='researchQuestions'>
-        <h3>Research Questions</h3>
-        <p>
-          The study aims to answer the following research questions:
-          <ul>
-            <li>
-              RQ1: What types of Dark Patterns are present in popular SNS mobile
-              applications in Sweden?
-            </li>
-            <li>
-              RQ2: What persuasive strategies are used to influence users
-              through these design patterns?
-            </li>
-            <li>RQ3: How does this influence affect user autonomy?</li>
-          </ul>
-        </p>
-      </section>
-      <section className='methodology'>
-        <h3>Methodology</h3>
-        <p>
-          The study employed a document analysis and thematic analysis, guided
-          by an ontology from Gray et al. (2024). Nine mobile apps were
-          analyzed: Facebook, YouTube, Instagram, Snapchat, LinkedIn, TikTok, X,
-          Pinterest, and Reddit. In total, 34 unique Dark Patterns were
-          identified, including 13 newly defined patterns created by the
-          authors. Examples of these new patterns include:
-          <ul>
-            <li>
-              Eternal Presence: a pattern that makes logging out difficult.
-            </li>
-            <li>
-              Sticky Engagement: a design that makes following content easy but
-              unfollowing difficult.
-            </li>
-            <li>
-              Public Display: default settings that make user information
-              publicly visible without adequate consent.
-            </li>
-          </ul>
-        </p>
-      </section>
-      <section className='results'>
-        <h3>Results</h3>
-        <p>
-          Dark Patterns were identified under five high-level categories:
-          <ul>
-            <li>
-              Sneaking: Concealing information, e.g., Disguised Ads (TikTok,
-              Instagram).
-            </li>
-            <li>
-              Obstruction: Hindering desired actions, e.g., Privacy Maze and new
-              patterns like Eternal Presence.
-            </li>
-            <li>
-              Interface Interference: Privileging certain options, e.g., Bad
-              Defaults and Public Display.
-            </li>
-            <li>
-              Forced Action: Forcing user interaction, e.g., Unnecessary
-              Onboarding Steps.
-            </li>
-            <li>
-              Social Engineering: Exploiting social behaviors, e.g., nagging and
-              nudge effects.
-            </li>
-          </ul>
-        </p>
-      </section>
-      <section className='conclusions'>
-        <h3>Discussion and Conclusion</h3>
-        <p>
-          The design of these mobile applications manipulates user decisions and
-          undermines autonomy. Dark Patterns prolong time spent on platforms,
-          complicate account deletion, and expose personal data without adequate
-          consent. The authors argue that social media companies should adopt
-          ethical design practices to avoid exploitation.
-        </p>
-      </section>
-      <section className='finalThoughts'>
-        <h3>Final Thoughts</h3>
-        <p>
-          This study highlights the need for greater awareness of Dark Patterns
-          and their impact on user autonomy. As social media continues to
-          evolve, ethical design practices must be prioritized to protect users
-          from exploitation.
-        </p>
-      </section>
-      {/* Show overlay if under construction */}
+    <StyledArticlePage>
+      <div className='back-button'>
+        <Button text='← Back' onClick={handleGoBack} variant='tertiary' />
+      </div>
+
+      <header className='article-header'>
+        <h1>{article.title}</h1>
+        {article.subtitle && <p className='subtitle'>{article.subtitle}</p>}
+
+        <div className='meta'>
+          <span>Published: {article.publishedDate}</span>
+        </div>
+
+        {article.tags && article.tags.length > 0 && (
+          <TagList tags={article.tags} />
+        )}
+      </header>
+
+      <div className='article-actions'>
+        {article.link && (
+          <Button text='Download PDF' href={article.link} variant='primary' />
+        )}
+        <Button
+          text='Share Article'
+          onClick={() =>
+            navigator.share?.({
+              title: article.title,
+              url: window.location.href
+            })
+          }
+          variant='secondary'
+        />
+      </div>
+
+      <article className='article-content'>
+        {article.fullContent?.abstract && (
+          <section className='abstract'>
+            <h2>Abstract</h2>
+            <p>{article.fullContent.abstract}</p>
+          </section>
+        )}
+
+        {article.fullContent?.sections?.map((section, index) => (
+          <section key={index} className='section'>
+            <h2>{section.title}</h2>
+            <p>{section.content}</p>
+          </section>
+        ))}
+
+        {article.content?.references &&
+          article.content.references.length > 0 && (
+            <section className='references'>
+              <h2>References</h2>
+              <ol>
+                {article.content.references.map((reference, index) => (
+                  <li key={index}>{reference}</li>
+                ))}
+              </ol>
+            </section>
+          )}
+      </article>
+
       {isUnderConstruction && <UnderConstruction overlay={true} />}
     </StyledArticlePage>
   )

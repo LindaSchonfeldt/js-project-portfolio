@@ -63,24 +63,61 @@ const StyledButton = styled.button`
         text-decoration: none;
       }
     `}
+
+  /* Disabled - for under construction */
+  ${({ $variant }) =>
+    $variant === 'disabled' &&
+    css`
+      background-color: #f5f5f5;
+      color: var(--text-muted);
+      border: 2px solid #ddd;
+      cursor: not-allowed;
+      opacity: 0.6;
+
+      /* No hover effects */
+      &:hover {
+        background-color: #f5f5f5;
+        color: #999;
+        opacity: 0.6;
+      }
+    `}
 `
-export const ButtonGroup = styled.div`
+
+const StyledButtonGroup = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: var(--space-xxs);
   width: 100%;
-  margin-top: var(--space-sm);
-  gap: var(--space-xs);
-  box-sizing: border-box;
-
-  @media ${media.desktop} {
-    flex-direction: row;
-    gap: var(--space-sm);
-  }
-
-  button {
-    flex: 1;
-  }
 `
+
+export function ButtonGroup({ actions = [] }) {
+  console.log('ButtonGroup received actions:', actions) // Debug log
+
+  if (!actions || actions.length === 0) {
+    console.log('ButtonGroup: No actions provided')
+    return null
+  }
+
+  return (
+    <StyledButtonGroup>
+      {actions.map((action, index) => {
+        console.log(`Rendering button ${index}:`, action)
+        return (
+          <Button
+            key={index}
+            text={action.text}
+            href={action.href}
+            onClick={action.onClick}
+            target={action.target}
+            variant={action.variant || 'primary'}
+            internal={action.internal}
+            className={action.className}
+          />
+        )
+      })}
+    </StyledButtonGroup>
+  )
+}
 
 export default function Button({
   text,

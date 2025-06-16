@@ -68,6 +68,7 @@ export default function CardGrid({ projects, articles, variant }) {
           netlify={item.netlify}
           github={item.github}
           figma={item.figma}
+          id={articles ? item.id : undefined}
         />
       ))}
     </StyledCardGrid>

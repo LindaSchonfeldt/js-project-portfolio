@@ -1,9 +1,7 @@
-import { useNavigate } from 'react-router-dom'
-import React, { useMemo } from 'react'
 import styled, { css } from 'styled-components'
 
 import defaultImg from '../assets/img.png'
-import siteConfig from '../data/siteConfig.json'
+import { useCardActions } from '../hooks/useCardActions'
 import Button, { ButtonGroup } from './Button'
 import { TagList } from './TagList'
 
@@ -82,59 +80,6 @@ const BaseCard = styled.div`
   ${({ $variant }) => $variant === 'article' && css``}
 `
 
-// define per‐variant defaults
-const defaultActions = {
-  code: ({ netlify, github }) => {
-    const actions = []
-    if (netlify)
-      actions.push({ text: 'Live Demo', href: netlify, variant: 'primary' })
-    if (github)
-      actions.push({ text: 'View Code', href: github, variant: 'secondary' })
-    return actions
-  },
-  uxui: ({ figma, github, caseStudyId }) => {
-    const actions = []
-    if (caseStudyId)
-      actions.push({
-        text: 'Case Study',
-        href: `/case-study/${caseStudyId}`,
-        variant: 'primary',
-        internal: true
-      })
-    if (figma)
-      actions.push({ text: 'View Design', href: figma, variant: 'secondary' })
-    if (github)
-      actions.push({ text: 'View Code', href: github, variant: 'secondary' })
-    return actions
-  },
-  article: ({ link, id }) => {
-    const actions = []
-    console.log('Article action creator ID:', id) // Add debug
-
-    // Add internal link to ArticlePage if there's an ID
-    if (id) {
-      actions.push({
-        text: 'Read Full Article',
-        href: `/article/${id}`,
-        variant: 'primary',
-        internal: true
-      })
-    }
-
-    // Keep the existing PDF download link if available
-    if (link) {
-      actions.push({
-        text: 'Download PDF',
-        href: link,
-        variant: id ? 'secondary' : 'primary'
-      })
-    }
-
-    console.log('Return actions:', actions) // Add debug
-    return actions
-  }
-}
-
 /**
  * Card Component
  *
@@ -177,91 +122,25 @@ export const Card = ({
   children,
   className = ''
 }) => {
-  const navigate = useNavigate()
-
-  const imgScr = image || defaultImg
-  const isUnderConstruction =
-    (variant === 'uxui' &&
-      siteConfig.underConstruction.caseStudies.includes(caseStudyId)) ||
-    (variant === 'article' &&
-      siteConfig.underConstruction.articles.includes(id))
-
-  const handleCaseStudyClick = () => {
-    if (isUnderConstruction) {
-      alert('This case study is currently under construction. Check back soon!')
-    } else {
-      navigate(`/case-study/${caseStudyId}`)
-    }
-  }
-
-  const handleArticleClick = () => {
-    if (isUnderConstruction) {
-      alert('This article is currently under construction. Check back soon!')
-    } else {
-      navigate(`/article/${id}`)
-    }
-  }
-
-  const actionList = useMemo(() => {
-    const actions = []
-
-    // Custom actions based on variant
-    if (variant === 'code') {
-      if (netlify)
-        actions.push({ text: 'Live Demo', href: netlify, variant: 'primary' })
-      if (github)
-        actions.push({ text: 'View Code', href: github, variant: 'secondary' })
-    } else if (variant === 'uxui') {
-      if (caseStudyId) {
-        actions.push({
-          text: isUnderConstruction
-            ? '🚧 Under Construction'
-            : 'View Case Study',
-          href: null,
-          onClick: handleCaseStudyClick,
-          variant: isUnderConstruction ? 'secondary' : 'primary',
-          internal: true
-        })
-      }
-      if (figma)
-        actions.push({ text: 'View Design', href: figma, variant: 'secondary' })
-      if (github)
-        actions.push({ text: 'View Code', href: github, variant: 'secondary' })
-    } else if (variant === 'article') {
-      if (id) {
-        actions.push({
-          text: isUnderConstruction
-            ? '🚧 Under Construction'
-            : 'Read Full Article',
-          href: null,
-          onClick: handleArticleClick,
-          variant: isUnderConstruction ? 'secondary' : 'primary',
-          internal: true
-        })
-      }
-      if (link) {
-        actions.push({
-          text: 'Download PDF',
-          href: link,
-          variant: id ? 'secondary' : 'primary'
-        })
-      }
-    }
-
-    return actions
-  }, [
+  const actionList = useCardActions({
     variant,
     netlify,
     github,
     figma,
     link,
     id,
-    caseStudyId,
-    isUnderConstruction
-  ])
+    caseStudyId
+  })
 
-  // Use content if provided, otherwise fall back to description
-  const displayContent = content || description
+  const imgScr = image || defaultImg
+
+  // Safely handle content - only use simple strings
+  const displayContent =
+    typeof content === 'string'
+      ? content
+      : typeof description === 'string'
+      ? description
+      : null
 
   return (
     <BaseCard $variant={variant.toLowerCase()} id={id} className={className}>
@@ -276,7 +155,6 @@ export const Card = ({
           </>
         ) : image ? (
           <>
-            {console.log('Rendering image:', image)}
             <img src={image} alt={alt} className='cardImage' loading='lazy' />
           </>
         ) : (
@@ -286,33 +164,20 @@ export const Card = ({
       </div>
       {title && <h3 className='cardTitle'>{title}</h3>}
       {subtitle && <p className='cardSubtitle'>{subtitle}</p>}
+
       {displayContent && (
         <div className='cardContent'>
-          {typeof displayContent === 'string' ? (
-            <p>{displayContent}</p>
-          ) : (
-            displayContent
-          )}
+          <p>{displayContent}</p>
         </div>
       )}
-      {children}
+
       {actionList.length > 0 && (
-        <ButtonGroup>
-          {actionList.map(
-            ({ text, href, onClick, target, variant, internal }, i) => (
-              <Button
-                key={i}
-                text={text}
-                href={href}
-                onClick={onClick}
-                target={target}
-                variant={variant}
-                internal={internal}
-              />
-            )
-          )}
-        </ButtonGroup>
+        <div className='cardActions'>
+          <ButtonGroup actions={actionList} />
+        </div>
       )}
+
+      {children}
       {tags.length > 0 && <TagList tags={tags} />}
     </BaseCard>
   )

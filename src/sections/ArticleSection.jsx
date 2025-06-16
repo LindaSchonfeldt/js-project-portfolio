@@ -14,6 +14,9 @@ const StyledArticleSection = styled.div`
 export const ArticleSection = () => {
   const articles = useArticleStore((state) => state.articles)
 
+  console.log('ArticleSection articles:', articles)
+  console.log('Articles length:', articles.length)
+
   return (
     <StyledArticleSection>
       <SectionTitle title='Articles' className='sectionTitle' />
