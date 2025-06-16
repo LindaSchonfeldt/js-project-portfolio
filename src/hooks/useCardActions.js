@@ -92,7 +92,7 @@ export function useCardActions({
             : 'Read Full Article',
           href: null,
           onClick: isUnderConstruction ? null : handleArticleClick,
-          variant: isUnderConstruction ? 'disabled' : 'primary', // Already using 'disabled'
+          variant: isUnderConstruction ? 'disabled' : 'primary',
           internal: true
         })
       }
