@@ -7,6 +7,8 @@ export const useUnderConstruction = (type, id) => {
   console.log('useUnderConstruction:', type, id, typeof id)
 
   switch (type) {
+    case 'code':
+      return siteConfig.underConstruction.code.includes(Number(id))
     case 'casestudy':
       return siteConfig.underConstruction.caseStudies.includes(Number(id))
     case 'article':
