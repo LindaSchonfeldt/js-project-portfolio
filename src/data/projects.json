@@ -15,7 +15,7 @@
       "title": "Happy Thoughts",
       "image": "/assets/happythoughts.png",
       "alt": "",
-      "description": "A feel-good app where users can share positive thoughts and like each other's messages. Designed to spread joy through a simple, intuitive interface that encourages connection and kindness.",
+      "description": "A feel-good full-stack app where users can share positive thoughts and like each other’s messages. Built with React and Vite on the frontend, and Node.js with Express and MongoDB on the backend. The app features dynamic updates via a REST API, responsive design, and real-time message interaction.",
       "tags": ["React", "Vite", "Styled Components", "APIs"],
       "netlify": "https://creative-hotteok-2e5655.netlify.app/",
       "github": "https://github.com/LindaSchonfeldt/js-project-happy-thoughts/tree/main"
