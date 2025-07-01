@@ -42,18 +42,33 @@ export function useCardActions({
 
     // Code variant
     if (variant === 'code') {
-      if (netlify)
-        defaultActions.push({
-          text: 'Live Demo',
-          href: netlify,
-          variant: 'primary'
-        })
-      if (github)
+      // Add under construction check for code projects
+      const isCodeUnderConstruction = useUnderConstruction('code', id)
+
+      if (netlify) {
+        if (isCodeUnderConstruction) {
+          defaultActions.push({
+            text: '🚧 Under Construction',
+            href: null,
+            onClick: null,
+            variant: 'disabled'
+          })
+        } else {
+          defaultActions.push({
+            text: 'Live Demo',
+            href: netlify,
+            variant: 'primary'
+          })
+        }
+      }
+
+      if (github) {
         defaultActions.push({
           text: 'View Code',
           href: github,
           variant: 'secondary'
         })
+      }
     }
 
     // UX/UI variant

@@ -2,7 +2,8 @@
   "_comment": "Configuration for pages under construction",
   "underConstruction": {
     "_comment": "Array of case study IDs that are under construction",
-    "caseStudies": [1],
+    "code": [2],
+    "caseStudies": [2],
     "articles": [1],
     "_pagesComment": "Could also track other pages",
     "pages": []
