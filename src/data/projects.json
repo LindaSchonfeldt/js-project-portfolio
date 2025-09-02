@@ -2,6 +2,16 @@
   "code": [
     {
       "id": 1,
+      "title": "naima Website",
+      "image": "/assets/tree.svg",
+      "alt": "",
+      "description": "A modern, accessible fullstack web application for Naima, a Swedish superfood fika brand. The site combines brand storytelling with e-commerce functionality, featuring an interactive retailer map, wholesale partner dashboard, and comprehensive product showcase.",
+      "tags": ["React", "Vite", "Styled Components", "Zustand"],
+      "netlify": "",
+      "github": ""
+    },
+    {
+      "id": 2,
       "title": "Portfolio Website",
       "image": "/assets/tree.svg",
       "alt": "",
@@ -11,7 +21,7 @@
       "github": "https://github.com/LindaSchonfeldt/js-project-portfolio"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Happy Thoughts",
       "image": "/assets/happythoughts.png",
       "alt": "",
@@ -21,7 +31,7 @@
       "github": "https://github.com/LindaSchonfeldt/js-project-happy-thoughts/tree/main"
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "Screamflix",
       "image": "/assets/screamflix.png",
       "alt": "Screenshot of Screamflix horror movie browser",
@@ -31,7 +41,7 @@
       "github": "https://github.com/LindaSchonfeldt/js-project-movies"
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Weather App",
       "image": "",
       "alt": "",
@@ -41,7 +51,7 @@
       "github": "https://github.com/LindaSchonfeldt/weather-app"
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Recipe Library",
       "image": "",
       "alt": "",

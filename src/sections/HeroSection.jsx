@@ -35,7 +35,7 @@ export const StyledHeroSection = styled.section`
   }
 
   .heroSubtitle {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 800;
     margin: 0;
   }
