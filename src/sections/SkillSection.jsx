@@ -101,7 +101,7 @@ export const SkillSection = () => {
             <li>Figma</li>
             <li>Github</li>
             <li>Notion</li>
-            <li>Trello</li>
+            <li>Trello/Clickup</li>
             <li>Slack</li>
           </ul>
         </div>
