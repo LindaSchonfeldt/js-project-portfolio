@@ -5,7 +5,7 @@
       "title": "naima",
       "image": "",
       "alt": "",
-      "description": "A modern, accessible fullstack web application for Naima, a Swedish superfood fika brand. The site combines brand storytelling with e-commerce functionality, featuring an interactive retailer map, wholesale partner dashboard, and comprehensive product showcase.",
+      "description": "A modern, accessible fullstack web application for Naima, a Swedish superfood fika brand. The site combines brand storytelling with e-commerce functionality, featuring an interactive retailer map, wholesale partner dashboard, and comprehensive product showcase. Work in progress.",
       "tags": ["React", "Vite", "Styled Components", "Zustand"],
       "netlify": "https://resetwithnaima.netlify.app/",
       "github": "https://github.com/LindaSchonfeldt/naima-website"
